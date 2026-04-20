@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Navbar from "../components/Navbar";
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
@@ -18,9 +17,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
           <div className="text-center text-white px-6">
             <h2 className="text-3xl md:text-5xl font-extrabold"></h2>
-            <p className="mt-2 max-w-2xl mx-auto text-sm md:text-lg">
-              
-            </p>
+            <p className="mt-2 max-w-2xl mx-auto text-sm md:text-lg"></p>
           </div>
         </div>
       </section>
@@ -34,8 +31,7 @@ export default function Home() {
           What is the Magical Midwinter Festival?
         </h1>
         <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center">
-          This is placeholder body text for the home page. Replace with your own
-          content when ready.
+          This is placeholder body text for the home page. Replace with your own content when ready.
         </p>
       </main>
     </div>

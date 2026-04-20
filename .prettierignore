@@ -1,0 +1,14 @@
+.next
+node_modules
+dist
+out
+build
+public
+package-lock.json
+*/.git
+.vscode
+coverage
+npm-debug.log
+pnpm-debug.log
+yarn-debug.log
+yarn-error.log
