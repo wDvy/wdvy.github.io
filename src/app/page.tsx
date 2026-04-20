@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Logo from '../../assets/Copy of Logo.webp';
 import Navbar from '../components/Navbar';
 
 export default function Home() {
@@ -24,6 +26,33 @@ export default function Home() {
 
       {/* Navbar (client) */}
       <Navbar />
+
+      {/* Two-column section: text (left) + image (right) */}
+      <section className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-50">
+              Placeholder Left Heading
+            </h2>
+            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+              This is some placeholder text on the left column. Replace this with
+              the real copy describing the image on the right. It will be
+              responsive and stack on small screens.
+            </p>
+          </div>
+
+          <div className="w-full flex items-center justify-center">
+            <Image
+              src={Logo}
+              alt="Magical Midwinter Market Logo"
+              width={600}
+              height={600}
+              className="w-full h-auto max-w-sm object-contain rounded-md shadow-lg"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Placeholder heading and text */}
       <main className="max-w-4xl mx-auto px-6 py-16">
