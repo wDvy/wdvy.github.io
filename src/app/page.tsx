@@ -1,64 +1,78 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+      {/* Hero video (top) */}
+      <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
+        <video
+          className="w-full h-full object-cover"
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Hero video"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <div className="text-center text-white px-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold">Hero Video</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-sm md:text-lg">
+              A short placeholder tagline goes here.
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Navbar below the video (logo on left, links left-aligned, responsive) */}
+      <nav className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-start py-4 gap-4">
+            {/* Logo placeholder (left) */}
+            <a
+              href="#"
+              aria-label="Homepage"
+              className="flex items-center shrink-0"
+            >
+              <div className="h-8 w-8 sm:h-10 sm:w-10 bg-zinc-200 dark:bg-zinc-700 rounded-md flex items-center justify-center text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-50">
+                L
+              </div>
+              <span className="ml-3 hidden sm:inline text-sm sm:text-base font-semibold text-zinc-900 dark:text-zinc-50">
+                Brand
+              </span>
+            </a>
+
+            {/* Links (wrap on small screens) */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6">
+              <Link href="#" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
+                Link 1
+              </Link>
+              <Link href="#" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
+                Link 2
+              </Link>
+              <Link href="#" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
+                Link 3
+              </Link>
+              <Link href="#" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
+                Link 4
+              </Link>
+              <Link href="#" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
+                Link 5
+              </Link>
+            </div>
+          </div>
         </div>
+      </nav>
+
+      {/* Placeholder heading and text */}
+      <main className="max-w-4xl mx-auto px-6 py-16">
+        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
+          Placeholder Heading
+        </h1>
+        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center">
+          This is placeholder body text for the home page. Replace with your own
+          content when ready.
+        </p>
       </main>
     </div>
   );
