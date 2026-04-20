@@ -8,15 +8,27 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false); // mobile menu
   const [mobileFestOpen, setMobileFestOpen] = useState(false); // mobile festivals submenu
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const closeTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     function handleDocClick(e: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        // close immediately on outside click and clear any pending timer
         setOpen(false);
+        if (closeTimeoutRef.current) {
+          clearTimeout(closeTimeoutRef.current);
+          closeTimeoutRef.current = null;
+        }
       }
     }
     document.addEventListener('mousedown', handleDocClick);
-    return () => document.removeEventListener('mousedown', handleDocClick);
+    return () => {
+      document.removeEventListener('mousedown', handleDocClick);
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+        closeTimeoutRef.current = null;
+      }
+    };
   }, []);
 
   return (
@@ -52,8 +64,20 @@ export default function Navbar() {
               <div
                 className="relative"
                 ref={dropdownRef}
-                onMouseEnter={() => setOpen(true)}
-                onMouseLeave={() => setOpen(false)}
+                onMouseEnter={() => {
+                  if (closeTimeoutRef.current) {
+                    clearTimeout(closeTimeoutRef.current);
+                    closeTimeoutRef.current = null;
+                  }
+                  setOpen(true);
+                }}
+                onMouseLeave={() => {
+                  if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                  closeTimeoutRef.current = window.setTimeout(() => {
+                    setOpen(false);
+                    closeTimeoutRef.current = null;
+                  }, 250) as unknown as number;
+                }}
               >
                 <button
                   onClick={() => setOpen((s) => !s)}
@@ -79,6 +103,12 @@ export default function Navbar() {
                 <div
                   id="festivals-menu"
                   className={`absolute z-20 mt-2 w-48 bg-white dark:bg-zinc-900 rounded-md shadow-lg py-1 ${open ? 'block' : 'hidden'}`}
+                  onMouseEnter={() => {
+                    if (closeTimeoutRef.current) {
+                      clearTimeout(closeTimeoutRef.current);
+                      closeTimeoutRef.current = null;
+                    }
+                  }}
                 >
                   <Link
                     href="#"
