@@ -27,6 +27,16 @@ export default function Home() {
       {/* Navbar (client) */}
       <Navbar />
 
+      {/* Placeholder heading and text */}
+      <main className="max-w-4xl mx-auto px-6 py-16">
+        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
+          What is the Magical Midwinter Festival?
+        </h1>
+        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center">
+          This is placeholder body text for the home page. Replace with your own content when ready.
+        </p>
+      </main>
+
       {/* Two-column section: text (left) + image (right) */}
       <section className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -54,15 +64,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Placeholder heading and text */}
-      <main className="max-w-4xl mx-auto px-6 py-16">
-        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
-          What is the Magical Midwinter Festival?
-        </h1>
-        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center">
-          This is placeholder body text for the home page. Replace with your own content when ready.
-        </p>
-      </main>
     </div>
   );
 }

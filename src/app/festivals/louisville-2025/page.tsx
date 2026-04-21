@@ -1,10 +1,39 @@
-export default function Louisville2025Page() {
+import Navbar from '../../../components/Navbar';
+
+export default function Home() {
   return (
-    <main className="min-h-[60vh] flex items-center justify-center p-8">
-      <div className="text-center">
-        <h1 className="text-2xl font-semibold">Louisville 2025</h1>
-        <p className="mt-2 text-sm text-zinc-600">Placeholder page — content coming soon.</p>
-      </div>
-    </main>
+    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+      {/* Hero video (top) */}
+      <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
+        <video
+          className="w-full h-full object-cover"
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Hero video"
+        />
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <div className="text-center text-white px-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold"></h2>
+            <p className="mt-2 max-w-2xl mx-auto text-sm md:text-lg"></p>
+          </div>
+        </div>
+      </section>
+
+      {/* Navbar (client) */}
+      <Navbar />
+
+      {/* Placeholder heading and text */}
+      <main className="max-w-4xl mx-auto px-6 py-16">
+        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
+          2025 Magical Midwinter Marketplace
+        </h1>
+        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center">
+          The first magical midwinter marketplace was held at logan street market in Louisville, Kentucky in 2025. This is placeholder body text for the festival page. Replace with your own content when ready.
+        </p>
+      </main>
+    </div>
   );
 }
