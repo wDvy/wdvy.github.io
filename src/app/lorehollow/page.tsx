@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Logo from '../../../assets/Copy of Logo.webp';
-import Carousel from '../../components/Carousel';
+import Navbar from '../../components/Navbar';
 import FlipCard from '../../components/FlipCard';
 
 export default function LorehollowPage() {
@@ -15,13 +15,22 @@ export default function LorehollowPage() {
 
   return (
     <div className="px-6">
-      {/* Hero text */}
-      <section className="max-w-4xl mx-auto text-center py-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50">Lorehollow</h1>
-        <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-          A short hero blurb about Lorehollow. Replace with the real hero copy
-          describing the place, dates, and quick call-to-action.
-        </p>
+      <Navbar />
+
+      {/* Hero with background image */}
+      <section className="relative">
+        <div className="absolute inset-0 -z-10">
+          <Image src={Logo} alt="Lorehollow hero" fill className="object-cover" />
+          <div className="absolute inset-0 bg-black/45" />
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center py-24 relative z-10">
+          <h1 className="text-3xl md:text-4xl font-bold text-zinc-50">Lorehollow</h1>
+          <p className="mt-4 text-zinc-100/90">
+            A short hero blurb about Lorehollow. Replace with the real hero copy
+            describing the place, dates, and quick call-to-action.
+          </p>
+        </div>
       </section>
 
       {/* Centered image */}
@@ -31,16 +40,16 @@ export default function LorehollowPage() {
         </div>
       </div>
 
-      {/* Carousel of flippable cards */}
+      {/* Grid of larger flippable cards */}
       <section className="max-w-6xl mx-auto py-12">
         <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50 text-center">Highlights</h2>
-        <Carousel>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {cards.map((c, i) => (
-            <div key={i} className="snap-start">
-              <FlipCard image={Logo} title={c.title} backText={c.text} />
+            <div key={i}>
+              <FlipCard image={Logo} title={c.title} backText={c.text} className="h-[28rem]" />
             </div>
           ))}
-        </Carousel>
+        </div>
       </section>
     </div>
   );
