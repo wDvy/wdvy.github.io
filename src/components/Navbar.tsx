@@ -46,19 +46,13 @@ export default function Navbar() {
 
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-6">
+              <Link href="/" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
+                Home
+              </Link>
               <Link href="/markies" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
                 Markies
               </Link>
-              <Link href="#" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
-                Home
-              </Link>
 
-              <Link
-                href="#"
-                className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300"
-              >
-                Markies
-              </Link>
 
               <div
                 className="relative"
@@ -110,13 +104,13 @@ export default function Navbar() {
                   }}
                 >
                   <Link
-                    href="#"
+                    href="/festivals/louisville-2025"
                     className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800"
                   >
                     Louisville 2025
                   </Link>
                   <Link
-                    href="#"
+                    href="/festivals/louisville-2026"
                     className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800"
                   >
                     Louisville 2026
@@ -131,13 +125,13 @@ export default function Navbar() {
               </div>
 
               <Link
-                href="#"
+                href="/lorehollow"
                 className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300"
               >
                 Lorehollow
               </Link>
               <Link
-                href="#"
+                href="/gazette"
                 className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300"
               >
                 Gazette
@@ -197,43 +191,39 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu content */}
-      <div
-        className={`md:hidden ${mobileOpen ? 'block' : 'hidden'} bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800`}
-      >
+      <div className={`md:hidden ${mobileOpen ? 'block' : 'hidden'} bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800`}>
         <div className="px-4 pt-2 pb-4 space-y-2">
-          <Link href="#" className="block px-2 py-2 rounded text-zinc-700 dark:text-zinc-300">
-            Home
-          </Link>
-          <Link href="#" className="block px-2 py-2 rounded text-zinc-700 dark:text-zinc-300">
-            About
+          <Link href="/markies" className="block px-2 py-2 rounded text-zinc-700 dark:text-zinc-300">
+            Markies
           </Link>
 
-                  <Link
-                    href="/festivals/louisville-2025"
-                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800"
-                  >
-                    Louisville 2025
-                  </Link>
-                  <Link
-                    href="/festivals/louisville-2026"
-                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800"
-                  >
-                    Louisville 2026
-                  </Link>
-                </div>
-              </Link>
-              <Link href="#" className="block px-2 py-2 text-zinc-700 dark:text-zinc-300">
-                Festival B
-              </Link>
-              <Link href="#" className="block px-2 py-2 text-zinc-700 dark:text-zinc-300">
-                Festival C
-              </Link>
-              <Link href="/lorehollow" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
-                Lorehollow
-              </Link>
-              <Link href="/gazette" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
-                Gazette
-              </Link>
+          <button
+            className="w-full flex justify-between items-center px-2 py-2 text-zinc-700 dark:text-zinc-300"
+            onClick={() => setMobileFestOpen((s) => !s)}
+            aria-expanded={mobileFestOpen}
+          >
+            <span>Festivals</span>
+            <svg className={`h-4 w-4 transform ${mobileFestOpen ? 'rotate-180' : 'rotate-0'}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 011.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z" />
+            </svg>
+          </button>
+
+          <div className={`${mobileFestOpen ? 'block' : 'hidden'} pl-4`}>
+            <Link href="/festivals/louisville-2025" className="block px-2 py-2 text-zinc-700 dark:text-zinc-300">
+              Louisville 2025
+            </Link>
+            <Link href="/festivals/louisville-2026" className="block px-2 py-2 text-zinc-700 dark:text-zinc-300">
+              Louisville 2026
+            </Link>
+          </div>
+
+          <Link href="/lorehollow" className="block px-2 py-2 rounded text-zinc-700 dark:text-zinc-300">
+            Lorehollow
+          </Link>
+
+          <Link href="/gazette" className="block px-2 py-2 rounded text-zinc-700 dark:text-zinc-300">
+            Gazette
+          </Link>
         </div>
       </div>
     </nav>
