@@ -51,6 +51,26 @@ export default function LorehollowPage() {
           ))}
         </div>
       </section>
+      
+        {/* Two-column section below cards: image left (1/3), text right (2/3) */}
+        <section className="max-w-6xl mx-auto py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div className="md:col-span-1 flex items-center justify-center">
+              <div className="w-full max-w-sm rounded-md overflow-hidden shadow-md">
+                <Image src={Logo} alt="Lorehollow detail" width={800} height={800} className="w-full h-auto object-cover" />
+              </div>
+            </div>
+
+            <div className="md:col-span-2">
+              <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">About Lorehollow</h3>
+              <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+                This section contains header and explanatory text on the right. Replace
+                this placeholder with the actual content you want to display about
+                Lorehollow — details, schedule, and any important information.
+              </p>
+            </div>
+          </div>
+        </section>
     </div>
   );
 }
