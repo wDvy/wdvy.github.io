@@ -48,7 +48,7 @@ export default function Home() {
             </div>
 
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">About Markies</h3>
+              <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">Markies</h3>
               <p className="mt-4 text-zinc-600 dark:text-zinc-400">
                 This section contains header and explanatory text on the right. Replace
                 this placeholder with the actual content you want to display about

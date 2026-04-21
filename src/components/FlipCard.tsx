@@ -7,13 +7,14 @@ type FlipCardProps = {
   image: StaticImageData | string;
   title: string;
   backText: string;
+  className?: string;
 };
 
-export default function FlipCard({ image, title, backText }: FlipCardProps) {
+export default function FlipCard({ image, title, backText, className = '' }: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <div className="min-w-[14rem] sm:min-w-[16rem] h-72" style={{ perspective: '1000px' }}>
+    <div className={`w-full ${className}`} style={{ perspective: '1000px' }}>
       <div
         role="button"
         tabIndex={0}
@@ -30,18 +31,18 @@ export default function FlipCard({ image, title, backText }: FlipCardProps) {
           className="absolute inset-0 bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center p-4"
           style={{ backfaceVisibility: 'hidden' as const }}
         >
-          <div className="w-full h-40 relative rounded-md overflow-hidden">
+          <div className="w-full h-56 sm:h-64 md:h-72 relative rounded-md overflow-hidden">
             <Image src={image} alt={title} fill sizes="(max-width: 640px) 80vw, 320px" className="object-cover" />
           </div>
-          <h3 className="mt-3 text-lg font-semibold text-zinc-900">{title}</h3>
+          <h3 className="mt-3 text-xl md:text-2xl font-semibold text-zinc-900">{title}</h3>
         </div>
 
         {/* Back */}
         <div
-          className="absolute inset-0 bg-zinc-50 rounded-lg shadow-md p-4 flex items-center justify-center text-zinc-700"
+          className="absolute inset-0 bg-zinc-50 rounded-lg shadow-md p-6 flex items-center justify-center text-zinc-700"
           style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' as const }}
         >
-          <p className="text-sm text-center">{backText}</p>
+          <p className="text-base text-center">{backText}</p>
         </div>
       </div>
     </div>

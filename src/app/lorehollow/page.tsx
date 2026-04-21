@@ -5,12 +5,12 @@ import FlipCard from '../../components/FlipCard';
 
 export default function LorehollowPage() {
   const cards = [
-    { title: 'Tale of the Hollow', text: 'Short description for card 1.' },
-    { title: 'The Old Grove', text: 'Short description for card 2.' },
-    { title: 'Fae Market', text: 'Short description for card 3.' },
-    { title: 'Midnight Parade', text: 'Short description for card 4.' },
-    { title: 'Moonlight Crafts', text: 'Short description for card 5.' },
-    { title: 'Lantern Procession', text: 'Short description for card 6.' },
+    { title: 'Ashthorn', text: 'Short description for card 1.' },
+    { title: 'Ironstag', text: 'Short description for card 2.' },
+    { title: 'Wraithpine', text: 'Short description for card 3.' },
+    { title: 'Briarfang', text: 'Short description for card 4.' },
+    { title: 'Stormhollow', text: 'Short description for card 5.' },
+    { title: 'Emberwyld', text: 'Short description for card 6.' },
   ];
 
   return (

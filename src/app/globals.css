@@ -1,8 +1,37 @@
 @import 'tailwindcss';
 
+/* Color palette from assets/colorlist.txt
+   Alchemy         - #B82B9F  (primary / accent)
+   Comfort         - #745C4C  (secondary / muted)
+   Enchanted Forest- #2E402D  (text / headings)
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Named tokens */
+  --color-alchemy: #B82B9F;
+  --color-comfort: #745C4C;
+  --color-enchanted: #2E402D;
+
+  /* Base foreground/background used by global styles */
+  --background: #FBF9F8; /* light neutral background tuned to palette */
+  --foreground: var(--color-enchanted);
+
+  /* Map Tailwind CSS variables to the palette so existing utility classes adopt the new colors */
+  --color-emerald-600: var(--color-alchemy);
+
+  /* Map neutral/zinc scales to warm palette variants */
+  --color-zinc-50: #FBF9F8;
+  --color-zinc-100: #F7F3F1;
+  --color-zinc-200: #EDE6E3;
+  --color-zinc-300: #E3D9D4;
+  --color-zinc-400: #C9B8B1;
+  --color-zinc-600: #8C6E63;
+  --color-zinc-700: var(--color-comfort);
+  --color-zinc-800: #5C4941;
+  --color-zinc-900: var(--color-enchanted);
+
+  --color-white: #ffffff;
+  --color-black: #000000;
 }
 
 @theme inline {
@@ -14,8 +43,23 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark mode: keep deep, readable text and darker backgrounds */
+    --background: #07110d;
+    --foreground: #efeae6;
+
+    /* darker neutrals for dark mode */
+    --color-zinc-50: #0b0c0b;
+    --color-zinc-100: #0f1210;
+    --color-zinc-200: #1a1d1a;
+    --color-zinc-300: #222523;
+    --color-zinc-400: #2e2f2d;
+    --color-zinc-600: #576059;
+    --color-zinc-700: #6f645a;
+    --color-zinc-800: #4a3f39;
+    --color-zinc-900: var(--color-enchanted);
+
+    /* keep primary accent visible in dark mode */
+    --color-emerald-600: var(--color-alchemy);
   }
 }
 
