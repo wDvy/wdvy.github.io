@@ -56,8 +56,8 @@ export default function LorehollowPage() {
         <section className="max-w-6xl mx-auto py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-1 flex items-center justify-center">
-              <div className="w-full max-w-sm rounded-md overflow-hidden shadow-md">
-                <Image src={Logo} alt="Lorehollow detail" width={800} height={800} className="w-full h-auto object-cover" />
+              <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-md flex items-center justify-center">
+                <Image src={Logo} alt="Lorehollow detail" fill className="object-cover" />
               </div>
             </div>
 
