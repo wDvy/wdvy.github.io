@@ -1,70 +1,163 @@
 @import 'tailwindcss';
 
+/* Load the custom header font (Game & Reality) from the assets folder */
+@font-face {
+  font-family: 'Game&Reality';
+  src: url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality.eot'); /* IE9 Compat Modes */
+  src: url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality.eot?#iefix') format('embedded-opentype'),
+       url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality.woff') format('woff'),
+       url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* Optional: provide a bold/700 weight if you add one later
+@font-face {
+  font-family: 'Game&Reality';
+  src: url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
 /* Color palette from assets/colorlist.txt
-   Alchemy         - #B82B9F  (primary / accent)
-   Comfort         - #745C4C  (secondary / muted)
-   Enchanted Forest- #2E402D  (text / headings)
+   Light Mode:
+   Alchemy - #B82B9F Primary / CTA / Accent
+   Bloom - #D45EC4 Primary hover / links
+   Enchanted Forest - #2E402D Headings / logo
+   Grove - #5A7558 Secondary text on dark
+   Comfort - #745C4C Body text / muted
+   Suede - #9A8272 Subtle / placeholder
+   Lantern Glow - #E88F40 Highlight / badge
+   Embers - #F5C080 Warm accent / tag
+   Parchment - #F7F3EE Page background
+   Vellum - #FFFAF5 Surface / card bg
+
+   Dark Mode:
+   Alchemy - #D45EC4 Primary / CTA / Accent
+   Bloom - #E8A5DF Primary hover / links
+   Enchanted Forest - #7AAD78 Headings / logo
+   Grove - #A8C9A6 Secondary heading
+   Comfort - #C4A882 Body text / muted
+   Suede - #9A8272 Subtle / placeholder
+   Lantern Glow - #F0B070 Highlight / badge
+   Embers - #F5C080 Warm accent / tag
+   Obsidian - #1A1712 Page background
+   Charcoal - #26201A Surface / card bg
 */
 
 :root {
-  /* Named tokens */
+  /* Light mode colors (default) */
   --color-alchemy: #B82B9F;
-  --color-comfort: #745C4C;
+  --color-bloom: #D45EC4;
   --color-enchanted: #2E402D;
+  --color-grove: #5A7558;
+  --color-comfort: #745C4C;
+  --color-suede: #9A8272;
+  --color-lantern: #E88F40;
+  --color-embers: #F5C080;
+  --color-parchment: #F7F3EE;
+  --color-vellum: #FFFAF5;
 
-  /* Base foreground/background used by global styles */
-  --background: #FBF9F8; /* light neutral background tuned to palette */
+  /* Base foreground/background */
+  --background: var(--color-parchment);
   --foreground: var(--color-enchanted);
+  --surface: var(--color-vellum);
 
-  /* Map Tailwind CSS variables to the palette so existing utility classes adopt the new colors */
+  /* Map Tailwind to palette */
   --color-emerald-600: var(--color-alchemy);
+  --color-emerald-500: var(--color-alchemy);
+  --color-amber-500: var(--color-lantern);
+  --color-amber-400: var(--color-embers);
 
-  /* Map neutral/zinc scales to warm palette variants */
-  --color-zinc-50: #FBF9F8;
-  --color-zinc-100: #F7F3F1;
-  --color-zinc-200: #EDE6E3;
-  --color-zinc-300: #E3D9D4;
+  /* Zinc scale mapped to warm palette */
+  --color-zinc-50: var(--color-parchment);
+  --color-zinc-100: #F2EDE6;
+  --color-zinc-200: #E5DCD2;
+  --color-zinc-300: #D8CABE;
   --color-zinc-400: #C9B8B1;
-  --color-zinc-600: #8C6E63;
-  --color-zinc-700: var(--color-comfort);
-  --color-zinc-800: #5C4941;
+  --color-zinc-500: #B5A396;
+  --color-zinc-600: var(--color-comfort);
+  --color-zinc-700: #5C4941;
+  --color-zinc-800: #4A3F39;
   --color-zinc-900: var(--color-enchanted);
 
   --color-white: #ffffff;
   --color-black: #000000;
 }
 
+/* Dark mode */
+.dark {
+  --color-alchemy: #D45EC4;
+  --color-bloom: #E8A5DF;
+  --color-enchanted: #7AAD78;
+  --color-grove: #A8C9A6;
+  --color-comfort: #C4A882;
+  --color-suede: #9A8272;
+  --color-lantern: #F0B070;
+  --color-embers: #F5C080;
+  --color-parchment: #1A1712;
+  --color-vellum: #26201A;
+
+  --background: var(--color-parchment);
+  --foreground: #efeae6;
+  --surface: var(--color-vellum);
+
+  --color-emerald-600: var(--color-alchemy);
+  --color-emerald-500: var(--color-alchemy);
+  --color-amber-500: var(--color-lantern);
+  --color-amber-400: var(--color-embers);
+
+  --color-zinc-50: var(--color-parchment);
+  --color-zinc-100: #221E1A;
+  --color-zinc-200: #2A2520;
+  --color-zinc-300: #332D28;
+  --color-zinc-400: #4A423A;
+  --color-zinc-500: #6B5F52;
+  --color-zinc-600: var(--color-comfort);
+  --color-zinc-700: #8C7B66;
+  --color-zinc-800: #5C4D3D;
+  --color-zinc-900: var(--color-grove);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --font-sans: Georgia, 'Times New Roman', Times, serif;
+  --font-mono: Georgia, 'Times New Roman', Times, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode: keep deep, readable text and darker backgrounds */
-    --background: #07110d;
-    --foreground: #efeae6;
-
-    /* darker neutrals for dark mode */
-    --color-zinc-50: #0b0c0b;
-    --color-zinc-100: #0f1210;
-    --color-zinc-200: #1a1d1a;
-    --color-zinc-300: #222523;
-    --color-zinc-400: #2e2f2d;
-    --color-zinc-600: #576059;
-    --color-zinc-700: #6f645a;
-    --color-zinc-800: #4a3f39;
-    --color-zinc-900: var(--color-enchanted);
-
-    /* keep primary accent visible in dark mode */
-    --color-emerald-600: var(--color-alchemy);
-  }
-}
-
+/* Body uses Georgia (serif) as requested */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Ensure Tailwind's `font-sans` utility maps to the same body serif stack */
+.font-sans {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* If a parent element applies `.font-sans`, ensure nested headings still use the display font */
+.font-sans h1,
+.font-sans h2,
+.font-sans h3,
+.font-sans h4,
+.font-sans h5,
+.font-sans h6 {
+  font-family: 'Game&Reality', Georgia, serif;
+}
+
+/* Headings should use the custom Game & Reality font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Game&Reality', Georgia, serif;
+}
+
+/* Slight tuning: give headings a bit more letter spacing for display fonts */
+h1, h2, h3 {
+  letter-spacing: 0.5px;
 }

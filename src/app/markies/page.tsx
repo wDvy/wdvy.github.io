@@ -1,5 +1,5 @@
 import Navbar from '../../components/Navbar';
-import Image from 'next/image';
+import MarkieCard from '../../components/MarkieCard';
 import Logo from '../../../assets/Copy of Logo.webp';
 
 
@@ -38,44 +38,24 @@ export default function Home() {
         </p>
       </main>
 
-        {/* Two-column section below cards: image left (1/3), text right (2/3) */}
-        <section className="max-w-6xl mx-auto py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div className="md:col-span-1 flex items-center justify-center">
-              <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-md flex items-center justify-center">
-                <Image src={Logo} alt="Markies detail" fill className="object-cover" />
-              </div>
-            </div>
+        <MarkieCard
+          name="Markie 1"
+          bio={"This section will contain bio information for Markie 1. It sits on the right for desktop and below the image on mobile. Replace with details, bios, or other relevant info."}
+          image={Logo}
+          imageAlt="Markies detail"
+          instagramUrl="https://instagram.com"
+          instagramHandle='Example Handle'
+        />
 
-            <div className="md:col-span-2">
-              <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">Markies</h3>
-              <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-                This section contains header and explanatory text on the right. Replace
-                this placeholder with the actual content you want to display about
-                the Markies — details, schedule, and any important information.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Two-column section below cards: image left (1/3), text right (2/3) */}
-        <section className="max-w-6xl mx-auto py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <div className="md:col-span-2 order-2 md:order-1">
-              <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">More About Markies</h3>
-              <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-                Another block of text that sits on the left for desktop and above the
-                image on mobile. Replace with details, bios, or other relevant info.
-              </p>
-            </div>
-
-            <div className="md:col-span-1 flex items-center justify-center order-1 md:order-2">
-              <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-md flex items-center justify-center">
-                <Image src={Logo} alt="Markies detail" fill className="object-cover" />
-              </div>
-            </div>
-          </div>
-        </section>
+        <MarkieCard
+          name="Markie 2"
+          bio={"This section will contain bio information for Markie 2. It sits on the right for desktop and below the image on mobile. Replace with details, bios, or other relevant info."}
+          image={Logo}
+          imageAlt="Markies detail"
+          instagramUrl="https://instagram.com"
+          instagramHandle='Example Handle'
+          reverse
+        />
 
 
     </div>

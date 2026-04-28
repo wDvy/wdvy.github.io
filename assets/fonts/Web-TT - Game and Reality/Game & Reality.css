@@ -1,0 +1,11 @@
+/* Webfont: GameReality-Regular */@font-face {
+    font-family: 'Game&Reality';
+    src: url('Game & Reality.eot'); /* IE9 Compat Modes */
+    src: url('Game & Reality.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Game & Reality.woff') format('woff'), /* Modern Browsers */
+         url('Game & Reality.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

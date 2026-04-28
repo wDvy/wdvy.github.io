@@ -1,4 +1,33 @@
+Base:
 Alchemy - #B82B9F
 Comfort - #745C4C
 Enchanted Forest - #2E402D
 Latern Glow - #E88f40
+
+Full Palatte
+
+Light Mode:
+
+Alchemy - #B82B9F Primary / CTA / Accent
+Bloom - #D45EC4 Primary hover / links
+Enchanted Forest - #2E402D Headings / logo
+Grove - #5A7558 Secondary text on dark
+Comfort - #745C4C Body text / muted
+Suede - #9A8272 Subtle / 
+Lantern Glow - #E88F40 Highlight / badge
+Embers - #F5C080 Warm accent / tag
+Parchment - #F7F3EE Page background
+Vellum - #FFFAF5 Surface / card bg
+
+Dark Mode:
+
+Alchemy - #D45EC4 Primary / CTA / Accent
+Bloom - #E8A5DF Primary hover / links
+Enchanted Forest - #7AAD78 Headings / logo
+Grove - #A8C9A6 Secondary heading
+Comfort - #C4A882 Body text / muted
+Suede - #9A8272 Subtle / placeholder
+Lantern Glow - #F0B070 Highlight / badge
+Embers - #F5C080 Warm accent / tag
+Obsidian - #1A1712 Page background
+Charcoal - #26201A Surface / card bg

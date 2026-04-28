@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cinzel+Decorative:wght@400&display=swap');
+
+/* ── Overlay scene ─────────────────────────────── */
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #0e0c0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 28px;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  outline: none;
+  opacity: 1;
+  transition: opacity 0.6s ease 1s;
+  pointer-events: all;
+}
+
+/* Fade out the whole overlay after door swings open */
+.scene.opened {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Behind-door reveal ────────────────────────── */
+.behindDoor {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a3a2a 0%, #0e1f14 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.4s;
+  pointer-events: none;
+}
+
+.behindDoor h1 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #c9e8b0;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.behindDoor p {
+  font-family: 'Cormorant Garamond', serif;
+  color: #7aaa6a;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── Door ──────────────────────────────────────── */
+.doorWrap {
+  perspective: 900px;
+  width: 120px;
+  height: 200px;
+  position: relative;
+}
+
+.door {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transition: transform 1.1s cubic-bezier(0.76, 0, 0.24, 1);
+  transform: rotateY(0deg);
+}
+
+.doorFront {
+  position: absolute;
+  inset: 0;
+  background: #1c1510;
+  border: 1.5px solid #6b5832;
+  box-shadow:
+    inset 0 0 0 10px #181210,
+    inset 0 0 0 11px #6b5832;
+  border-radius: 2px 2px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 12px;
+}
+
+.doorPanel {
+  width: 72%;
+  border: 1px solid #6b5832;
+  border-radius: 1px;
+}
+
+.doorPanel.top { height: 35%; }
+.doorPanel.bot { height: 48%; }
+
+.doorKnob {
+  width: 10px;
+  height: 10px;
+  background: #c9a84c;
+  border-radius: 50%;
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 4px #c9a84c88;
+}
+
+.doorFrame {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 128px;
+  height: 12px;
+  background: #6b5832;
+  border-radius: 0 0 2px 2px;
+}
+
+/* ── Text below door ───────────────────────────── */
+.sceneText {
+  text-align: center;
+}
+
+.sceneText h2 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #e8d9b0;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  margin: 0 0 8px;
+}
+
+.sceneText p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: #8a7a5a;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
+/* ── Hint ──────────────────────────────────────── */
+.hint {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  color: #4a3f28;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ── Opened state ──────────────────────────────── */
+.scene.opened .door {
+  transform: rotateY(-115deg);
+}
+
+.scene.opened .behindDoor {
+  opacity: 1;
+}
+
+.scene.opened .hint {
+  display: none;
+}

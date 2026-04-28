@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false); // desktop festivals dropdown
@@ -32,24 +33,24 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+    <nav className="bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-b border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-4">
             <Link href="#" className="flex items-center shrink-0">
-              <div className="h-8 w-8 sm:h-10 sm:w-10 bg-zinc-200 dark:bg-zinc-700 rounded-md flex items-center justify-center text-xs sm:text-sm font-bold text-zinc-800 dark:text-zinc-50">
+              <div className="h-8 w-8 sm:h-10 sm:w-10 bg-[var(--color-alchemy)] rounded-md flex items-center justify-center text-xs sm:text-sm font-bold text-white">
                 MMF
               </div>
-              <span className="ml-3 hidden sm:inline text-sm sm:text-base font-semibold text-zinc-900 dark:text-zinc-50">
+              <span className="ml-3 hidden sm:inline text-sm sm:text-base font-semibold text-[var(--color-enchanted)] dark:text-[var(--color-enchanted)]">
               </span>
             </Link>
 
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-6">
-              <Link href="/" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
+              <Link href="/" className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]">
                 Home
               </Link>
-              <Link href="/markies" className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300">
+              <Link href="/markies" className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]">
                 Markies
               </Link>
 
@@ -76,7 +77,7 @@ export default function Navbar() {
                   onClick={() => setOpen((s) => !s)}
                   aria-expanded={open}
                   aria-controls="festivals-menu"
-                  className="flex items-center text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300"
+                  className="flex items-center text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
                 >
                   Festivals
                   <svg
@@ -95,7 +96,7 @@ export default function Navbar() {
 
                 <div
                   id="festivals-menu"
-                  className={`absolute z-20 mt-2 w-48 bg-white dark:bg-zinc-900 rounded-md shadow-lg py-1 ${open ? 'block' : 'hidden'}`}
+                  className={`absolute z-20 mt-2 w-48 bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] rounded-md shadow-lg py-1 border border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)] ${open ? 'block' : 'hidden'}`}
                   onMouseEnter={() => {
                     if (closeTimeoutRef.current) {
                       clearTimeout(closeTimeoutRef.current);
@@ -105,19 +106,19 @@ export default function Navbar() {
                 >
                   <Link
                     href="/festivals/louisville-2025"
-                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800"
+                    className="block px-4 py-2 text-sm text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
                   >
                     Louisville 2025
                   </Link>
                   <Link
                     href="/festivals/louisville-2026"
-                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800"
+                    className="block px-4 py-2 text-sm text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
                   >
                     Louisville 2026
                   </Link>
                   <Link
                     href="#"
-                    className="block px-4 py-2 text-sm text-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-800"
+                    className="block px-4 py-2 text-sm text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
                   >
                     TBD
                   </Link>
@@ -126,13 +127,13 @@ export default function Navbar() {
 
               <Link
                 href="/lorehollow"
-                className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300"
+                className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
               >
                 Lorehollow
               </Link>
               <Link
                 href="/gazette"
-                className="text-sm sm:text-base text-zinc-700 hover:text-black dark:text-zinc-300"
+                className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
               >
                 Gazette
               </Link>
@@ -140,9 +141,11 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center">
+            <ThemeToggle />
+
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 mr-2 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
+              className="md:hidden p-2 mr-2 rounded-md hover:bg-[var(--color-zinc-200)] dark:hover:bg-[var(--color-zinc-800)]"
               onClick={() => setMobileOpen((s) => !s)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
@@ -150,7 +153,7 @@ export default function Navbar() {
               {mobileOpen ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-zinc-900 dark:text-zinc-50"
+                  className="h-6 w-6 text-[var(--color-enchanted)] dark:text-[var(--color-enchanted)]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -165,7 +168,7 @@ export default function Navbar() {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-zinc-900 dark:text-zinc-50"
+                  className="h-6 w-6 text-[var(--color-enchanted)] dark:text-[var(--color-enchanted)]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -182,7 +185,7 @@ export default function Navbar() {
 
             <Link
               href="#"
-              className="ml-4 px-3 py-2 rounded-md bg-emerald-600 text-white text-sm sm:text-base"
+              className="ml-4 px-3 py-2 rounded-md bg-[var(--color-alchemy)] hover:bg-[var(--color-bloom)] text-white text-sm sm:text-base transition-colors"
             >
               Tickets
             </Link>
@@ -191,14 +194,14 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu content */}
-      <div className={`md:hidden ${mobileOpen ? 'block' : 'hidden'} bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800`}>
+      <div className={`md:hidden ${mobileOpen ? 'block' : 'hidden'} bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-t border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]`}>
         <div className="px-4 pt-2 pb-4 space-y-2">
-          <Link href="/markies" className="block px-2 py-2 rounded text-zinc-700 dark:text-zinc-300">
+          <Link href="/markies" className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]">
             Markies
           </Link>
 
           <button
-            className="w-full flex justify-between items-center px-2 py-2 text-zinc-700 dark:text-zinc-300"
+            className="w-full flex justify-between items-center px-2 py-2 text-[var(--color-comfort)]"
             onClick={() => setMobileFestOpen((s) => !s)}
             aria-expanded={mobileFestOpen}
           >
@@ -209,19 +212,19 @@ export default function Navbar() {
           </button>
 
           <div className={`${mobileFestOpen ? 'block' : 'hidden'} pl-4`}>
-            <Link href="/festivals/louisville-2025" className="block px-2 py-2 text-zinc-700 dark:text-zinc-300">
+            <Link href="/festivals/louisville-2025" className="block px-2 py-2 text-[var(--color-comfort)]">
               Louisville 2025
             </Link>
-            <Link href="/festivals/louisville-2026" className="block px-2 py-2 text-zinc-700 dark:text-zinc-300">
+            <Link href="/festivals/louisville-2026" className="block px-2 py-2 text-[var(--color-comfort)]">
               Louisville 2026
             </Link>
           </div>
 
-          <Link href="/lorehollow" className="block px-2 py-2 rounded text-zinc-700 dark:text-zinc-300">
+          <Link href="/lorehollow" className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]">
             Lorehollow
           </Link>
 
-          <Link href="/gazette" className="block px-2 py-2 rounded text-zinc-700 dark:text-zinc-300">
+          <Link href="/gazette" className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]">
             Gazette
           </Link>
         </div>

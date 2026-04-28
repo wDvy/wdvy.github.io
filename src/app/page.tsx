@@ -1,10 +1,34 @@
+'use client';
 import Image from 'next/image';
 import Logo from '../../assets/Copy of Logo.webp';
 import Navbar from '../components/Navbar';
+import { useState, useEffect } from 'react';
+import IntroOverlay from '../components/IntroOverlay';
+
+const INTRO_STORAGE_KEY = 'intro-seen';
 
 export default function Home() {
+
+  //intro overlay state and handler
+  // Start as "entered" to avoid flash, then check storage on mount
+  const [entered, setEntered] = useState<boolean>(true);
+
+  useEffect(() => {
+    const seen = sessionStorage.getItem(INTRO_STORAGE_KEY);
+    if (!seen) setEntered(false);
+  }, []);
+
+  const handleEnter = () => {
+    sessionStorage.setItem(INTRO_STORAGE_KEY, '1');
+    setEntered(true);
+  };
+
+
+
   return (
+
     <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+      {!entered && <IntroOverlay onEnter={handleEnter} />}
       {/* Hero video (top) */}
       <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
         <video
@@ -63,7 +87,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
