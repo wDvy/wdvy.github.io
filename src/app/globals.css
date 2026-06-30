@@ -3,10 +3,12 @@
 /* Load the custom header font (Game & Reality) from the assets folder */
 @font-face {
   font-family: 'Game&Reality';
-  src: url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality.eot'); /* IE9 Compat Modes */
-  src: url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality.eot?#iefix') format('embedded-opentype'),
-       url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality.woff') format('woff'),
-       url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality.ttf') format('truetype');
+  src: url('/assets/fonts/Web-TT - Game and Reality/Game & Reality.eot'); /* IE9 Compat Modes */
+  src:
+    url('/assets/fonts/Web-TT - Game and Reality/Game & Reality.eot?#iefix')
+      format('embedded-opentype'),
+    url('/assets/fonts/Web-TT - Game and Reality/Game & Reality.woff') format('woff'),
+    url('/assets/fonts/Web-TT - Game and Reality/Game & Reality.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -15,7 +17,7 @@
 /* Optional: provide a bold/700 weight if you add one later
 @font-face {
   font-family: 'Game&Reality';
-  src: url('../../assets/fonts/Web-TT - Game and Reality/Game & Reality-Bold.woff') format('woff');
+  src: url('public/assets/fonts/Web-TT - Game and Reality/Game & Reality-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -50,16 +52,16 @@
 
 :root {
   /* Light mode colors (default) */
-  --color-alchemy: #B82B9F;
-  --color-bloom: #D45EC4;
-  --color-enchanted: #2E402D;
-  --color-grove: #5A7558;
-  --color-comfort: #745C4C;
-  --color-suede: #9A8272;
-  --color-lantern: #E88F40;
-  --color-embers: #F5C080;
-  --color-parchment: #F7F3EE;
-  --color-vellum: #FFFAF5;
+  --color-alchemy: #b82b9f;
+  --color-bloom: #d45ec4;
+  --color-enchanted: #2e402d;
+  --color-grove: #5a7558;
+  --color-comfort: #745c4c;
+  --color-suede: #9a8272;
+  --color-lantern: #e88f40;
+  --color-embers: #f5c080;
+  --color-parchment: #f7f3ee;
+  --color-vellum: #fffaf5;
 
   /* Base foreground/background */
   --background: var(--color-parchment);
@@ -74,14 +76,14 @@
 
   /* Zinc scale mapped to warm palette */
   --color-zinc-50: var(--color-parchment);
-  --color-zinc-100: #F2EDE6;
-  --color-zinc-200: #E5DCD2;
-  --color-zinc-300: #D8CABE;
-  --color-zinc-400: #C9B8B1;
-  --color-zinc-500: #B5A396;
+  --color-zinc-100: #f2ede6;
+  --color-zinc-200: #e5dcd2;
+  --color-zinc-300: #d8cabe;
+  --color-zinc-400: #c9b8b1;
+  --color-zinc-500: #b5a396;
   --color-zinc-600: var(--color-comfort);
-  --color-zinc-700: #5C4941;
-  --color-zinc-800: #4A3F39;
+  --color-zinc-700: #5c4941;
+  --color-zinc-800: #4a3f39;
   --color-zinc-900: var(--color-enchanted);
 
   --color-white: #ffffff;
@@ -90,16 +92,16 @@
 
 /* Dark mode */
 .dark {
-  --color-alchemy: #D45EC4;
-  --color-bloom: #E8A5DF;
-  --color-enchanted: #7AAD78;
-  --color-grove: #A8C9A6;
-  --color-comfort: #C4A882;
-  --color-suede: #9A8272;
-  --color-lantern: #F0B070;
-  --color-embers: #F5C080;
-  --color-parchment: #1A1712;
-  --color-vellum: #26201A;
+  --color-alchemy: #d45ec4;
+  --color-bloom: #e8a5df;
+  --color-enchanted: #7aad78;
+  --color-grove: #a8c9a6;
+  --color-comfort: #c4a882;
+  --color-suede: #9a8272;
+  --color-lantern: #f0b070;
+  --color-embers: #f5c080;
+  --color-parchment: #1a1712;
+  --color-vellum: #26201a;
 
   --background: var(--color-parchment);
   --foreground: #efeae6;
@@ -111,14 +113,14 @@
   --color-amber-400: var(--color-embers);
 
   --color-zinc-50: var(--color-parchment);
-  --color-zinc-100: #221E1A;
-  --color-zinc-200: #2A2520;
-  --color-zinc-300: #332D28;
-  --color-zinc-400: #4A423A;
-  --color-zinc-500: #6B5F52;
+  --color-zinc-100: #221e1a;
+  --color-zinc-200: #2a2520;
+  --color-zinc-300: #332d28;
+  --color-zinc-400: #4a423a;
+  --color-zinc-500: #6b5f52;
   --color-zinc-600: var(--color-comfort);
-  --color-zinc-700: #8C7B66;
-  --color-zinc-800: #5C4D3D;
+  --color-zinc-700: #8c7b66;
+  --color-zinc-800: #5c4d3d;
   --color-zinc-900: var(--color-grove);
 }
 
@@ -153,11 +155,18 @@ body {
 }
 
 /* Headings should use the custom Game & Reality font */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Game&Reality', Georgia, serif;
 }
 
 /* Slight tuning: give headings a bit more letter spacing for display fonts */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   letter-spacing: 0.5px;
 }

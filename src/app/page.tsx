@@ -1,16 +1,14 @@
 'use client';
 import Image from 'next/image';
-import Logo from '../../assets/Copy of Logo.webp';
+import { Logo, Banner, SantaMagic } from '../images';
 import Navbar from '../components/Navbar';
 import { useState, useEffect } from 'react';
 import IntroOverlay from '../components/IntroOverlay';
+import { FaInstagram, FaTiktok } from 'react-icons/fa';
 
 const INTRO_STORAGE_KEY = 'intro-seen';
 
 export default function Home() {
-
-  //intro overlay state and handler
-  // Start as "entered" to avoid flash, then check storage on mount
   const [entered, setEntered] = useState<boolean>(true);
 
   useEffect(() => {
@@ -23,67 +21,145 @@ export default function Home() {
     setEntered(true);
   };
 
-
-
   return (
-
-    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-900 font-sans">
       {!entered && <IntroOverlay onEnter={handleEnter} />}
-      {/* Hero video (top) */}
-      <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
-        <video
-          className="w-full h-full object-cover"
-          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-label="Hero video"
+      {/* Hero banner (top) */}
+      <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden">
+        <Image
+          src={Banner}
+          alt="Magical Midwinter Market Logo"
+          width={1920}
+          height={1080}
+          className="w-full h-full object-cover opacity-100"
+          priority
+          quality={100}
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <div className="text-center text-white px-6">
-            <h2 className="text-3xl md:text-5xl font-extrabold"></h2>
-            <p className="mt-2 max-w-2xl mx-auto text-sm md:text-lg"></p>
-          </div>
-        </div>
       </section>
 
       {/* Navbar (client) */}
       <Navbar />
 
-      {/* Placeholder heading and text */}
-      <main className="max-w-4xl mx-auto px-6 py-16">
-        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
-          What is the Magical Midwinter Festival?
-        </h1>
-        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center">
-          This is placeholder body text for the home page. Replace with your own content when ready.
-        </p>
+      {/* Introduction section */}
+      <main className="max-w-5xl mx-auto px-6 py-20">
+        <div className="text-center mb-16">
+          <h2
+            className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-6"
+            style={{ fontFamily: 'Game&Reality, serif' }}
+          >
+            What is Magical Midwinter?
+          </h2>
+          <p className="text-lg md:text-xl text-zinc-700 dark:text-zinc-300 leading-relaxed max-w-3xl mx-auto">
+            Combining your favorite parts of a renaissance festival, a mysterious night market, and
+            a live Dungeons and Dragons campaign, Magical Midwinter invites you to leave mundanity
+            behind and embrace your magical self.
+          </p>
+        </div>
       </main>
 
-      {/* Two-column section: text (left) + image (right) */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-50">
-              Placeholder Left Heading
-            </h2>
-            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-              This is some placeholder text on the left column. Replace this with
-              the real copy describing the image on the right. It will be
-              responsive and stack on small screens.
-            </p>
+      {/* Feature section: Portal */}
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="md:order-2 w-full flex items-center justify-center">
+              <Image
+                src={SantaMagic}
+                alt="Magical Midwinter Market Logo"
+                width={400}
+                height={400}
+                className="w-full h-auto max-w-sm object-contain"
+                priority
+              />
+            </div>
+            <div className="md:order-1">
+              <h2
+                className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4"
+                style={{ fontFamily: 'Game&Reality, serif' }}
+              >
+                Step Through the Portal
+              </h2>
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4">
+                Emerge into the Magical Midwinter Marketplace where quests, shopping, mysteries and
+                more await you. Learn more about furthering your magical education by visiting the
+                professors of Lorehollow Academy at their popup bookstore.
+              </p>
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                Will you choose to specialize in plant-speaking as a Sylvan from House Ashthorn, or
+                will you learn the ancient art-craft of forging spells into metal as an Artificer in
+                House Ironstag?
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="w-full flex items-center justify-center">
-            <Image
-              src={Logo}
-              alt="Magical Midwinter Market Logo"
-              width={600}
-              height={600}
-              className="w-full h-auto max-w-sm object-contain rounded-md shadow-lg"
-              priority
-            />
+      {/* Feature section: Marketplace & Tavern */}
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="w-full flex items-center justify-center">
+              <Image
+                src={Logo}
+                alt="Magical Midwinter Market Logo"
+                width={400}
+                height={400}
+                className="w-full h-auto max-w-sm object-contain"
+                priority
+              />
+            </div>
+
+            <div>
+              <h2
+                className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4"
+                style={{ fontFamily: 'Game&Reality, serif' }}
+              >
+                Experience the Marketplace
+              </h2>
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4">
+                After working up a thirst, stop by the tavern to grab a drink and gossip with the
+                barkeep – who knows what rumors you might uncover!
+              </p>
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4">
+                Do your holiday shopping for your magical friends and family. The marketplace is the
+                perfect place to pick up magical necessaries like specialty potions, enchanting
+                artifacts, books of magic, and much more!
+              </p>
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-semibold text-amber-700 dark:text-amber-400">
+                Most importantly – the marketplace won't be in your city for long and entrance is
+                limited. Don't miss your chance to visit and purchase your entrance time today!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* social media section */}
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center">
+            <h3 className="text-3xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-12">
+              Explore more of the world of Magical Midwinter here on our website and our social
+              media pages.
+            </h3>
+            <div className="flex justify-center items-center gap-8">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-amber-700 dark:hover:text-amber-400 transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-amber-700 dark:hover:text-amber-400 transition-colors"
+                aria-label="TikTok"
+              >
+                <FaTiktok />
+              </a>
+            </div>
           </div>
         </div>
       </section>

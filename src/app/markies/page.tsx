@@ -1,7 +1,6 @@
 import Navbar from '../../components/Navbar';
 import MarkieCard from '../../components/MarkieCard';
-import Logo from '../../../assets/Copy of Logo.webp';
-
+import { Logo } from '../../images';
 
 export default function Home() {
   return (
@@ -38,26 +37,28 @@ export default function Home() {
         </p>
       </main>
 
-        <MarkieCard
-          name="Markie 1"
-          bio={"This section will contain bio information for Markie 1. It sits on the right for desktop and below the image on mobile. Replace with details, bios, or other relevant info."}
-          image={Logo}
-          imageAlt="Markies detail"
-          instagramUrl="https://instagram.com"
-          instagramHandle='Example Handle'
-        />
+      <MarkieCard
+        name="Markie 1"
+        bio={
+          'This section will contain bio information for Markie 1. It sits on the right for desktop and below the image on mobile. Replace with details, bios, or other relevant info.'
+        }
+        image={Logo}
+        imageAlt="Markies detail"
+        instagramUrl="https://instagram.com"
+        instagramHandle="Example Handle"
+      />
 
-        <MarkieCard
-          name="Markie 2"
-          bio={"This section will contain bio information for Markie 2. It sits on the right for desktop and below the image on mobile. Replace with details, bios, or other relevant info."}
-          image={Logo}
-          imageAlt="Markies detail"
-          instagramUrl="https://instagram.com"
-          instagramHandle='Example Handle'
-          reverse
-        />
-
-
+      <MarkieCard
+        name="Markie 2"
+        bio={
+          'This section will contain bio information for Markie 2. It sits on the right for desktop and below the image on mobile. Replace with details, bios, or other relevant info.'
+        }
+        image={Logo}
+        imageAlt="Markies detail"
+        instagramUrl="https://instagram.com"
+        instagramHandle="Example Handle"
+        reverse
+      />
     </div>
   );
 }
