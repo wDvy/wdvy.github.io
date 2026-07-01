@@ -26,7 +26,7 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-900 font-sans">
       {!entered && <IntroOverlay onEnter={handleEnter} />}
       {/* Hero Video */}
-      <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
+      <section className="relative w-full h-[45vh] sm:h-[55vh] md:h-[70vh] overflow-hidden bg-black">
         <video
           className="w-full h-full object-cover"
           src={HeroVideo}
@@ -36,18 +36,18 @@ export default function Home() {
           playsInline
           aria-label="Hero video"
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center gap-8 px-6 text-center">
           {/*Logo*/}
           <Image
             src={Logo}
             alt="Magical Midwinter Market Logo"
             width={400}
             height={400}
-            className="w-full h-auto max-w-5xl object-contain"
+            className="w-full h-auto max-w-xs sm:max-w-md md:max-w-5xl object-contain"
             priority
             quality={100}
           />
-          <div className="text-center text-white px-6">
+          <div className="text-center text-white px-2 sm:px-6">
             <h2 className="text-3xl md:text-5xl font-extrabold"></h2>
             <p className="mt-2 max-w-2xl mx-auto text-sm md:text-lg"></p>
           </div>
