@@ -33,7 +33,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="relative sticky top-0 z-50 bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-b border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]">
+    <nav className="relative sticky top-0 z-40 bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-b border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-[var(--color-alchemy)] via-[rgba(184,43,159,0.4)] to-transparent opacity-80 blur-xl" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">

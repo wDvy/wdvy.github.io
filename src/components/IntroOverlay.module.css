@@ -4,7 +4,7 @@
 .scene {
   position: fixed;
   inset: 0;
-  z-index: 50;
+  z-index: 60;
   background: #0e0c0a;
   display: flex;
   align-items: center;
@@ -98,8 +98,12 @@
   border-radius: 1px;
 }
 
-.doorPanel.top { height: 35%; }
-.doorPanel.bot { height: 48%; }
+.doorPanel.top {
+  height: 35%;
+}
+.doorPanel.bot {
+  height: 48%;
+}
 
 .doorKnob {
   width: 10px;
@@ -164,8 +168,13 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* ── Opened state ──────────────────────────────── */
