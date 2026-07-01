@@ -33,27 +33,25 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-b border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]">
+    <nav className="relative sticky top-0 z-50 bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-b border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-[var(--color-alchemy)] via-[rgba(184,43,159,0.4)] to-transparent opacity-80 blur-xl" />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center gap-4">
-            <Link href="#" className="flex items-center shrink-0">
-              <div className="h-8 w-8 sm:h-10 sm:w-10 bg-[var(--color-alchemy)] rounded-md flex items-center justify-center text-xs sm:text-sm font-bold text-white">
-                MMF
-              </div>
-              <span className="ml-3 hidden sm:inline text-sm sm:text-base font-semibold text-[var(--color-enchanted)] dark:text-[var(--color-enchanted)]">
-              </span>
-            </Link>
-
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-6">
-              <Link href="/" className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]">
+              <Link
+                href="/"
+                className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
+              >
                 Home
               </Link>
-              <Link href="/markies" className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]">
+              <Link
+                href="/markies"
+                className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
+              >
                 Markies
               </Link>
-
 
               <div
                 className="relative"
@@ -187,16 +185,21 @@ export default function Navbar() {
               href="#"
               className="ml-4 px-3 py-2 rounded-md bg-[var(--color-alchemy)] hover:bg-[var(--color-bloom)] text-white text-sm sm:text-base transition-colors"
             >
-              Tickets
+              <span>Tickets</span>
             </Link>
           </div>
         </div>
       </div>
 
       {/* Mobile menu content */}
-      <div className={`md:hidden ${mobileOpen ? 'block' : 'hidden'} bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-t border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]`}>
+      <div
+        className={`md:hidden ${mobileOpen ? 'block' : 'hidden'} bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-t border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]`}
+      >
         <div className="px-4 pt-2 pb-4 space-y-2">
-          <Link href="/markies" className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]">
+          <Link
+            href="/markies"
+            className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
+          >
             Markies
           </Link>
 
@@ -206,25 +209,42 @@ export default function Navbar() {
             aria-expanded={mobileFestOpen}
           >
             <span>Festivals</span>
-            <svg className={`h-4 w-4 transform ${mobileFestOpen ? 'rotate-180' : 'rotate-0'}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <svg
+              className={`h-4 w-4 transform ${mobileFestOpen ? 'rotate-180' : 'rotate-0'}`}
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
               <path d="M5.23 7.21a.75.75 0 011.06-.02L10 10.67l3.71-3.48a.75.75 0 011.04 1.08l-4.25 4a.75.75 0 01-1.04 0l-4.25-4a.75.75 0 01-.02-1.06z" />
             </svg>
           </button>
 
           <div className={`${mobileFestOpen ? 'block' : 'hidden'} pl-4`}>
-            <Link href="/festivals/louisville-2025" className="block px-2 py-2 text-[var(--color-comfort)]">
+            <Link
+              href="/festivals/louisville-2025"
+              className="block px-2 py-2 text-[var(--color-comfort)]"
+            >
               Louisville 2025
             </Link>
-            <Link href="/festivals/louisville-2026" className="block px-2 py-2 text-[var(--color-comfort)]">
+            <Link
+              href="/festivals/louisville-2026"
+              className="block px-2 py-2 text-[var(--color-comfort)]"
+            >
               Louisville 2026
             </Link>
           </div>
 
-          <Link href="/lorehollow" className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]">
+          <Link
+            href="/lorehollow"
+            className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
+          >
             Lorehollow
           </Link>
 
-          <Link href="/gazette" className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]">
+          <Link
+            href="/gazette"
+            className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
+          >
             Gazette
           </Link>
         </div>

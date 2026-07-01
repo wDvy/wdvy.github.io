@@ -1,10 +1,11 @@
 'use client';
 import Image from 'next/image';
-import { Logo, Banner, SantaMagic } from '../images';
+import { Logo, Banner, SantaMagic, divider, magicDude, HeroVideo } from '../images';
 import Navbar from '../components/Navbar';
 import { useState, useEffect } from 'react';
 import IntroOverlay from '../components/IntroOverlay';
-import { FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaTiktok, FaArrowRight } from 'react-icons/fa';
+import Link from 'next/link';
 
 const INTRO_STORAGE_KEY = 'intro-seen';
 
@@ -24,7 +25,37 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-900 font-sans">
       {!entered && <IntroOverlay onEnter={handleEnter} />}
+      {/* Hero Video */}
+      <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
+        <video
+          className="w-full h-full object-cover"
+          src={HeroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Hero video"
+        />
+        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+          {/*Logo*/}
+          <Image
+            src={Logo}
+            alt="Magical Midwinter Market Logo"
+            width={400}
+            height={400}
+            className="w-full h-auto max-w-5xl object-contain"
+            priority
+            quality={100}
+          />
+          <div className="text-center text-white px-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold"></h2>
+            <p className="mt-2 max-w-2xl mx-auto text-sm md:text-lg"></p>
+          </div>
+        </div>
+      </section>
+
       {/* Hero banner (top) */}
+      {/*
       <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden">
         <Image
           src={Banner}
@@ -36,6 +67,7 @@ export default function Home() {
           quality={100}
         />
       </section>
+    */}
 
       {/* Navbar (client) */}
       <Navbar />
@@ -56,7 +88,7 @@ export default function Home() {
           </p>
         </div>
       </main>
-
+      <img src={divider} alt="Divider" className="mx-auto mb-6 h-auto max-w-xs w-1/2 " />
       {/* Feature section: Portal */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-6">
@@ -64,10 +96,10 @@ export default function Home() {
             <div className="md:order-2 w-full flex items-center justify-center">
               <Image
                 src={SantaMagic}
-                alt="Magical Midwinter Market Logo"
+                alt="santa and midwinter staff"
                 width={400}
                 height={400}
-                className="w-full h-auto max-w-sm object-contain"
+                className="w-full h-auto max-w-sm object-contain rounded-xl shadow-lg"
                 priority
               />
             </div>
@@ -83,11 +115,20 @@ export default function Home() {
                 more await you. Learn more about furthering your magical education by visiting the
                 professors of Lorehollow Academy at their popup bookstore.
               </p>
-              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
                 Will you choose to specialize in plant-speaking as a Sylvan from House Ashthorn, or
                 will you learn the ancient art-craft of forging spells into metal as an Artificer in
                 House Ironstag?
               </p>
+              <div className="mt-6 flex justify-center">
+                <Link
+                  href="/lorehollow"
+                  className="inline-flex items-center justify-center rounded-md bg-[var(--color-alchemy)] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[var(--color-bloom)]"
+                >
+                  Lorehollow
+                  <FaArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -99,11 +140,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="w-full flex items-center justify-center">
               <Image
-                src={Logo}
+                src={magicDude}
                 alt="Magical Midwinter Market Logo"
                 width={400}
                 height={400}
-                className="w-full h-auto max-w-sm object-contain"
+                className="w-full h-auto max-w-sm object-contain rounded-xl shadow-lg"
                 priority
               />
             </div>
@@ -124,10 +165,19 @@ export default function Home() {
                 perfect place to pick up magical necessaries like specialty potions, enchanting
                 artifacts, books of magic, and much more!
               </p>
-              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-semibold text-amber-700 dark:text-amber-400">
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-semibold text-amber-700 dark:text-amber-400 mb-6">
                 Most importantly – the marketplace won't be in your city for long and entrance is
                 limited. Don't miss your chance to visit and purchase your entrance time today!
               </p>
+              <div className="mt-6 flex justify-center">
+                <Link
+                  href="/markies"
+                  className="inline-flex items-center justify-center rounded-md bg-[var(--color-alchemy)] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[var(--color-bloom)]"
+                >
+                  Tickets
+                  <FaArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -142,7 +192,7 @@ export default function Home() {
             </h3>
             <div className="flex justify-center items-center gap-8">
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-amber-700 dark:hover:text-amber-400 transition-colors"
@@ -151,7 +201,7 @@ export default function Home() {
                 <FaInstagram />
               </a>
               <a
-                href="https://www.tiktok.com"
+                href="https://www.tiktok.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-amber-700 dark:hover:text-amber-400 transition-colors"
