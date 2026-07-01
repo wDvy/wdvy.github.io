@@ -1,6 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import { useState, useCallback } from 'react';
+import { Logo } from '../images';
 import styles from './IntroOverlay.module.css';
 
 interface IntroOverlayProps {
@@ -8,13 +10,17 @@ interface IntroOverlayProps {
 }
 
 export default function IntroOverlay({ onEnter }: IntroOverlayProps) {
-  const [opened, setOpened] = useState<boolean>(false);
+  const [opened, setOpened] = useState(false);
 
   const handleClick = useCallback(() => {
     if (opened) return;
     setOpened(true);
-    setTimeout(onEnter, 1200);
+    setTimeout(onEnter, 4000);
   }, [opened, onEnter]);
+
+  const doorImage = opened
+    ? '/assets/Images/doors/OpenDoor.png'
+    : '/assets/Images/doors/ClosedDoor.png';
 
   return (
     <div
@@ -25,32 +31,35 @@ export default function IntroOverlay({ onEnter }: IntroOverlayProps) {
       tabIndex={0}
       onKeyDown={(e) => e.key === 'Enter' && handleClick()}
     >
-      {/* Behind-door reveal */}
-      <div className={styles.behindDoor} aria-hidden="true">
-        <h1>fuck you!</h1>
-        <p>You&apos;ve stepped inside.</p>
-      </div>
+      <div className={styles.content}>
+        <div className={styles.sceneText}>{/* <h2>Welcome to Magical Midwinter</h2> */}</div>
 
-      {/* Door */}
-      <div className={styles.doorWrap}>
-        <div className={styles.door}>
-          <div className={styles.doorFront}>
-            <div className={`${styles.doorPanel} ${styles.top}`} />
-            <div className={`${styles.doorPanel} ${styles.bot}`} />
-            <div className={styles.doorKnob} />
-          </div>
+        <div className={styles.doorLogo}>
+          <Image
+            src={Logo}
+            alt="Magical Midwinter logo"
+            width={240}
+            height={90}
+            className={styles.doorLogoImage}
+            priority
+          />
         </div>
-        <div className={styles.doorFrame} />
-      </div>
 
-      {/* Text below door */}
-      <div className={styles.sceneText}>
-        <h2>Welcome to the Magical Midwinter Festival</h2>
-        <p>Open the Portal, What will you discover?</p>
+        <div className={styles.doorWrap}>
+          <div className={styles.doorGlow} aria-hidden="true" />
+          <Image
+            src={doorImage}
+            alt={opened ? 'Open magical door' : 'Closed magical door'}
+            width={420}
+            height={520}
+            className={styles.doorImage}
+            priority
+          />
+        </div>
       </div>
 
       <span className={styles.hint} aria-hidden="true">
-        click to enter
+        Click to Open the Portal
       </span>
     </div>
   );

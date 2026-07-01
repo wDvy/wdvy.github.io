@@ -3,12 +3,12 @@
 /* Load the custom header font (Game & Reality) from the assets folder */
 @font-face {
   font-family: 'Game&Reality';
-  src: url('/assets/fonts/Web-TT - Game and Reality/Game & Reality.eot'); /* IE9 Compat Modes */
+  src: url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.eot'); /* IE9 Compat Modes */
   src:
-    url('/assets/fonts/Web-TT - Game and Reality/Game & Reality.eot?#iefix')
+    url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.eot?#iefix')
       format('embedded-opentype'),
-    url('/assets/fonts/Web-TT - Game and Reality/Game & Reality.woff') format('woff'),
-    url('/assets/fonts/Web-TT - Game and Reality/Game & Reality.ttf') format('truetype');
+    url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.woff') format('woff'),
+    url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
