@@ -6,3 +6,10 @@ export const divider = '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_gol
 export const divider2 = '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_golden_04.svg';
 export const magicDude = '/assets/Images/magicFella.jpg';
 export const HeroVideo = '/assets/video/HeroVid.mp4';
+
+// Markies
+export const Amaryllis = '/assets/Images/markies/Amaryllis.png';
+export const MarketMaster = '/assets/Images/markies/MarketMaster.png';
+export const Sable = '/assets/Images/markies/Sable.png';
+export const LexiQuill = '/assets/Images/markies/LexiQuill.png';
+export const Otho = '/assets/Images/markies/Otho.png';
