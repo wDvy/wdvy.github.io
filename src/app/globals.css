@@ -51,6 +51,8 @@
 */
 
 :root {
+  color-scheme: light;
+
   /* Light mode colors (default) */
   --color-alchemy: #785780;
   --color-bloom: #d45ec4;
@@ -98,6 +100,8 @@
 
 /* Dark mode */
 .dark {
+  color-scheme: dark;
+
   --color-alchemy: #785780;
   --color-bloom: #e8a5df;
   --color-enchanted: #7aad78;
@@ -145,8 +149,14 @@
 }
 
 /* Body uses Georgia (serif) as requested */
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
