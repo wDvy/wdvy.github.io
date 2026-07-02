@@ -1,0 +1,82 @@
+.flipCardRoot {
+  perspective: 1000px;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.35s ease;
+  box-shadow:
+    0 0 18px rgba(0, 0, 0, 0.12),
+    inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.flipCardInner:hover {
+  box-shadow:
+    0 0 40px var(--glow-color),
+    inset 0 0 28px var(--glow-color);
+}
+
+.flipCardInner:hover .front::before {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1.08);
+    opacity: 1;
+    filter: blur(28px);
+  }
+
+  50% {
+    transform: scale(1.14);
+    opacity: 0.9;
+    filter: blur(32px);
+  }
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.flipCardFace {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.front {
+  background: #0000;
+}
+
+.front::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 20%, var(--glow-color) 0%, transparent 38%),
+    radial-gradient(circle at 70% 80%, transparent 26%, var(--glow-color) 45%, transparent 55%);
+  opacity: 0.55;
+  filter: blur(28px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  pointer-events: none;
+}
+
+.flipCardInner:hover .front::before {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.back {
+  background: var(--color-surface);
+  box-shadow: inset 0 0 18px rgba(15, 23, 42, 0.08);
+}

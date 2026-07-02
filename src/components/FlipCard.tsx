@@ -1,20 +1,36 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import styles from './FlipCard.module.css';
 
 type FlipCardProps = {
   image: StaticImageData | string;
   title: string;
   backText: string;
   className?: string;
+  glowColor?: string;
+  backLinkHref?: string;
+  backLinkLabel?: string;
 };
 
-export default function FlipCard({ image, title, backText, className = '' }: FlipCardProps) {
+export default function FlipCard({
+  image,
+  title,
+  backText,
+  className = '',
+  glowColor = 'rgba(120, 87, 128, 0.35)',
+  backLinkHref,
+  backLinkLabel = 'Learn more',
+}: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <div className={`w-full ${className}`} style={{ perspective: '1000px' }}>
+    <div
+      className={`${styles.flipCardRoot} w-full ${className}`}
+      style={{ '--glow-color': glowColor } as React.CSSProperties}
+    >
       <div
         role="button"
         tabIndex={0}
@@ -23,26 +39,39 @@ export default function FlipCard({ image, title, backText, className = '' }: Fli
           if (e.key === 'Enter' || e.key === ' ') setFlipped((s) => !s);
         }}
         onClick={() => setFlipped((s) => !s)}
-        className="relative w-full h-full transition-transform duration-500"
-        style={{ transformStyle: 'preserve-3d', transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
+        className={`${styles.flipCardInner} ${flipped ? styles.flipped : ''}`}
+        style={{ transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
       >
         {/* Front */}
-        <div
-          className="absolute inset-0 bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center p-4"
-          style={{ backfaceVisibility: 'hidden' as const }}
-        >
-          <div className="w-full h-56 sm:h-64 md:h-72 relative rounded-md overflow-hidden">
-            <Image src={image} alt={title} fill sizes="(max-width: 640px) 80vw, 320px" className="object-cover" />
-          </div>
-          <h3 className="mt-3 text-xl md:text-2xl font-semibold text-zinc-900">{title}</h3>
+        <div className={`${styles.flipCardFace} ${styles.front}`}>
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width: 640px) 80vw, 320px"
+            className="object-cover"
+          />
         </div>
 
         {/* Back */}
         <div
-          className="absolute inset-0 bg-zinc-50 rounded-lg shadow-md p-6 flex items-center justify-center text-zinc-700"
-          style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' as const }}
+          className={`${styles.flipCardFace} ${styles.back}`}
+          style={{ transform: 'rotateY(180deg)' }}
         >
-          <p className="text-base text-center">{backText}</p>
+          <div className="flex h-full flex-col items-center justify-center gap-4 px-6 text-center">
+            <p className="text-base text-zinc-900 dark:text-zinc-100">{backText}</p>
+            {backLinkHref ? (
+              <Link
+                href={backLinkHref}
+                className="inline-flex items-center justify-center rounded-md bg-[var(--color-alchemy)] px-5 py-3 text-sm font-normal text-white shadow-md transition hover:bg-[var(--color-bloom)]"
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                {backLinkLabel}
+              </Link>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

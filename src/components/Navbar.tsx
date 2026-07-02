@@ -197,6 +197,12 @@ export default function Navbar() {
       >
         <div className="px-4 pt-2 pb-4 space-y-2">
           <Link
+            href="/"
+            className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
+          >
+            Home
+          </Link>
+          <Link
             href="/markies"
             className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
           >

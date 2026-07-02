@@ -1,11 +1,12 @@
 // Centralized image paths for assets in public folder
-export const Logo = '/assets/Images/NewLogoPurple+Shadow.png';
+export const Logo = '/assets/Images/NewLogoPurple+Shadow1.png';
 export const Banner = '/assets/Images/Eventbrite Banner.png';
 export const SantaMagic = '/assets/Images/santa&magic.jpg';
 export const divider = '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_golden_05.svg';
 export const divider2 = '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_golden_04.svg';
 export const magicDude = '/assets/Images/magicFella.jpg';
 export const HeroVideo = '/assets/video/HeroVid.mp4';
+export const LorehollowTransparent = '/assets/Images/Lorehollow/LorehollowTransparent.png';
 
 // Markies
 export const Amaryllis = '/assets/Images/markies/Amaryllis.png';
@@ -13,3 +14,11 @@ export const MarketMaster = '/assets/Images/markies/MarketMaster.png';
 export const Sable = '/assets/Images/markies/Sable.png';
 export const LexiQuill = '/assets/Images/markies/LexiQuill.png';
 export const Otho = '/assets/Images/markies/Otho.png';
+
+//Lorehollow
+export const AshThornCrest = '/assets/Images/Lorehollow/AshThornCrest+bkgrd.png';
+export const IronstagCrest = '/assets/Images/Lorehollow/IronstagCrest+bkgrd.png';
+export const WraithpineCrest = '/assets/Images/Lorehollow/WraithpineCrest+bkgrd.png';
+export const BriarfangCrest = '/assets/Images/Lorehollow/BriarfangCrest+bkgrd.png';
+export const StormhollowCrest = '/assets/Images/Lorehollow/StormhollowCrest+bkgrd.png';
+export const EmberwyldCrest = '/assets/Images/Lorehollow/EmberwyldCrest+bkgrd.png';

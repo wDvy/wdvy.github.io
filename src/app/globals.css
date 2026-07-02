@@ -26,7 +26,7 @@
 
 /* Color palette from assets/colorlist.txt
    Light Mode:
-   Alchemy - #B82B9F Primary / CTA / Accent
+   Alchemy - var(--color-alchemy) Primary / CTA / Accent
    Bloom - #D45EC4 Primary hover / links
    Enchanted Forest - #2E402D Headings / logo
    Grove - #5A7558 Secondary text on dark
@@ -52,7 +52,7 @@
 
 :root {
   /* Light mode colors (default) */
-  --color-alchemy: #b82b9f;
+  --color-alchemy: #785780;
   --color-bloom: #d45ec4;
   --color-enchanted: #2e402d;
   --color-grove: #5a7558;
@@ -62,6 +62,12 @@
   --color-embers: #f5c080;
   --color-parchment: #f7f3ee;
   --color-vellum: #fffaf5;
+  --color-ashthorn: #7a8b3c;
+  --color-ironstag: #433838;
+  --color-wraithpine: #062665;
+  --color-briarfang: #f9f3c8;
+  --color-stormhollow: #5a6a8c;
+  --color-emberwyld: #ee5e3a;
 
   /* Base foreground/background */
   --background: var(--color-parchment);
@@ -92,7 +98,7 @@
 
 /* Dark mode */
 .dark {
-  --color-alchemy: #d45ec4;
+  --color-alchemy: #785780;
   --color-bloom: #e8a5df;
   --color-enchanted: #7aad78;
   --color-grove: #a8c9a6;
@@ -102,6 +108,12 @@
   --color-embers: #f5c080;
   --color-parchment: #1a1712;
   --color-vellum: #26201a;
+  --color-ashthorn: #7a8b3c;
+  --color-ironstag: #991f00;
+  --color-wraithpine: #062665;
+  --color-briarfang: #f9f3c8;
+  --color-stormhollow: #5a6a8c;
+  --color-emberwyld: #ee5e3a;
 
   --background: var(--color-parchment);
   --foreground: #efeae6;

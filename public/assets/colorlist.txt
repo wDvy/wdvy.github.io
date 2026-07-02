@@ -1,5 +1,5 @@
 Base:
-Alchemy - #B82B9F
+Alchemy - var(--color-alchemy)
 Comfort - #745C4C
 Enchanted Forest - #2E402D
 Latern Glow - #E88f40
@@ -8,7 +8,10 @@ Full Palatte
 
 Light Mode:
 
-Alchemy - #B82B9F Primary / CTA / Accent
+
+meganSuggested - #785780
+
+Alchemy - var(--color-alchemy) Primary / CTA / Accent
 Bloom - #D45EC4 Primary hover / links
 Enchanted Forest - #2E402D Headings / logo
 Grove - #5A7558 Secondary text on dark
@@ -31,3 +34,12 @@ Lantern Glow - #F0B070 Highlight / badge
 Embers - #F5C080 Warm accent / tag
 Obsidian - #1A1712 Page background
 Charcoal - #26201A Surface / card bg
+
+
+// Lorehollow Houses
+Ashthorn - #7a8b3c
+Ironstag - #991F00
+Wraithpine - #062665
+Briarfang - #f9f3c8
+Stormhollow - #5a6a8c
+Emberwyld - #EE5E3A
