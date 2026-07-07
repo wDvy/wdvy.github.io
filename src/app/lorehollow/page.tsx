@@ -6,8 +6,11 @@ import {
   IronstagCrest,
   Logo,
   LorehollowTransparent,
+  LorehollowGreen,
   StormhollowCrest,
   WraithpineCrest,
+  Vesper,
+  Evanora,
 } from '../../images';
 import Navbar from '../../components/Navbar';
 import FlipCard from '../../components/FlipCard';
@@ -74,7 +77,7 @@ export default function LorehollowPage() {
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
           <div className="mx-auto mb-8 w-full max-w-md">
             <Image
-              src={LorehollowTransparent}
+              src={LorehollowGreen}
               alt="Lorehollow logo"
               width={800}
               height={800}
@@ -83,18 +86,54 @@ export default function LorehollowPage() {
           </div>
 
           <h1 className="text-3xl md:text-4xl font-bold text-zinc-50">Lorehollow</h1>
-          <p className="mt-4 max-w-3xl mx-auto">
-            A short hero blurb about Lorehollow. Replace with the real hero copy describing the
-            place, dates, and quick call-to-action.
-          </p>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid items-center gap-12 rounded-3xl border border-[var(--color-zinc-200)] bg-[var(--color-vellum)] p-8 shadow-lg md:grid-cols-2 md:p-10 dark:border-[var(--color-zinc-800)] dark:bg-[var(--color-vellum)]">
+            <div>
+              <h2
+                className="mb-4 text-3xl font-bold text-zinc-900 dark:text-zinc-50"
+                style={{ fontFamily: 'Game&Reality, serif' }}
+              >
+                A school for magic, mystery, and mastery
+              </h2>
+              <p className="mb-4 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+                Lorehollow was founded as a sister magical school to the University of Louisville in
+                1798, drawing its spirit from Hecate rather than Minerva. The institution was built
+                to offer a higher education in magic for students moving beyond secondary school.
+              </p>
+              <p className="mb-4 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+                Its six founders each established a house rooted in a distinct branch of magic, from
+                plantcraft and spellforging to shadowwork and flamecraft. Each house helps students
+                cultivate their own natural gifts while developing discipline and community.
+              </p>
+              <p className="text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+                Today, Lorehollow continues that tradition through its Magical Alignment Test,
+                specialty academies, and after-school tutoring for younger magical learners.
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <Image
+                src={LorehollowGreen}
+                alt="Lorehollow crest illustration"
+                width={700}
+                height={700}
+                className="w-full max-w-md rounded-2xl object-contain"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Grid of larger flippable cards */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50 text-center">
-          Highlights
-        </h2>
+        <h1 className="text-4xl font-semibold text-zinc-900 dark:text-zinc-50 text-center">
+          The Houses
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {cards.map((c, i) => (
             <div key={i}>
@@ -114,14 +153,28 @@ export default function LorehollowPage() {
 
       <section className="max-w-4xl mx-auto px-6 py-16">
         <MarkieCard
-          name="Lorehollow Prof"
+          name="Vesper Nightingale"
           bio={
-            'This section will contain bio information for the Lorehollow prof. It sits on the right for desktop and below the image on mobile. Replace with details, bios, or other relevant info.'
+            'Current head of House Emberwyld at Lorehollow. A true Emberwyld protégé, Vesper graduated Lorehollow with achievements in both the storyspinner and firestoker class, a rare distinction, and how she earned acceptance into the family Nightingale. Now, Vesper leads students as one of the two guidance counselors available to conduct MATs. '
           }
-          image={Logo}
+          image={Vesper}
           instagramUrl="https://instagram.com/"
           instagramHandle="Test Handle"
-          imageAlt="Lorehollow detail"
+          imageAlt="Vesper Nightingale"
+        />
+      </section>
+
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <MarkieCard
+          name="Evanora Lace"
+          bio={
+            'Current head of House Ashthorn at Lorehollow. Evanora is a truly devoted soul, both to her craft and to her students. Evanora is a gifted sylvan and has a companion Soulgazer Lily, a plant that rarely chooses to bond with humans. With her Soulgazer Lily at her side, Evanora can see right into the heart of any being and sense their true intentions… or so she thinks. '
+          }
+          image={Evanora}
+          instagramUrl="https://instagram.com/"
+          instagramHandle="Test Handle"
+          imageAlt="Evanora Lace"
+          reverse
         />
       </section>
     </div>

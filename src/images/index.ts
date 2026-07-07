@@ -7,13 +7,17 @@ export const divider2 = '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_go
 export const magicDude = '/assets/Images/magicFella.jpg';
 export const HeroVideo = '/assets/video/HeroVid.mp4';
 export const LorehollowTransparent = '/assets/Images/Lorehollow/LorehollowTransparent.png';
+export const LorehollowGreen =
+  '/assets/Images/Lorehollow/LorehollowCrests-updated-Lorehollow(1).png';
 
-// Markies
+// Markies and professor
 export const Amaryllis = '/assets/Images/markies/Amaryllis.png';
 export const MarketMaster = '/assets/Images/markies/MarketMaster.png';
 export const Sable = '/assets/Images/markies/Sable.png';
 export const LexiQuill = '/assets/Images/markies/LexiQuill.png';
 export const Otho = '/assets/Images/markies/Otho.png';
+export const Vesper = '/assets/Images/Lorehollow/VesperNightingale.png';
+export const Evanora = '/assets/Images/Lorehollow/EvanoraLace.png';
 
 //Lorehollow
 export const AshThornCrest = '/assets/Images/Lorehollow/AshThornCrest+bkgrd.png';
