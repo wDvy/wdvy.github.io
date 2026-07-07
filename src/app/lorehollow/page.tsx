@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 import {
   AshThornCrest,
@@ -6,7 +8,7 @@ import {
   IronstagCrest,
   Logo,
   LorehollowTransparent,
-  LorehollowGreen,
+  LorehollowTan,
   StormhollowCrest,
   WraithpineCrest,
   Vesper,
@@ -15,15 +17,32 @@ import {
 import Navbar from '../../components/Navbar';
 import FlipCard from '../../components/FlipCard';
 import MarkieCard from '../../components/MarkieCard';
+import { useEffect, useState } from 'react';
 
 export default function LorehollowPage() {
+  const [revealVisibleOnScroll, setRevealVisibleOnScroll] = useState(false);
+
+  useEffect(() => {
+    const check = () => {
+      const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 120;
+      setRevealVisibleOnScroll(nearBottom);
+    };
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    return () => {
+      window.removeEventListener('scroll', check);
+      window.removeEventListener('resize', check);
+    };
+  }, []);
+
   const cards = [
     {
       title: 'Ashthorn',
       text: 'Short description for card 1.',
       Img: AshThornCrest,
       glowColor: 'var(--color-ashthorn)',
-      backLinkHref: '/lorehollow',
+      backLinkHref: '/lorehollow/ashthorn',
       backLinkLabel: 'Explore Ashthorn',
     },
     {
@@ -31,7 +50,7 @@ export default function LorehollowPage() {
       text: 'Short description for card 2.',
       Img: IronstagCrest,
       glowColor: 'var(--color-ironstag)',
-      backLinkHref: '/lorehollow',
+      backLinkHref: '/lorehollow/ironstag',
       backLinkLabel: 'Explore Ironstag',
     },
     {
@@ -39,7 +58,7 @@ export default function LorehollowPage() {
       text: 'Short description for card 3.',
       Img: WraithpineCrest,
       glowColor: 'var(--color-wraithpine)',
-      backLinkHref: '/lorehollow',
+      backLinkHref: '/lorehollow/wraithpine',
       backLinkLabel: 'Explore Wraithpine',
     },
     {
@@ -47,7 +66,7 @@ export default function LorehollowPage() {
       text: 'Short description for card 4.',
       Img: BriarfangCrest,
       glowColor: 'var(--color-briarfang)',
-      backLinkHref: '/lorehollow',
+      backLinkHref: '/lorehollow/briarfang',
       backLinkLabel: 'Explore Briarfang',
     },
     {
@@ -55,7 +74,7 @@ export default function LorehollowPage() {
       text: 'Short description for card 5.',
       Img: StormhollowCrest,
       glowColor: 'var(--color-stormhollow)',
-      backLinkHref: '/lorehollow',
+      backLinkHref: '/lorehollow/stormhollow',
       backLinkLabel: 'Explore Stormhollow',
     },
     {
@@ -63,7 +82,7 @@ export default function LorehollowPage() {
       text: 'Short description for card 6.',
       Img: EmberwyldCrest,
       glowColor: 'var(--color-emberwyld)',
-      backLinkHref: '/lorehollow',
+      backLinkHref: '/lorehollow/emberwyld',
       backLinkLabel: 'Explore Emberwyld',
     },
   ];
@@ -75,23 +94,21 @@ export default function LorehollowPage() {
       {/* Hero section with Lorehollow transparent logo */}
       <section className="relative">
         <div className="max-w-5xl mx-auto px-6 py-20 text-center">
-          <div className="mx-auto mb-8 w-full max-w-md">
+          <div className="mx-auto mb-2 w-full max-w-2xl">
             <Image
-              src={LorehollowGreen}
+              src={LorehollowTan}
               alt="Lorehollow logo"
               width={800}
               height={800}
               className="mx-auto w-full h-auto object-contain"
             />
           </div>
-
-          <h1 className="text-3xl md:text-4xl font-bold text-zinc-50">Lorehollow</h1>
         </div>
       </section>
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid items-center gap-12 rounded-3xl border border-[var(--color-zinc-200)] bg-[var(--color-vellum)] p-8 shadow-lg md:grid-cols-2 md:p-10 dark:border-[var(--color-zinc-800)] dark:bg-[var(--color-vellum)]">
+          <div className="grid items-center gap-12 rounded-3xl border border-zinc-200 bg-(--color-vellum) p-8 shadow-lg  md:p-8 dark:border-zinc-800 dark:bg-(--color-vellum)">
             <div>
               <h2
                 className="mb-4 text-3xl font-bold text-zinc-900 dark:text-zinc-50"
@@ -117,12 +134,12 @@ export default function LorehollowPage() {
 
             <div className="flex items-center justify-center">
               <Image
-                src={LorehollowGreen}
+                src={LorehollowTan}
                 alt="Lorehollow crest illustration"
                 width={700}
                 height={700}
                 className="w-full max-w-md rounded-2xl object-contain"
-                priority
+                hidden
               />
             </div>
           </div>
@@ -134,6 +151,9 @@ export default function LorehollowPage() {
         <h1 className="text-4xl font-semibold text-zinc-900 dark:text-zinc-50 text-center">
           The Houses
         </h1>
+        <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4 align-center text-center mt-4">
+          Click on each house to learn more about their skills, staff and magic:
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {cards.map((c, i) => (
             <div key={i}>
@@ -144,7 +164,7 @@ export default function LorehollowPage() {
                 glowColor={c.glowColor}
                 backLinkHref={c.backLinkHref}
                 backLinkLabel={c.backLinkLabel}
-                className="h-[28rem]"
+                className="h-112"
               />
             </div>
           ))}
@@ -215,6 +235,18 @@ export default function LorehollowPage() {
           imageAlt="Evanora Lace"
           reverse
         />
+      </div>
+
+      {/* Page-only reveal: appears above footer only on Lorehollow page */}
+      <div className="group footer-reveal">
+        <div className="max-w-6xl mx-auto px-6 py-4 text-center">
+          <a
+            href="/lorehollow/veilbreaker"
+            className={`inline-block opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 text-sm text-zinc-700 dark:text-zinc-300 wave ${revealVisibleOnScroll ? 'reveal-visible' : ''}`}
+          >
+            Lorehollow LIES - seek the truth...
+          </a>
+        </div>
       </div>
     </div>
   );

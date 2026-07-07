@@ -9,6 +9,7 @@ export const HeroVideo = '/assets/video/HeroVid.mp4';
 export const LorehollowTransparent = '/assets/Images/Lorehollow/LorehollowTransparent.png';
 export const LorehollowGreen =
   '/assets/Images/Lorehollow/LorehollowCrests-updated-Lorehollow(1).png';
+export const LorehollowTan = '/assets/Images/Lorehollow/LorehollowTan.png';
 
 // Markies and professor
 export const Amaryllis = '/assets/Images/markies/Amaryllis.png';
@@ -19,6 +20,8 @@ export const Otho = '/assets/Images/markies/Otho.png';
 export const Vesper = '/assets/Images/Lorehollow/VesperNightingale.png';
 export const Evanora = '/assets/Images/Lorehollow/EvanoraLace.png';
 
+export const VictorCreo = '/assets/Images/Lorehollow/VictorCreo.png';
+
 //Lorehollow
 export const AshThornCrest = '/assets/Images/Lorehollow/AshThornCrest+bkgrd.png';
 export const IronstagCrest = '/assets/Images/Lorehollow/IronstagCrest+bkgrd.png';
@@ -26,3 +29,16 @@ export const WraithpineCrest = '/assets/Images/Lorehollow/WraithpineCrest+bkgrd.
 export const BriarfangCrest = '/assets/Images/Lorehollow/BriarfangCrest+bkgrd.png';
 export const StormhollowCrest = '/assets/Images/Lorehollow/StormhollowCrest+bkgrd.png';
 export const EmberwyldCrest = '/assets/Images/Lorehollow/EmberwyldCrest+bkgrd.png';
+//transparent versions
+export const AshThornCrestTransparent =
+  '/assets/Images/Lorehollow/LorehollowCrests-updated-Ashthorn.png';
+export const IronstagCrestTransparent =
+  '/assets/Images/Lorehollow/LorehollowCrests-updated-Ironstag.png';
+export const WraithpineCrestTransparent =
+  '/assets/Images/Lorehollow/LorehollowCrests-updated-Wraithpine.png';
+export const BriarfangCrestTransparent =
+  '/assets/Images/Lorehollow/LorehollowCrests-updated-Briarfang.png';
+export const StormhollowCrestTransparent =
+  '/assets/Images/Lorehollow/LorehollowCrests-updated-Stormhollow.png';
+export const EmberwyldCrestTransparent =
+  '/assets/Images/Lorehollow/LorehollowCrests-updated-Emberwyld.png';
