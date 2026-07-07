@@ -151,7 +151,48 @@ export default function LorehollowPage() {
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-16">
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="gap-12 items-center">
+            {/* Add Carosel here */}
+            <div className="md:order-1">
+              <h2
+                className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4"
+                style={{ fontFamily: 'Game&Reality, serif' }}
+              >
+                Magical alignment Tests (MATs)
+              </h2>
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4">
+                The Magical Alignment Test is given to a magical person when they decide to pursue
+                magical education at the tertiary level to determine their magical potencies.
+                Lorehollow Academy has a distinct MAT protocol that also aligns a magic user with
+                the particular Lorehollow house where they will best thrive. The MAT is a deeply
+                personal experience, a one-on-one guided encounter with a faculty member where they
+                will guide you through a series of intuitive based tests to discover your true
+                calling.
+              </p>
+              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
+                Schedule your MAT today at the Magical Midwinter Market - however due to the
+                demanding, individualized attention and empathetic magic needed to perform spots are
+                extremely limited and fill up within the first hour of opening. Spots can be
+                reserved in advance to the market opening, and that is recommended for those who
+                know they’d like to participate. You must have an observer, traveler, apprentice or
+                true markie pass to enter the market in addition to your MAT add-on. The MAT is
+                suitable for ages 10 and up but is most effective for those seeking deep magical
+                introspection.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-5xl mx-auto px-6">
+        <h2
+          className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4"
+          style={{ fontFamily: 'Game&Reality, serif' }}
+        >
+          Professors of Lorehollow
+        </h2>
         <MarkieCard
           name="Vesper Nightingale"
           bio={
@@ -162,9 +203,7 @@ export default function LorehollowPage() {
           instagramHandle="Test Handle"
           imageAlt="Vesper Nightingale"
         />
-      </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-16">
         <MarkieCard
           name="Evanora Lace"
           bio={
@@ -176,7 +215,7 @@ export default function LorehollowPage() {
           imageAlt="Evanora Lace"
           reverse
         />
-      </section>
+      </div>
     </div>
   );
 }
