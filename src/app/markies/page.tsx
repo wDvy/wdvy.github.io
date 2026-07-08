@@ -29,8 +29,15 @@ export default function Home() {
 
       {/* Placeholder heading and text */}
       <main className="max-w-4xl mx-auto px-6 py-16">
-        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 text-center"></h1>
-        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center"> </p>
+        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
+          The Markies
+        </h1>
+        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center">
+          {' '}
+          The Markies are the group of folk that travel around the world with the Marketplace,
+          selling their wares and services. A found family, the Markies are deeply loyal to each
+          other and the Market Master.
+        </p>
       </main>
 
       <MarkieCard

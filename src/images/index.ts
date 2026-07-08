@@ -23,12 +23,12 @@ export const Evanora = '/assets/Images/Lorehollow/EvanoraLace.png';
 export const VictorCreo = '/assets/Images/Lorehollow/VictorCreo.png';
 
 //Lorehollow
-export const AshThornCrest = '/assets/Images/Lorehollow/AshThornCrest+bkgrd.png';
-export const IronstagCrest = '/assets/Images/Lorehollow/IronstagCrest+bkgrd.png';
-export const WraithpineCrest = '/assets/Images/Lorehollow/WraithpineCrest+bkgrd.png';
-export const BriarfangCrest = '/assets/Images/Lorehollow/BriarfangCrest+bkgrd.png';
-export const StormhollowCrest = '/assets/Images/Lorehollow/StormhollowCrest+bkgrd.png';
-export const EmberwyldCrest = '/assets/Images/Lorehollow/EmberwyldCrest+bkgrd.png';
+export const AshThornCrest = '/assets/Images/Lorehollow/AshThorn.webp';
+export const IronstagCrest = '/assets/Images/Lorehollow/Ironstag.webp';
+export const WraithpineCrest = '/assets/Images/Lorehollow/Wraithpine.webp';
+export const BriarfangCrest = '/assets/Images/Lorehollow/Briarfang.webp';
+export const StormhollowCrest = '/assets/Images/Lorehollow/Stormbreak.webp';
+export const EmberwyldCrest = '/assets/Images/Lorehollow/Emberwyld.webp';
 //transparent versions
 export const AshThornCrestTransparent =
   '/assets/Images/Lorehollow/LorehollowCrests-updated-Ashthorn.png';
