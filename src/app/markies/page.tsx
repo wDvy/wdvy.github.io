@@ -6,6 +6,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
       {/* Hero video (top) */}
+
+      {/*
       <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
         <video
           className="w-full h-full object-cover"
@@ -23,6 +25,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Navbar (client) */}
       <Navbar />

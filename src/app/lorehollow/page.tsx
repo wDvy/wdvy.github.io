@@ -39,7 +39,7 @@ export default function LorehollowPage() {
   const cards = [
     {
       title: 'Ashthorn',
-      text: 'Short description for card 1.',
+      text: 'House Ashthorn nurtures students with abundant connections to the natural world and empathetic magics. ',
       Img: AshThornCrest,
       glowColor: 'var(--color-ashthorn)',
       backLinkHref: '/lorehollow/ashthorn',
@@ -47,7 +47,7 @@ export default function LorehollowPage() {
     },
     {
       title: 'Ironstag',
-      text: 'Short description for card 2.',
+      text: 'House Ironstag forges some of the strongest magic users who channel their deep wells of power into useful protective artifacts and devastating magical weapons.',
       Img: IronstagCrest,
       glowColor: 'var(--color-ironstag)',
       backLinkHref: '/lorehollow/ironstag',
@@ -55,7 +55,7 @@ export default function LorehollowPage() {
     },
     {
       title: 'Wraithpine',
-      text: 'Short description for card 3.',
+      text: 'House Wraithpine sequesters the secret seekers and keepers of the world, revealing hidden and sacred knowledge only to those they deem worthy.',
       Img: WraithpineCrest,
       glowColor: 'var(--color-wraithpine)',
       backLinkHref: '/lorehollow/wraithpine',
@@ -63,23 +63,23 @@ export default function LorehollowPage() {
     },
     {
       title: 'Briarfang',
-      text: 'Short description for card 4.',
+      text: 'House Briarfang corrals the students with a wild edge, who prefer to live on the edge of magical society in communion with beasts and cryptids.',
       Img: BriarfangCrest,
       glowColor: 'var(--color-briarfang)',
       backLinkHref: '/lorehollow/briarfang',
       backLinkLabel: 'Explore Briarfang',
     },
     {
-      title: 'Stormhollow',
-      text: 'Short description for card 5.',
+      title: 'Stormbreak',
+      text: 'House Stormbreak shields the most tempestuous students and shows them how to hone their devastating physical magic. ',
       Img: StormhollowCrest,
       glowColor: 'var(--color-stormhollow)',
       backLinkHref: '/lorehollow/stormhollow',
-      backLinkLabel: 'Explore Stormhollow',
+      backLinkLabel: 'Explore Stormbreak',
     },
     {
       title: 'Emberwyld',
-      text: 'Short description for card 6.',
+      text: 'House Emberwyld ignites students with the potential for great storytelling and leadership, feeding the flames of intense creation. ',
       Img: EmberwyldCrest,
       glowColor: 'var(--color-emberwyld)',
       backLinkHref: '/lorehollow/emberwyld',
@@ -152,7 +152,7 @@ export default function LorehollowPage() {
           The Houses
         </h1>
         <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4 align-center text-center mt-4">
-          Click on each house to learn more about their skills, staff and magic:
+          Click to learn more about each house's unique magical focus and traditions:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
           {cards.map((c, i) => (

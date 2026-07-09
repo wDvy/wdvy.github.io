@@ -71,8 +71,6 @@ export default function AccessibilityPage() {
           </section>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
