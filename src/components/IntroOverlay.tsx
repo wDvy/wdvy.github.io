@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useCallback } from 'react';
-import { Logo } from '../images';
+import { Logo, withBasePath } from '../images';
 import styles from './IntroOverlay.module.css';
 
 interface IntroOverlayProps {
@@ -19,8 +19,8 @@ export default function IntroOverlay({ onEnter }: IntroOverlayProps) {
   }, [opened, onEnter]);
 
   const doorImage = opened
-    ? '/assets/Images/doors/OpenDoor.png'
-    : '/assets/Images/doors/ClosedDoor.png';
+    ? withBasePath('/assets/Images/doors/OpenDoor.png')
+    : withBasePath('/assets/Images/doors/ClosedDoor.png');
 
   return (
     <div
