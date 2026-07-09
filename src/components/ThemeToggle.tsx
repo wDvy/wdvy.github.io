@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 
 type Theme = 'light' | 'dark';
 
@@ -13,19 +13,29 @@ function applyTheme(theme: Theme) {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>('light');
+  const isMounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
-  // Initialize theme from localStorage or default to light
-  useEffect(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') {
+      return 'light';
+    }
+
+    const attrTheme = document.documentElement.dataset.theme;
+    if (attrTheme === 'light' || attrTheme === 'dark') {
+      return attrTheme;
+    }
+
     const stored = window.localStorage.getItem('mmf-theme');
     if (stored === 'light' || stored === 'dark') {
-      setTheme(stored);
-    } else {
-      // Check system preference as default
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDark ? 'dark' : 'light');
+      return stored;
     }
-  }, []);
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
 
   // Apply theme to document
   useEffect(() => {
@@ -64,6 +74,15 @@ export default function ThemeToggle() {
     );
 
   const label = theme === 'light' ? 'Dark' : 'Light';
+
+  if (!isMounted) {
+    return (
+      <span
+        aria-hidden="true"
+        className="inline-flex h-9 w-20 rounded-md bg-zinc-200/70 dark:bg-zinc-700/70 animate-pulse"
+      />
+    );
+  }
 
   return (
     <button

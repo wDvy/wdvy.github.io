@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 
-/* Load the custom header font (Game & Reality) from the assets folder */
 @font-face {
   font-family: 'Game&Reality';
   src: url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.eot'); /* IE9 Compat Modes */
@@ -14,7 +13,7 @@
   font-display: swap;
 }
 
-/* Optional: provide a bold/700 weight if you add one later
+/* 
 @font-face {
   font-family: 'Game&Reality';
   src: url('public/assets/fonts/Web-TT - Game and Reality/Game & Reality-Bold.woff') format('woff');
@@ -53,7 +52,7 @@
 :root {
   color-scheme: light;
 
-  /* Light mode colors (default) */
+  /* Light mode colors */
   --color-alchemy: #785780;
   --color-bloom: #d45ec4;
   --color-enchanted: #2e402d;
@@ -148,7 +147,6 @@
   --font-mono: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Body uses Georgia (serif) as requested */
 html {
   background-color: var(--background);
   color: var(--foreground);
@@ -161,12 +159,10 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Ensure Tailwind's `font-sans` utility maps to the same body serif stack */
 .font-sans {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* If a parent element applies `.font-sans`, ensure nested headings still use the display font */
 .font-sans h1,
 .font-sans h2,
 .font-sans h3,
@@ -176,7 +172,6 @@ body {
   font-family: 'Game&Reality', Georgia, serif;
 }
 
-/* Headings should use the custom Game & Reality font */
 h1,
 h2,
 h3,
@@ -186,7 +181,6 @@ h6 {
   font-family: 'Game&Reality', Georgia, serif;
 }
 
-/* Slight tuning: give headings a bit more letter spacing for display fonts */
 h1,
 h2,
 h3 {

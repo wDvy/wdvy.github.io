@@ -22,9 +22,9 @@ export default function AccessibilityPage() {
               Our Commitment
             </h2>
             <p className="mt-2">
-              MMF is committed to providing an inclusive and accessible experience for
-              all attendees, regardless of ability. We strive to ensure that our events
-              and this website are accessible to everyone.
+              MMF is committed to providing an inclusive and accessible experience for all
+              attendees, regardless of ability. We strive to ensure that our events and this website
+              are accessible to everyone.
             </p>
           </section>
 
@@ -48,48 +48,25 @@ export default function AccessibilityPage() {
             <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
               Event Accessibility
             </h2>
-            <p className="mt-2">
-              Our festival grounds are wheelchair accessible. We provide:
-            </p>
-            <ul className="mt-2 list-disc pl-6 space-y-1">
-              <li>Accessible restrooms at all venue areas</li>
-              <li>Reserved viewing areas for performances</li>
-              <li>ASL interpreters upon request (contact us in advance)</li>
-              <li>Quiet zones for those needing sensory breaks</li>
-            </ul>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
               Service Animals
             </h2>
-            <p className="mt-2">
-              Service animals are welcome at all MMF events. Please ensure your service
-              animal is clearly identified and under your control at all times.
-            </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
               Request Accommodations
             </h2>
-            <p className="mt-2">
-              If you need specific accommodations or have accessibility questions,
-              please contact us at{' '}
-              <a href="mailto:accessibility@mmf.com" className="text-emerald-600 hover:underline">
-                accessibility@mmf.com
-              </a>{' '}
-              at least 14 days before the event.
-            </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-              Feedback
-            </h2>
+            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">Feedback</h2>
             <p className="mt-2">
-              We welcome your feedback on accessibility. If you encounter barriers
-              or have suggestions for improvement, please let us know.
+              We welcome your feedback on accessibility. If you encounter barriers or have
+              suggestions for improvement, please let us know.
             </p>
           </section>
         </div>
