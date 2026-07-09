@@ -29,11 +29,12 @@ export const LorehollowGreen = withBasePath(
 export const LorehollowTan = withBasePath('/assets/Images/Lorehollow/LorehollowTan.png');
 
 // Markies and professor
-export const Amaryllis = withBasePath('/assets/Images/markies/Amaryllis.png');
-export const MarketMaster = withBasePath('/assets/Images/markies/MarketMaster.png');
-export const Sable = withBasePath('/assets/Images/markies/Sable.png');
-export const LexiQuill = withBasePath('/assets/Images/markies/LexiQuill.png');
-export const Otho = withBasePath('/assets/Images/markies/Otho.png');
+export const Amaryllis = withBasePath('/assets/Images/Markies/Amaryllis.png');
+export const MarketMaster = withBasePath('/assets/Images/Markies/MarketMaster.png');
+export const Sable = withBasePath('/assets/Images/Markies/Sable.png');
+export const LexiQuill = withBasePath('/assets/Images/Markies/LexiQuill.png');
+export const Otho = withBasePath('/assets/Images/Markies/Otho.png');
+
 export const Vesper = withBasePath('/assets/Images/Lorehollow/VesperNightingale.png');
 export const Evanora = withBasePath('/assets/Images/Lorehollow/EvanoraLace.png');
 
