@@ -43,3 +43,6 @@ Wraithpine - #062665
 Briarfang - #f9f3c8
 Stormhollow - #5a6a8c
 Emberwyld - #EE5E3A
+
+//Gazette
+Antique Parchment - #EAD8C1

@@ -66,3 +66,6 @@ export const StormhollowCrestTransparent = withBasePath(
 export const EmberwyldCrestTransparent = withBasePath(
   '/assets/Images/Lorehollow/LorehollowCrests-updated-Emberwyld.png'
 );
+
+//Gazette
+export const GazetteOverlay = withBasePath('/assets/Images/gazette/MarketGazette-template.png');
