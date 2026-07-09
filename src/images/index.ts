@@ -40,7 +40,7 @@ export const Evanora = withBasePath('/assets/Images/Lorehollow/EvanoraLace.png')
 export const VictorCreo = withBasePath('/assets/Images/Lorehollow/VictorCreo.png');
 
 //Lorehollow
-export const AshThornCrest = withBasePath('/assets/Images/Lorehollow/AshThorn.webp');
+export const AshThornCrest = withBasePath('/assets/Images/Lorehollow/Ashthorn.webp');
 export const IronstagCrest = withBasePath('/assets/Images/Lorehollow/Ironstag.webp');
 export const WraithpineCrest = withBasePath('/assets/Images/Lorehollow/Wraithpine.webp');
 export const BriarfangCrest = withBasePath('/assets/Images/Lorehollow/Briarfang.webp');
