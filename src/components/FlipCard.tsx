@@ -51,6 +51,15 @@ export default function FlipCard({
             sizes="(max-width: 640px) 80vw, 320px"
             className="object-cover"
           />
+          <div className="pointer-events-none absolute bottom-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-black/45 p-2 text-white backdrop-blur-sm">
+            <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path
+                fillRule="evenodd"
+                d="M4.25 10a.75.75 0 01.75-.75h8.19L10.47 6.53a.75.75 0 111.06-1.06l4 4a.75.75 0 010 1.06l-4 4a.75.75 0 01-1.06-1.06l2.72-2.72H5a.75.75 0 01-.75-.75z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
         </div>
 
         {/* Back */}
