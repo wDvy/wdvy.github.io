@@ -93,7 +93,7 @@ export default function Navbar() {
                   aria-controls="festivals-menu"
                   className="flex items-center text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
                 >
-                  Festivals
+                  Cities
                   <svg
                     className="ml-2 h-4 w-4"
                     viewBox="0 0 20 20"
