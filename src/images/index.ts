@@ -21,12 +21,10 @@ export const divider2 = withBasePath(
 export const magicDude = withBasePath('/assets/Images/magicFella.jpg');
 export const HeroVideo = withBasePath('/assets/video/HeroVid.mp4');
 export const LorehollowTransparent = withBasePath(
-  '/assets/Images/Lorehollow/LorehollowTransparent.png'
+  '/assets/Images/Lorehollow/LorehollowCrests-Main.png'
 );
-export const LorehollowGreen = withBasePath(
-  '/assets/Images/Lorehollow/LorehollowCrests-updated-Lorehollow(1).png'
-);
-export const LorehollowTan = withBasePath('/assets/Images/Lorehollow/LorehollowTan.png');
+export const LorehollowGreen = withBasePath('/assets/Images/Lorehollow/LorehollowCrests-Main.png');
+export const LorehollowTan = withBasePath('/assets/Images/Lorehollow/LorehollowCrests-Main.png');
 
 // Markies and professor
 export const Amaryllis = withBasePath('/assets/Images/Markies/Amaryllis.png');
@@ -49,22 +47,22 @@ export const StormhollowCrest = withBasePath('/assets/Images/Lorehollow/Stormbre
 export const EmberwyldCrest = withBasePath('/assets/Images/Lorehollow/Emberwyld.webp');
 //transparent versions
 export const AshThornCrestTransparent = withBasePath(
-  '/assets/Images/Lorehollow/LorehollowCrests-updated-Ashthorn.png'
+  '/assets/Images/Lorehollow/LorehollowCrests-Ashthorn.png'
 );
 export const IronstagCrestTransparent = withBasePath(
-  '/assets/Images/Lorehollow/LorehollowCrests-updated-Ironstag.png'
+  '/assets/Images/Lorehollow/LorehollowCrests-Ironstag.png'
 );
 export const WraithpineCrestTransparent = withBasePath(
-  '/assets/Images/Lorehollow/LorehollowCrests-updated-Wraithpine.png'
+  '/assets/Images/Lorehollow/LorehollowCrests-Wraithpine.png'
 );
 export const BriarfangCrestTransparent = withBasePath(
-  '/assets/Images/Lorehollow/LorehollowCrests-updated-Briarfang.png'
+  '/assets/Images/Lorehollow/LorehollowCrests-Briarfang.png'
 );
 export const StormhollowCrestTransparent = withBasePath(
-  '/assets/Images/Lorehollow/LorehollowCrests-updated-Stormhollow.png'
+  '/assets/Images/Lorehollow/LorehollowCrests-Stormbreak.png'
 );
 export const EmberwyldCrestTransparent = withBasePath(
-  '/assets/Images/Lorehollow/LorehollowCrests-updated-Emberwyld.png'
+  '/assets/Images/Lorehollow/LorehollowCrests-Emberwyld.png'
 );
 
 //Gazette

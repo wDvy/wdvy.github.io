@@ -77,10 +77,7 @@ export default function Home() {
         <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 text-center">
           Louisville 2025
         </h1>
-        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center max-w-3xl mx-auto">
-          The Louisville 2025 chapter is now broken into readable story blocks below, using the same
-          visual rhythm as your bottom component.
-        </p>
+        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 text-center max-w-3xl mx-auto"></p>
       </main>
 
       {sections.map((section, index) => (
