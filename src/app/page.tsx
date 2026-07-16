@@ -192,7 +192,7 @@ export default function Home() {
             </h3>
             <div className="flex justify-center items-center gap-8">
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/magicalmidwinter/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-amber-700 dark:hover:text-amber-400 transition-colors"
@@ -201,7 +201,7 @@ export default function Home() {
                 <FaInstagram />
               </a>
               <a
-                href="https://www.tiktok.com/"
+                href="https://www.tiktok.com/@magical.midwinter"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-4xl text-zinc-900 dark:text-zinc-50 hover:text-amber-700 dark:hover:text-amber-400 transition-colors"

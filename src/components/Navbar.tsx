@@ -230,7 +230,7 @@ export default function Navbar() {
             onClick={() => setMobileFestOpen((s) => !s)}
             aria-expanded={mobileFestOpen}
           >
-            <span>Festivals</span>
+            <span>Cities</span>
             <svg
               className={`h-4 w-4 transform ${mobileFestOpen ? 'rotate-180' : 'rotate-0'}`}
               viewBox="0 0 20 20"

@@ -93,7 +93,7 @@ export default function LorehollowPage() {
 
       {/* Hero section with Lorehollow transparent logo */}
       <section className="relative">
-        <div className="max-w-5xl mx-auto px-6 py-20 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
           <div className="mx-auto mb-2 w-full max-w-2xl">
             <Image
               src={LorehollowTan}
@@ -107,8 +107,8 @@ export default function LorehollowPage() {
       </section>
 
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid items-center gap-12 rounded-3xl border border-zinc-200 bg-(--color-vellum) p-8 shadow-lg  md:p-8 dark:border-zinc-800 dark:bg-(--color-vellum)">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid items-center gap-12 rounded-3xl border border-zinc-200 bg-(--color-vellum) p-4 sm:p-6 shadow-lg md:p-8 dark:border-zinc-800 dark:bg-(--color-vellum)">
             <div>
               <h2
                 className="mb-4 text-3xl font-bold text-zinc-900 dark:text-zinc-50"
@@ -147,7 +147,7 @@ export default function LorehollowPage() {
       </section>
 
       {/* Grid of larger flippable cards */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
         <h1 className="text-4xl font-semibold text-zinc-900 dark:text-zinc-50 text-center">
           The Houses
         </h1>
@@ -172,7 +172,7 @@ export default function LorehollowPage() {
       </section>
 
       <section className="py-20">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="gap-12 items-center">
             {/* Add Carosel here */}
             <div className="md:order-1">
@@ -206,7 +206,7 @@ export default function LorehollowPage() {
         </div>
       </section>
 
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <h2
           className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4"
           style={{ fontFamily: 'Game&Reality, serif' }}
@@ -219,8 +219,8 @@ export default function LorehollowPage() {
             'Current head of House Emberwyld at Lorehollow. A true Emberwyld protégé, Vesper graduated Lorehollow with achievements in both the storyspinner and firestoker class, a rare distinction, and how she earned acceptance into the family Nightingale. Now, Vesper leads students as one of the two guidance counselors available to conduct MATs. '
           }
           image={Vesper}
-          instagramUrl="https://instagram.com/"
-          instagramHandle="Test Handle"
+          instagramUrl="https://www.instagram.com/vesper_nightingale/"
+          instagramHandle="@vesper_nightingale"
           imageAlt="Vesper Nightingale"
         />
 
@@ -230,8 +230,8 @@ export default function LorehollowPage() {
             'Current head of House Ashthorn at Lorehollow. Evanora is a truly devoted soul, both to her craft and to her students. Evanora is a gifted sylvan and has a companion Soulgazer Lily, a plant that rarely chooses to bond with humans. With her Soulgazer Lily at her side, Evanora can see right into the heart of any being and sense their true intentions… or so she thinks. '
           }
           image={Evanora}
-          instagramUrl="https://instagram.com/"
-          instagramHandle="Test Handle"
+          instagramUrl="https://www.instagram.com/evanoralace/"
+          instagramHandle="@evanoralace"
           imageAlt="Evanora Lace"
           reverse
         />
@@ -239,7 +239,7 @@ export default function LorehollowPage() {
 
       {/* Page-only reveal: appears above footer only on Lorehollow page */}
       <div className="group footer-reveal">
-        <div className="max-w-6xl mx-auto px-6 py-4 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-center">
           <a
             href="/lorehollow/veilbreaker"
             className={`inline-block opacity-0 translate-y-2 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 text-sm text-zinc-700 dark:text-zinc-300 wave ${revealVisibleOnScroll ? 'reveal-visible' : ''}`}

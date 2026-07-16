@@ -26,8 +26,8 @@ export default function VeilbreakerPage() {
       </section>
 
       <section className="py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid items-center gap-12 rounded-3xl border border-zinc-200 bg-(--color-vellum) p-8 shadow-lg md:grid-cols-2 md:p-10 dark:border-zinc-800 dark:bg-(--color-vellum)">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="grid items-center gap-12 rounded-3xl border border-zinc-200 bg-(--color-vellum) p-4 sm:p-6 shadow-lg md:grid-cols-2 md:p-10 dark:border-zinc-800 dark:bg-(--color-vellum)">
             <div>
               <h2 className="mb-4 text-3xl font-bold text-zinc-900 dark:text-zinc-50">
                 The Veilbreakers

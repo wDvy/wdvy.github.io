@@ -52,8 +52,8 @@ export default function Home() {
         ]}
         image={MarketMaster}
         imageAlt="Markies detail"
-        instagramUrl="https://instagram.com"
-        instagramHandle="Example Handle"
+        instagramUrl="https://www.instagram.com/magicalmidwinter/"
+        instagramHandle="@magicalmidwinter"
       />
 
       <MarkieCard
@@ -65,8 +65,8 @@ export default function Home() {
         ]}
         image={LexiQuill}
         imageAlt="Markies detail"
-        instagramUrl="https://instagram.com"
-        instagramHandle="Example Handle"
+        instagramUrl="https://www.instagram.com/lexi_quill/"
+        instagramHandle="@lexi_quill"
         reverse
       />
 
@@ -80,8 +80,8 @@ export default function Home() {
         ]}
         image={Otho}
         imageAlt="Markies detail"
-        instagramUrl="https://instagram.com"
-        instagramHandle="Example Handle"
+        instagramUrl="https://www.instagram.com/plantologistpike/"
+        instagramHandle="@plantologistpike"
       />
 
       <MarkieCard
@@ -94,8 +94,8 @@ export default function Home() {
         ]}
         image={Amaryllis}
         imageAlt="Markies detail"
-        instagramUrl="https://instagram.com"
-        instagramHandle="Example Handle"
+        instagramUrl="https://www.instagram.com/amaryllispike/"
+        instagramHandle="@amaryllispike"
         reverse
       />
 
@@ -108,8 +108,8 @@ export default function Home() {
         ]}
         image={Sable}
         imageAlt="Markies detail"
-        instagramUrl="https://instagram.com"
-        instagramHandle="Example Handle"
+        instagramUrl="https://www.instagram.com/thehopgossip/"
+        instagramHandle="@thehopgossip"
       />
     </div>
   );
