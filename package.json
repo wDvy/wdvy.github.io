@@ -9,7 +9,8 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write .",
-    "deploy:clean": "powershell -ExecutionPolicy Bypass -File ./scripts/deploy-clean.ps1"
+    "deploy:clean": "powershell -ExecutionPolicy Bypass -File ./scripts/deploy-clean.ps1",
+    "deploy:clean:mac": "bash ./scripts/deploy-clean.sh"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
