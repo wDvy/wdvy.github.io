@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+    <div className="min-h-screen bg-zinc-50 dark:bg-[var(--color-parchment)] font-sans">
       {!entered && <IntroOverlay onEnter={handleEnter} />}
       {/* Hero Video */}
       <section className="relative w-full h-[45vh] sm:h-[55vh] md:h-[70vh] overflow-hidden bg-black">

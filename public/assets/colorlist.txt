@@ -24,12 +24,12 @@ Vellum - #FFFAF5 Surface / card bg
 
 Dark Mode:
 
-Alchemy - #D45EC4 Primary / CTA / Accent
-Bloom - #E8A5DF Primary hover / links
-Enchanted Forest - #7AAD78 Headings / logo
-Grove - #A8C9A6 Secondary heading
+Alchemy - #785780 Primary / CTA / Accent
+Bloom - #A87FAA Primary hover / links
+Enchanted Forest - #7AAD78 Headings / logo accents
+Grove - #A8C9A6 Main heading text
 Comfort - #C4A882 Body text / muted
-Suede - #9A8272 Subtle / placeholder
+Suede - #9A8272 Subtle / secondary text
 Lantern Glow - #F0B070 Highlight / badge
 Embers - #F5C080 Warm accent / tag
 Obsidian - #1A1712 Page background

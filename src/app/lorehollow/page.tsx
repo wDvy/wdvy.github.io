@@ -27,12 +27,38 @@ export default function LorehollowPage() {
       const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 120;
       setRevealVisibleOnScroll(nearBottom);
     };
-    check();
+
+    let rafId: number | null = null;
+    const scheduleCheck = () => {
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
+      rafId = requestAnimationFrame(() => {
+        check();
+        rafId = null;
+      });
+    };
+
+    scheduleCheck();
     window.addEventListener('scroll', check, { passive: true });
-    window.addEventListener('resize', check);
+
+    const onResize = () => scheduleCheck();
+    window.addEventListener('resize', onResize);
+    window.addEventListener('load', scheduleCheck);
+
+    const observer = new ResizeObserver(() => {
+      scheduleCheck();
+    });
+    observer.observe(document.body);
+
     return () => {
       window.removeEventListener('scroll', check);
-      window.removeEventListener('resize', check);
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('load', scheduleCheck);
+      observer.disconnect();
+      if (rafId !== null) {
+        cancelAnimationFrame(rafId);
+      }
     };
   }, []);
 
@@ -88,7 +114,7 @@ export default function LorehollowPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+    <div className="min-h-screen bg-zinc-50 dark:bg-[var(--color-parchment)] font-sans">
       <Navbar />
 
       {/* Hero section with Lorehollow transparent logo */}

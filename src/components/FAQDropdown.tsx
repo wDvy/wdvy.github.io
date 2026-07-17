@@ -32,7 +32,7 @@ export default function FAQDropdown({ title = 'Festival FAQ', items }: FAQDropdo
             return (
               <div
                 key={item.question}
-                className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/60 overflow-hidden"
+                className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-(--color-vellum) overflow-hidden"
               >
                 <button
                   type="button"

@@ -35,7 +35,7 @@ export default function FestivalSection({
           </div>
 
           <div className={reverse ? 'md:order-1' : 'md:order-2'}>
-            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/60 p-3 md:p-4">
+            <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-(--color-vellum) p-3 md:p-4">
               {imageSrc ? (
                 <Image
                   src={imageSrc}

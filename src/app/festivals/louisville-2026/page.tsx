@@ -80,7 +80,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+    <div className="min-h-screen bg-zinc-50 dark:bg-[var(--color-parchment)] font-sans">
       {/* Hero video (top) */}
       <section className="relative w-full h-[55vh] md:h-[70vh] overflow-hidden bg-black">
         <video

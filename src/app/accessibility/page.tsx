@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black">
+    <div className="min-h-screen bg-zinc-50 dark:bg-[var(--color-parchment)]">
       <Navbar />
 
       <main className="max-w-3xl mx-auto px-6 py-16">

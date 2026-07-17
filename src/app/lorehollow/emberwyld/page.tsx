@@ -4,7 +4,7 @@ import { EmberwyldCrestTransparent } from '../../../images';
 
 export default function EmberwyldPage() {
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
+    <div className="min-h-screen bg-zinc-50 dark:bg-[var(--color-parchment)] font-sans">
       <Navbar />
 
       <section className="relative">

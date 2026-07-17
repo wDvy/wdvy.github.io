@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* Color palette from assets/colorlist.txt
    Light Mode:
    Alchemy - var(--color-alchemy) Primary / CTA / Accent
@@ -79,7 +81,7 @@
   color-scheme: dark;
 
   --color-alchemy: #785780;
-  --color-bloom: #e8a5df;
+  --color-bloom: #a87faa;
   --color-enchanted: #7aad78;
   --color-grove: #a8c9a6;
   --color-comfort: #c4a882;
@@ -96,7 +98,7 @@
   --color-emberwyld: #ee5e3a;
 
   --background: var(--color-parchment);
-  --foreground: #efeae6;
+  --foreground: var(--color-comfort);
   --surface: var(--color-vellum);
 
   --color-emerald-600: var(--color-alchemy);
@@ -104,15 +106,15 @@
   --color-amber-500: var(--color-lantern);
   --color-amber-400: var(--color-embers);
 
-  --color-zinc-50: var(--color-parchment);
-  --color-zinc-100: #221e1a;
-  --color-zinc-200: #2a2520;
-  --color-zinc-300: #332d28;
-  --color-zinc-400: #4a423a;
-  --color-zinc-500: #6b5f52;
-  --color-zinc-600: var(--color-comfort);
-  --color-zinc-700: #8c7b66;
-  --color-zinc-800: #5c4d3d;
+  --color-zinc-50: var(--color-grove);
+  --color-zinc-100: #9ab796;
+  --color-zinc-200: #7f9c7c;
+  --color-zinc-300: var(--color-suede);
+  --color-zinc-400: #b89f8a;
+  --color-zinc-500: var(--color-comfort);
+  --color-zinc-600: #a88f79;
+  --color-zinc-700: #8f7764;
+  --color-zinc-800: #3a3128;
   --color-zinc-900: var(--color-grove);
 }
 
