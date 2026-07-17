@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-900 font-sans">
+    <div className="min-h-screen bg-zinc-50 dark:bg-black font-sans">
       {!entered && <IntroOverlay onEnter={handleEnter} />}
       {/* Hero Video */}
       <section className="relative w-full h-[45vh] sm:h-[55vh] md:h-[70vh] overflow-hidden bg-black">
@@ -165,7 +165,7 @@ export default function Home() {
                 perfect place to pick up magical necessaries like specialty potions, enchanting
                 artifacts, books of magic, and much more!
               </p>
-              <p className="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed font-semibold text-amber-700 dark:text-amber-400 mb-6">
+              <p className="text-lg leading-relaxed font-semibold text-amber-700 dark:text-amber-400 mb-6">
                 Most importantly – the marketplace won't be in your city for long and entrance is
                 limited. Don't miss your chance to visit and purchase your entrance time today!
               </p>
