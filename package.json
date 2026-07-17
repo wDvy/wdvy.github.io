@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy:clean": "powershell -ExecutionPolicy Bypass -File ./scripts/deploy-clean.ps1"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

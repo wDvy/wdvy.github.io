@@ -1,16 +1,12 @@
 'use client';
 
 import { useEffect, useState, useSyncExternalStore } from 'react';
-
-type Theme = 'light' | 'dark';
-
-function applyTheme(theme: Theme) {
-  const root = document.documentElement;
-  root.classList.remove('light', 'dark');
-  root.classList.add(theme);
-  root.style.setProperty('color-scheme', theme);
-  root.dataset.theme = theme;
-}
+import {
+  applyTheme,
+  persistTheme,
+  resolvePreferredTheme,
+  type Theme,
+} from '../lib/theme';
 
 export default function ThemeToggle() {
   const isMounted = useSyncExternalStore(
@@ -24,17 +20,7 @@ export default function ThemeToggle() {
       return 'light';
     }
 
-    const attrTheme = document.documentElement.dataset.theme;
-    if (attrTheme === 'light' || attrTheme === 'dark') {
-      return attrTheme;
-    }
-
-    const stored = window.localStorage.getItem('mmf-theme');
-    if (stored === 'light' || stored === 'dark') {
-      return stored;
-    }
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return resolvePreferredTheme();
   });
 
   // Apply theme to document
@@ -45,7 +31,7 @@ export default function ThemeToggle() {
   const toggleTheme = () => {
     const next = theme === 'light' ? 'dark' : 'light';
     setTheme(next);
-    localStorage.setItem('mmf-theme', next);
+    persistTheme(next);
   };
 
   const icon =
