@@ -1,28 +1,5 @@
 @import 'tailwindcss';
 
-@font-face {
-  font-family: 'Game&Reality';
-  src: url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.eot'); /* IE9 Compat Modes */
-  src:
-    url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.eot?#iefix')
-      format('embedded-opentype'),
-    url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.woff') format('woff'),
-    url('/assets/Images/fonts/Web-TT - Game and Reality/Game & Reality.ttf') format('truetype');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-/* 
-@font-face {
-  font-family: 'Game&Reality';
-  src: url('public/assets/fonts/Web-TT - Game and Reality/Game & Reality-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-*/
-
 /* Color palette from assets/colorlist.txt
    Light Mode:
    Alchemy - var(--color-alchemy) Primary / CTA / Accent
@@ -169,7 +146,7 @@ body {
 .font-sans h4,
 .font-sans h5,
 .font-sans h6 {
-  font-family: 'Game&Reality', Georgia, serif;
+  font-family: var(--font-game-reality), Georgia, serif;
 }
 
 h1,
@@ -178,7 +155,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Game&Reality', Georgia, serif;
+  font-family: var(--font-game-reality), Georgia, serif;
 }
 
 h1,

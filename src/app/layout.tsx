@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Footer from '../components/Footer';
 
@@ -13,6 +14,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+});
+
+const gameReality = localFont({
+  src: [
+    {
+      path: '../../public/assets/fonts/game-reality-regular.woff',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-game-reality',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -29,7 +42,7 @@ export default function RootLayout({
     <html
       suppressHydrationWarning
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${gameReality.variable} h-full antialiased`}
     >
       <head>
         <meta charSet="utf-8" />
