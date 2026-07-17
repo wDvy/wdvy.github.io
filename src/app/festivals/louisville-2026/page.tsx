@@ -1,29 +1,81 @@
 import Navbar from '../../../components/Navbar';
 import FAQDropdown from '../../../components/FAQDropdown';
 import FestivalSection from '../../../components/FestivalSection';
-import { HeroVideo } from '../../../images';
+import {
+  HeroVideo,
+  VictorCreo,
+  Sable,
+  LorehollowTan,
+  LexiQuill,
+  Lorehollow2025,
+} from '../../../images';
 
 export default function Home() {
   const faqItems = [
     {
-      question: 'When will Louisville 2026 dates be announced?',
+      question: 'How does timed entry work?',
       answer:
-        'Dates are still being finalized. Check this page and social channels for the first official announcement.',
+        'Please purchase your pass for the time you wish to enter the marketplace. The portal will open on the hour every hour and your pass grants you entry to the marketplace at the time listed through the close of the marketplace that day.',
     },
     {
-      question: 'Will there be returning storylines from 2025?',
+      question: 'How long can I stay after my entry time?',
       answer:
-        'Yes. Louisville 2026 continues world and character threads while still being welcoming to new attendees.',
+        'Your pass grants you entry to the marketplace at the time listed for your timed entry through the close of the marketplace that day.',
     },
     {
-      question: 'How do I participate in Veilbreakers Tavern Takeover?',
+      question: 'Where is the market?',
       answer:
-        'Look for the Tavern Takeover ticket. This is a 21+ event and does not include quest access unless you also have a Traveler Pass for the day or a True Markie Pass for the season.',
+        'Magical Midwinter is found through a portal behind the main building of Logan Street Market in Louisville, KY. You will enter through double doors off Logan Street and into the office of the Portal Gazette to begin your journey. Look for the Magical Midwinter logo!',
     },
     {
-      question: 'Are there different themes each weekend?',
+      question: 'Is the market ADA accessible?',
       answer:
-        'Yes. Each weekend has its own themed narrative content, special guests, and quests, with a cumulative completion prize for travelers who complete all special weekend quests and standard quests.',
+        'The Marketplace does its best to be inclusive of all our guests, including those needing ADA accommodations, however there may be some tight spaces, uneven flooring, and stairs at different points in the Marketplace. All quests will have ADA accessible methods for completion.',
+    },
+    {
+      question: 'Why do I need to sign a waiver?',
+      answer:
+        'The marketplace is a magical world full of mystery which includes tight spaces, uneven flooring, stairs, low clearances, live performers, and atmospheric effects like lighting, sound, and fog. We ask guests to sign a waiver to acknowledge their consent in engaging with these elements.',
+    },
+    {
+      question: 'Are there any discounts?',
+      answer:
+        'Yes. We have a family of four discount and are offering buy four get one free on select ticket types. You should also follow our social media pages, as there are often discount codes posted to our followers.',
+    },
+    {
+      question: 'Why are tickets so limited?',
+      answer:
+        'To keep the marketplace comfortable for all guests, we limit entry to a certain number of guests per hour. If you want to ensure your spot, we encourage you to buy your ticket early.',
+    },
+    {
+      question: 'Can I dress up?',
+      answer:
+        'We highly encourage you to come to the market in your magical best, but it is certainly not required. We do ask that no real weapons are worn or brandished in the market.',
+    },
+    {
+      question: 'Is this event suitable for children?',
+      answer:
+        'We have a specific ticket for those ages 7-15. Guests under seven are welcome for free. We ask that all young adventurers are supervised by an adult 18+ at all times. Some elements of the storyline, specific quests, and events like the Tavern Takeover (21+) are not recommended or available for children.',
+    },
+    {
+      question: 'Where do I park?',
+      answer:
+        'Free parking is available at the lot at the corner of Logan and Kentucky Street. There will be a QR code in the Portal Gazette office upon your entry to Magical Midwinter that you can scan for free parking validation.',
+    },
+    {
+      question: 'Who puts this on?',
+      answer:
+        'Immersio, the creators of Magical Midwinter, are a local Louisville production group founded to bring immersive entertainment to the Louisville community. We are a small startup and Magical Midwinter is our flagship event.',
+    },
+    {
+      question: "What's the difference between the passes?",
+      answer:
+        'This year, the marketplace is offering four tiers of pass, depending on how you plan to experience the market. Make sure to read the description of each pass to select the one that best fits your needs.',
+    },
+    {
+      question: "What happens if I'm late?",
+      answer:
+        'If you miss your entry time, you will have to wait for the next hourly entry time, permitting there is space for you. Late entry cannot be guaranteed.',
     },
   ];
 
@@ -102,6 +154,7 @@ export default function Home() {
 
       <FestivalSection
         title="Fae, Beasts, and Spirits Weekend"
+        imageSrc={Lorehollow2025}
         paragraphs={[
           'November 27th-29th | Calling all shapeshifters, faeries, and woodland spirits – the portal to the Magical Midwinter Marketplace is open! Join us in homecoming to Louisville, KY and celebrate the spirits of winter and the forest. A special-edition pin available for fae, beasts, and spirits who tell their tale of origin to the market master!',
         ]}
@@ -110,6 +163,7 @@ export default function Home() {
 
       <FestivalSection
         title="Rogues and Wanderers Weekend"
+        imageSrc={LexiQuill}
         paragraphs={[
           'December 4th - 6th | The Marketplace welcomes spies, con artists, rogues, and thieves from all corners, as well as merchants, travelers and wanderers of all dimensions and planes, to step through the portal and share in the magic of the marketplace (thieves and rogues are welcome to trade their own trinkets with willing participants, but remember the marketplace is guarded against roguery – any attempt to steal from the marketplace will result in immediate banishment through the portal!).',
         ]}
@@ -117,6 +171,7 @@ export default function Home() {
 
       <FestivalSection
         title="Lorehollow Weekend"
+        imageSrc={LorehollowTan}
         paragraphs={[
           'December 11th-13th | Show your Lorehollow house pride and come dressed in the colors of your house. Meet other students and discover your specialty and class in a quest designed for those who have completed their MATs, only available this weekend.',
         ]}
@@ -125,6 +180,7 @@ export default function Home() {
 
       <FestivalSection
         title="Veilbreakers Weekend"
+        imageSrc={VictorCreo}
         paragraphs={[
           'December 18th-20th | Celebrate Victor Creo and his faction of Veilbreakers – maybe even join them! Learn more about death magic and your untapped potential as the Veilbreakers take over the Marketplace. Or – fight back against their encroaching storm with the Lorehollow professors by infiltrating their ranks! The final weekend of the Marketplace will determine the power of the Veilbreakers faction - make your voice heard!',
         ]}
@@ -132,6 +188,7 @@ export default function Home() {
 
       <FestivalSection
         title="Veilbreakers Tavern Takeover (21+ only)"
+        imageSrc={Sable}
         paragraphs={[
           'The Tavern Takeover is a 21+ only event which will run Fridays and Saturdays 9-11p (one additional hour after the Marketplace place closes to the public). The Veilbreakers make a special appearance and attempt to communicate with their mysterious leader beyond the grave. This event is on the darker side and is meant for adults only. Tavern Takeover tickets do not include access to any quests (unless you have also purchased a Traveler Pass for the day, or a True Markie Pass for the season).',
           'Rotating musical guests and fortune tellers, schedule TBA soon!',

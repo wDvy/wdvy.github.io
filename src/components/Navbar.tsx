@@ -145,12 +145,6 @@ export default function Navbar() {
               >
                 Lorehollow
               </Link>
-              <Link
-                href="/gazette"
-                className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
-              >
-                Gazette
-              </Link>
             </div>
           </div>
 
@@ -198,7 +192,7 @@ export default function Navbar() {
             </button>
 
             <Link
-              href="#"
+              href="https://www.eventbrite.com/e/magical-midwinter-an-interactive-experience-tickets-1990290234669"
               className="ml-4 px-3 py-2 rounded-md bg-[var(--color-alchemy)] hover:bg-[var(--color-bloom)] text-white text-sm sm:text-base transition-colors"
             >
               <span>Tickets</span>
@@ -261,13 +255,6 @@ export default function Navbar() {
             className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
           >
             Lorehollow
-          </Link>
-
-          <Link
-            href="/gazette"
-            className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
-          >
-            Gazette
           </Link>
         </div>
       </div>

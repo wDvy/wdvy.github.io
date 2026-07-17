@@ -1,6 +1,6 @@
 import Navbar from '../../../components/Navbar';
 import FestivalSection from '../../../components/FestivalSection';
-import { Otho } from '../../../images';
+import { Otho, Lorehollow2025, LorehollowTan, VictorCreo } from '../../../images';
 
 type Section = {
   title: string;
@@ -12,6 +12,7 @@ export default function Home() {
   const sections: Section[] = [
     {
       title: 'The Marketplace Appears',
+      imageSrc: Lorehollow2025,
       paragraphs: [
         'The Magical Midwinter Marketplace is a fully transportable magical realm created and operated by the Market Master (known only to a select few as Marcus Nightingale).',
         'The realm manifests as a temperate wooded glade after passing through a doorway known as “the portal.”',
@@ -31,6 +32,7 @@ export default function Home() {
     },
     {
       title: 'Louisville and Lorehollow',
+      imageSrc: LorehollowTan,
       paragraphs: [
         'Last year, the portal manifested in Louisville, KY for the first time and partnered with Louisville’s magical school Lorehollow to invite the magical folk of the south to explore the marketplace.',
         'Lorehollow was founded in 1798 as the region’s premiere institution for magical higher education.',
@@ -39,6 +41,7 @@ export default function Home() {
     },
     {
       title: 'Victor Creo and the Veilbreakers',
+      imageSrc: VictorCreo,
       paragraphs: [
         'Two professors, Evanora Lace and Vesper Nightingale, were on site during the stay of the marketplace to meet prospective students and to administer MATs (Magical Alignment Tests) to determine a student’s magical aptitude and best house fit.',
         'Victor Creo, a former Lorehollow student, made the rounds of the marketplace, charming attendees and Markies alike with his musical talents and whispers of a new, unrestricted source of magic.',
