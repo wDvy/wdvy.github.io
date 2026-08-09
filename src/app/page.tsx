@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import IntroOverlay from '../components/IntroOverlay';
 import { FaInstagram, FaTiktok, FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
+import EventbriteCheckoutEmbed from '../components/EventbriteCheckoutEmbed';
 
 const INTRO_STORAGE_KEY = 'intro-seen';
 
@@ -182,6 +183,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 text-center"
+            style={{ fontFamily: 'Game&Reality, serif' }}
+          >
+            Reserve Your Entry
+          </h2>
+          <div className="rounded-xl border border-zinc-200 bg-white/70 dark:bg-[var(--color-vellum)] p-4 md:p-6">
+            <EventbriteCheckoutEmbed
+              eventId="1990290234669"
+              iframeContainerHeight={625}
+              brandColor="#785780"
+              onOrderComplete={() => {
+                console.log('Order complete!');
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* social media section */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-6">
