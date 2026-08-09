@@ -153,30 +153,17 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 mr-2 rounded-md hover:bg-[var(--color-zinc-200)] dark:hover:bg-[var(--color-zinc-800)]"
+              className="md:hidden mr-2 rounded-md p-2 transition-colors duration-200 ease-out hover:bg-[var(--color-zinc-200)] dark:hover:bg-[var(--color-zinc-800)]"
               onClick={() => setMobileOpen((s) => !s)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
             >
-              {mobileOpen ? (
+              <span className="relative block h-6 w-6">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-[var(--color-enchanted)] dark:text-[var(--color-enchanted)]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-[var(--color-enchanted)] dark:text-[var(--color-enchanted)]"
+                  className={`absolute inset-0 h-6 w-6 text-[var(--color-enchanted)] transition-all duration-300 ease-out dark:text-[var(--color-enchanted)] ${
+                    mobileOpen ? 'rotate-90 opacity-0' : 'rotate-0 opacity-100'
+                  }`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -188,7 +175,23 @@ export default function Navbar() {
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
-              )}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`absolute inset-0 h-6 w-6 text-[var(--color-enchanted)] transition-all duration-300 ease-out dark:text-[var(--color-enchanted)] ${
+                    mobileOpen ? 'rotate-0 opacity-100' : '-rotate-90 opacity-0'
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </span>
             </button>
 
             <Link
@@ -203,9 +206,11 @@ export default function Navbar() {
 
       {/* Mobile menu content */}
       <div
-        className={`md:hidden ${mobileOpen ? 'block' : 'hidden'} bg-[var(--color-vellum)] dark:bg-[var(--color-vellum)] border-t border-[var(--color-zinc-200)] dark:border-[var(--color-zinc-800)]`}
+        className={`grid overflow-hidden border-t border-[var(--color-zinc-200)] bg-[var(--color-vellum)] transition-all duration-300 ease-out dark:border-[var(--color-zinc-800)] dark:bg-[var(--color-vellum)] md:hidden ${
+          mobileOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}
       >
-        <div className="px-4 pt-2 pb-4 space-y-2">
+        <div className="min-h-0 px-4 pt-2 pb-4 space-y-2">
           <Link
             href="/"
             className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
@@ -255,6 +260,12 @@ export default function Navbar() {
             className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
           >
             Lorehollow
+          </Link>
+          <Link
+            href="/gazette"
+            className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
+          >
+            Gazette
           </Link>
         </div>
       </div>

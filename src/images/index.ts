@@ -19,6 +19,12 @@ export const divider = withBasePath(
   '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_golden_05.svg'
 );
 export const smallLogo = withBasePath('/assets/Images/smallLogo.psd.png');
+export const GazetteHeader = withBasePath('/assets/Images/gazette/marketGazetteHeader.png');
+export const GazetteBackground = withBasePath('/assets/Images/gazette/GazetteBackground.png');
+export const GazetteFooter = withBasePath('/assets/Images/gazette/GazetteFooter.png');
+export const GazetteDivider = withBasePath('/assets/Images/gazette/GazetteDivider.png');
+export const ExtraExtra = withBasePath('/assets/Images/gazette/ExtraExtra.png');
+export const StoryRedacted = withBasePath('/assets/Images/gazette/StoryRedacted.png');
 
 export const divider2 = withBasePath(
   '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_golden_04.svg'

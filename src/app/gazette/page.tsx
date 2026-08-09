@@ -1,49 +1,50 @@
-import { GazetteOverlay } from '../../images';
+import GazetteFeed from '../../components/GazetteFeed';
+import { GazetteHeader, GazetteBackground, GazetteDivider, GazetteFooter } from '../../images';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
+import { gazetteEntries } from './gazetteEntries';
 
 export default function GazettePage() {
   return (
-    <main className="min-h-screen" style={{ backgroundColor: '#EAD8C1' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#EAD8C1' }}>
       <Navbar />
 
-      <section className="px-4 py-8 md:px-8 md:py-10">
-        <div className="mx-auto w-full max-w-6xl">
-          <div className="relative mx-auto w-full aspect-3/4 md:aspect-4/5">
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                backgroundImage: `url(${GazetteOverlay})`,
-                backgroundSize: '100% 100%',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
+      <main className="mx-auto max-w-5xl px-0 pt-0 sm:px-6 sm:pb-20 sm:pt-0 m-0">
+        <header className="text-center">
+          <h1 className="sr-only">Market Gazette</h1>
+          <div className="mx-auto w-full max-w-5xl">
+            <Image
+              src={GazetteHeader}
+              alt="Market Gazette"
+              width={2124}
+              height={640}
+              className="mx-auto h-auto w-full object-contain"
+              priority
             />
-
-            {/* Adjust inset values to move/resize the content region inside the paper art. */}
-            <div
-              className="absolute overflow-y-auto"
-              style={{
-                top: '25%',
-                left: '11%',
-                right: '11%',
-                bottom: '11%',
-              }}
-            >
-              <article className="h-full px-3 py-2 md:px-6 md:py-4" style={{ color: '#3B2A1F' }}>
-                <h1 className="text-2xl md:text-3xl font-semibold text-center">
-                  The Market Gazette
-                </h1>
-                <p className="mt-4 text-sm md:text-base leading-relaxed">
-                  Contiainer information... unfortunately this doesnt work well on mobile scaling.
-                  Gonna have to chop this image up and make a bunch of vertical containers I
-                  think...
-                </p>
-              </article>
-            </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </header>
+
+        <section
+          style={{
+            backgroundImage: `url(${GazetteBackground})`,
+            backgroundPosition: 'top center',
+            backgroundRepeat: 'repeat-y',
+            backgroundSize: '100% auto',
+          }}
+        >
+          <div className="lg:pl-8 lg:pr-8 sm:p-4 pt-0 mt-0 px-2">
+            <GazetteFeed entries={gazetteEntries} />
+          </div>
+          <Image
+            src={GazetteFooter}
+            alt="Market Gazette Divider"
+            width={2124}
+            height={640}
+            className="mx-auto h-auto w-full object-contain"
+            priority
+          />
+        </section>
+      </main>
+    </div>
   );
 }
