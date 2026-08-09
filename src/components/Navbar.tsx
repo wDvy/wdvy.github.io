@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Logo } from '../images';
+import { smallLogo } from '../images';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
@@ -46,7 +46,7 @@ export default function Navbar() {
               className="md:hidden flex items-center rounded-md p-2 hover:bg-[var(--color-zinc-200)] dark:hover:bg-[var(--color-zinc-800)]"
             >
               <Image
-                src={Logo}
+                src={smallLogo}
                 alt="Home"
                 width={100}
                 height={100}

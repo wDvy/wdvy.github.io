@@ -18,6 +18,8 @@ export const Wlky = withBasePath('/assets/Images/wlky.jpg');
 export const divider = withBasePath(
   '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_golden_05.svg'
 );
+export const smallLogo = withBasePath('/assets/Images/smallLogo.psd.png');
+
 export const divider2 = withBasePath(
   '/assets/Images/dividers/Dividers_Golden_SVG/Dividers_golden_04.svg'
 );

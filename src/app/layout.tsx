@@ -7,6 +7,8 @@ import Footer from '../components/Footer';
 import ThemeDebugPanel from '../components/ThemeDebugPanel';
 import { THEME_INIT_SCRIPT } from '../lib/theme';
 
+const GA_MEASUREMENT_ID = 'G-63PFBBNT7R';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -50,6 +52,18 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Script id="theme-init" strategy="beforeInteractive">
           {THEME_INIT_SCRIPT}
+        </Script>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
         </Script>
       </head>
       <body className="min-h-full flex flex-col">
