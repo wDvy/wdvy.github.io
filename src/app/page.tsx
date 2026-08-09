@@ -192,11 +192,15 @@ export default function Home() {
           >
             Reserve Your Entry
           </h2>
-          <div className="rounded-xl border border-zinc-200 bg-white/70 dark:bg-[var(--color-vellum)] p-4 md:p-6">
+        </div>
+
+        <div className="w-full mt-8 md:max-w-5xl md:mx-auto md:px-6">
+          <div className="w-full md:rounded-xl md:border md:border-zinc-200 md:bg-white/70 md:dark:bg-[var(--color-vellum)] md:p-4">
             <EventbriteCheckoutEmbed
               eventId="1990290234669"
               iframeContainerHeight={625}
               brandColor="#785780"
+              className="w-full"
               onOrderComplete={() => {
                 console.log('Order complete!');
               }}

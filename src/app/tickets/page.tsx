@@ -75,19 +75,26 @@ export default function TicketsPage() {
     <div className="min-h-screen bg-zinc-50 dark:bg-[var(--color-parchment)] font-sans">
       <Navbar />
 
-      <main className="max-w-5xl mx-auto px-6 py-16">
-        <h1
-          className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 text-center"
-          style={{ fontFamily: 'Game&Reality, serif' }}
-        >
-          Tickets
-        </h1>
+      <main className="py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <h1
+            className="text-4xl md:text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 text-center"
+            style={{ fontFamily: 'Game&Reality, serif' }}
+          >
+            Tickets
+          </h1>
+        </div>
 
-        <EventbriteCheckoutEmbed
-          eventId="1990290234669"
-          iframeContainerHeight={625}
-          brandColor="#785780"
-        />
+        <section className="w-full mt-8 md:max-w-5xl md:mx-auto md:px-6">
+          <div className="w-full md:rounded-xl md:border md:border-zinc-200 md:bg-white/70 md:dark:bg-[var(--color-vellum)] md:p-4">
+            <EventbriteCheckoutEmbed
+              eventId="1990290234669"
+              iframeContainerHeight={625}
+              brandColor="#785780"
+              className="w-full"
+            />
+          </div>
+        </section>
       </main>
 
       <FAQDropdown title="Louisville 2026 FAQ" items={faqItems} />
