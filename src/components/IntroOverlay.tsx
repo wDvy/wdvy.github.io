@@ -31,9 +31,7 @@ export default function IntroOverlay({ onEnter }: IntroOverlayProps) {
       tabIndex={0}
       onKeyDown={(e) => e.key === 'Enter' && handleClick()}
     >
-      <div className={styles.content}>
-        <div className={styles.sceneText}>{/* <h2>Welcome to Magical Midwinter</h2> */}</div>
-
+      <div className={styles.topPrompt} aria-hidden="true">
         <div className={styles.doorLogo}>
           <Image
             src={Logo}
@@ -44,6 +42,12 @@ export default function IntroOverlay({ onEnter }: IntroOverlayProps) {
             priority
           />
         </div>
+
+        <div className={styles.hint}>Click to Open the Portal</div>
+      </div>
+
+      <div className={styles.content}>
+        <div className={styles.sceneText}>{/* <h2>Welcome to Magical Midwinter</h2> */}</div>
 
         <div className={styles.doorWrap}>
           <div className={styles.doorGlow} aria-hidden="true" />
@@ -57,10 +61,6 @@ export default function IntroOverlay({ onEnter }: IntroOverlayProps) {
           />
         </div>
       </div>
-
-      <span className={styles.hint} aria-hidden="true">
-        Click to Open the Portal
-      </span>
     </div>
   );
 }

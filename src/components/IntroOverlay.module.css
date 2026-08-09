@@ -27,6 +27,11 @@
   opacity: 0;
 }
 
+.scene.opened .topPrompt {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-10px);
+}
+
 .content {
   position: relative;
   z-index: 1;
@@ -38,6 +43,21 @@
   transition:
     transform 2.75s ease,
     opacity 2.75s ease;
+}
+
+.topPrompt {
+  position: absolute;
+  top: calc(env(safe-area-inset-top, 0px) + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  transition:
+    opacity 2.75s ease,
+    transform 2.75s ease;
 }
 
 .scene.opened .behindDoor {
@@ -67,7 +87,7 @@
 .doorLogo {
   display: flex;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   width: 100%;
 }
 
@@ -155,12 +175,37 @@
 
 .hint {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 0.82rem;
-  color: var(--color-alchemy);
-  letter-spacing: 0.14em;
+  font-size: clamp(0.92rem, 2.8vw, 1.12rem);
+  color: #fff8ff;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 247, 255, 0.82);
+  background: linear-gradient(180deg, rgba(248, 194, 255, 0.36), rgba(232, 143, 64, 0.2));
+  text-shadow:
+    0 0 8px rgba(255, 250, 255, 0.92),
+    0 0 22px rgba(212, 94, 196, 0.84);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.32) inset,
+    0 0 26px rgba(212, 94, 196, 0.52);
+  backdrop-filter: blur(3px);
   animation: pulse 2.4s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .topPrompt {
+    top: calc(env(safe-area-inset-top, 0px) + 10px);
+    gap: 25px;
+  }
+
+  .hint {
+    font-size: 0.98rem;
+    letter-spacing: 0.14em;
+  }
 }
 
 @keyframes pulse {
