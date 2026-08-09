@@ -5,7 +5,7 @@
   background: var(--color-black);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 24px;
   cursor: pointer;
@@ -33,8 +33,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
-  padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px 0;
+  width: 100%;
+  max-height: calc(
+    100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 12px
+  );
+  gap: clamp(14px, 2.4vh, 24px);
+  padding: calc(env(safe-area-inset-top, 0px) + 4px) 16px 0;
   transition:
     transform 2.75s ease,
     opacity 2.75s ease;
@@ -60,7 +64,7 @@
 }
 
 .doorWrap {
-  width: min(420px, 90vw);
+  width: min(420px, 78vw);
   position: relative;
 }
 
@@ -72,7 +76,7 @@
 }
 
 .doorLogoImage {
-  width: min(240px, 70vw);
+  width: min(240px, 52vw);
   height: auto;
   display: block;
 }
@@ -174,18 +178,6 @@
     0 0 26px rgba(212, 94, 196, 0.52);
   backdrop-filter: blur(3px);
   animation: pulse 2.4s ease-in-out infinite;
-}
-
-@media (max-width: 640px) {
-  .portalStack {
-    gap: 20px;
-    padding-top: calc(env(safe-area-inset-top, 0px) + 8px);
-  }
-
-  .hint {
-    font-size: 0.98rem;
-    letter-spacing: 0.14em;
-  }
 }
 
 @keyframes pulse {
