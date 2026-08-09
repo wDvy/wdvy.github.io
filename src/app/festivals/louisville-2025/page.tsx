@@ -14,7 +14,7 @@ export default function Home() {
       title: 'The Marketplace Appears',
       imageSrc: Lorehollow2025,
       paragraphs: [
-        'The Magical Midwinter Marketplace is a fully transportable magical realm created and operated by the Market Master (known only to a select few as Marcus Nightingale).',
+        'The Magical Midwinter Marketplace is a fully transportable magical realm created and operated by the Market Master.',
         'The realm manifests as a temperate wooded glade after passing through a doorway known as “the portal.”',
         'The portal is the key to the marketplace. It travels around the world, appearing in magical pockets of different cities to welcome magical folk to peruse the wares of the market.',
       ],
