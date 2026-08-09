@@ -83,13 +83,11 @@ export default function TicketsPage() {
           Tickets
         </h1>
 
-        <div className="rounded-xl border border-zinc-200 bg-white/70 dark:bg-[var(--color-vellum)] p-4 md:p-6">
-          <EventbriteCheckoutEmbed
-            eventId="1990290234669"
-            iframeContainerHeight={625}
-            brandColor="#785780"
-          />
-        </div>
+        <EventbriteCheckoutEmbed
+          eventId="1990290234669"
+          iframeContainerHeight={625}
+          brandColor="#785780"
+        />
       </main>
 
       <FAQDropdown title="Louisville 2026 FAQ" items={faqItems} />
