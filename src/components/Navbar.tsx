@@ -192,7 +192,7 @@ export default function Navbar() {
             </button>
 
             <Link
-              href="https://www.eventbrite.com/e/magical-midwinter-an-interactive-experience-tickets-1990290234669"
+              href="/tickets"
               className="ml-4 px-3 py-2 rounded-md bg-[var(--color-alchemy)] hover:bg-[var(--color-bloom)] text-white text-sm sm:text-base transition-colors"
             >
               <span>Tickets</span>

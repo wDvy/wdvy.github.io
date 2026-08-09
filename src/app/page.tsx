@@ -172,7 +172,7 @@ export default function Home() {
               </p>
               <div className="mt-6 flex justify-center">
                 <Link
-                  href="https://www.eventbrite.com/e/magical-midwinter-an-interactive-experience-tickets-1990290234669"
+                  href="/tickets"
                   className="inline-flex items-center justify-center rounded-md bg-[var(--color-alchemy)] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[var(--color-bloom)]"
                 >
                   Tickets

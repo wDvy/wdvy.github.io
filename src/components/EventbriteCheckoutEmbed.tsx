@@ -36,6 +36,10 @@ declare global {
 
 let eventbriteScriptPromise: Promise<void> | null = null;
 
+function defaultOnOrderComplete() {
+  console.log('Order complete!');
+}
+
 function loadEventbriteScript(): Promise<void> {
   if (typeof window === 'undefined') {
     return Promise.resolve();
@@ -91,7 +95,7 @@ export default function EventbriteCheckoutEmbed({
   brandColor = '#785780',
   iframeContainerHeight = 625,
   iframeContainerId,
-  onOrderComplete,
+  onOrderComplete = defaultOnOrderComplete,
   className,
 }: EventbriteCheckoutEmbedProps) {
   const containerId = iframeContainerId ?? `eventbrite-widget-container-${eventId}`;

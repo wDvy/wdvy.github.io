@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 import './globals.css';
 import Footer from '../components/Footer';
 import ThemeDebugPanel from '../components/ThemeDebugPanel';
@@ -47,7 +48,9 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <Script id="theme-init" strategy="beforeInteractive">
+          {THEME_INIT_SCRIPT}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col">
         {process.env.NODE_ENV === 'development' ? <ThemeDebugPanel /> : null}
