@@ -82,9 +82,6 @@ export default function TicketsPage() {
         >
           Tickets
         </h1>
-        <p className="text-center text-lg text-zinc-700 dark:text-zinc-300 max-w-3xl mx-auto mb-10">
-          Reserve your entry to Magical Midwinter below.
-        </p>
 
         <div className="rounded-xl border border-zinc-200 bg-white/70 dark:bg-[var(--color-vellum)] p-4 md:p-6">
           <EventbriteCheckoutEmbed

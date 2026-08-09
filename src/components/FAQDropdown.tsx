@@ -62,14 +62,19 @@ export default function FAQDropdown({ title = 'Festival FAQ', items }: FAQDropdo
                   </svg>
                 </button>
 
-                {isOpen && (
-                  <div
-                    id={`faq-panel-${index}`}
-                    className="px-5 pb-5 text-zinc-700 dark:text-zinc-300 leading-relaxed"
-                  >
-                    {item.answer}
+                <div
+                  id={`faq-panel-${index}`}
+                  aria-hidden={!isOpen}
+                  className={`grid transition-all duration-300 ease-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="px-5 pb-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                      {item.answer}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
