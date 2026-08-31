@@ -4,6 +4,7 @@ import localFont from 'next/font/local';
 import Script from 'next/script';
 import './globals.css';
 import Footer from '../components/Footer';
+import NewsletterPopup from '../components/NewsletterPopup';
 import ThemeDebugPanel from '../components/ThemeDebugPanel';
 import { THEME_INIT_SCRIPT } from '../lib/theme';
 
@@ -70,6 +71,7 @@ export default function RootLayout({
         {process.env.NODE_ENV === 'development' ? <ThemeDebugPanel /> : null}
         {children}
         <Footer />
+        <NewsletterPopup />
       </body>
     </html>
   );

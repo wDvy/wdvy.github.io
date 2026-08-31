@@ -151,6 +151,12 @@ export default function Navbar() {
               >
                 Gazette
               </Link>
+              <Link
+                href="/faction-quiz"
+                className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
+              >
+                Faction Quiz
+              </Link>
             </div>
           </div>
 
@@ -272,6 +278,12 @@ export default function Navbar() {
             className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
           >
             Gazette
+          </Link>
+          <Link
+            href="/faction-quiz"
+            className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
+          >
+            Faction Quiz
           </Link>
         </div>
       </div>
