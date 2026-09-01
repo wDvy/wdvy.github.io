@@ -151,11 +151,8 @@ export default function Navbar() {
               >
                 Gazette
               </Link>
-              <Link
-                href="/faction-quiz"
-                className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
-              >
-                Faction Quiz
+              <Link href="/faction-quiz" className="faction-quiz-link text-sm sm:text-base">
+                <span>Faction Quiz</span>
               </Link>
             </div>
           </div>
@@ -279,11 +276,8 @@ export default function Navbar() {
           >
             Gazette
           </Link>
-          <Link
-            href="/faction-quiz"
-            className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
-          >
-            Faction Quiz
+          <Link href="/faction-quiz" className="faction-quiz-link block text-sm sm:text-base">
+            <span>Faction Quiz</span>
           </Link>
         </div>
       </div>

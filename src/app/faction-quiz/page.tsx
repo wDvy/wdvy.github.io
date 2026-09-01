@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import {
@@ -30,7 +31,7 @@ const QUESTIONS = [
       },
       { answer: 'Silence them - at any cost.', result: 'Veilbreakers' },
       {
-        answer: 'Objectively analyze the situation before making any decisions .',
+        answer: 'Objectively analyze the situation before making any decisions.',
         result: 'The Marketplace Gazette',
       },
       { answer: 'Apologize and mend the relationship', result: "Hecate's Torch" },
@@ -43,11 +44,10 @@ const QUESTIONS = [
       { answer: 'Their words guide my actions.', result: 'Lorehollow' },
       { answer: "They're role models for me.", result: "Hecate's Torch" },
       { answer: "They're often out of touch with my life.", result: 'The Family Nightingale' },
-      { answer: "They're out of touch with reality. .", result: 'Veilbreakers' },
+      { answer: "They're out of touch with reality.", result: 'Veilbreakers' },
       { answer: 'Depends on the leader...', result: 'Markie' },
       {
-        answer:
-          'Leaders should not be trusted solely because of their power. Question Everything! .',
+        answer: 'Leaders should not be trusted solely because of their power. Question Everything!',
         result: 'The Marketplace Gazette',
       },
     ],
@@ -58,7 +58,7 @@ const QUESTIONS = [
     options: [
       {
         answer:
-          "Condemn your friend and take the opportunity to better yourself - it's their fault for being gullible .",
+          "Condemn your friend and take the opportunity to better yourself - it's their fault for being gullible.",
         result: 'Veilbreakers',
       },
       {
@@ -69,7 +69,7 @@ const QUESTIONS = [
       { answer: 'Refuse the offer and refuse to betray your friend', result: 'Lorehollow' },
       {
         answer:
-          'Interview the mage on what exactly he means by “power” and ask around for more information on the guy .',
+          'Interview the mage on what exactly he means by “power” and ask around for more information on the guy.',
         result: 'The Marketplace Gazette',
       },
       {
@@ -92,7 +92,7 @@ const QUESTIONS = [
       { answer: 'I try to keep people at a distance. .', result: 'Veilbreakers' },
       { answer: 'I have a community of mentors, friends, and family.', result: 'Lorehollow' },
       {
-        answer: 'I take a while to trust people, but when I do, I am loyal and expect the same. .',
+        answer: 'I take a while to trust people, but when I do, I am loyal and expect the same.',
         result: 'The Marketplace Gazette',
       },
     ],
@@ -108,11 +108,11 @@ const QUESTIONS = [
         result: 'The Family Nightingale',
       },
       {
-        answer: 'No, my local community would be a waste of time and money. .',
+        answer: 'No, my local community would be a waste of time and money.',
         result: 'Veilbreakers',
       },
       {
-        answer: 'Time is money and I help my community by sharing my knowledge and wisdom. .',
+        answer: 'Time is money and I help my community by sharing my knowledge and wisdom.',
         result: 'The Marketplace Gazette',
       },
       { answer: 'Community is everything. We all pitch in to keep it running.', result: 'Markie' },
@@ -126,17 +126,17 @@ const QUESTIONS = [
       { answer: 'Defend the area with the rest of your community', result: 'Markie' },
       { answer: 'Flee as soon as things look grim.', result: 'Veilbreakers' },
       {
-        answer: 'Cut a deal with the enemy to act as a spy and report back to your community .',
+        answer: 'Cut a deal with the enemy to act as a spy and report back to your community.',
         result: 'The Marketplace Gazette',
       },
       {
         answer:
-          'Take the mantle of leadership and crush the enemy, no matter the cost to your community',
+          'Take the mantle of leadership and crush the enemy, no matter the cost to your community.',
         result: 'The Family Nightingale',
       },
       {
         answer:
-          'Band together and use the wisdom of the elders to craft the best strategy to protect everyone',
+          'Band together and use the wisdom of the elders to craft the best strategy to protect everyone.',
         result: 'Lorehollow',
       },
     ],
@@ -167,12 +167,12 @@ const QUESTIONS = [
     options: [
       { answer: 'To help the destitute and less fortunate.', result: "Hecate's Torch" },
       { answer: 'To provide for the needs of friends and family.', result: 'Markie' },
-      { answer: 'To stay on top of the heap yourself. .', result: 'Veilbreakers' },
+      { answer: 'To stay on top of the heap yourself.', result: 'Veilbreakers' },
       {
         answer: 'To not only stay on top, but keep others from climbing to your level.',
         result: 'The Family Nightingale',
       },
-      { answer: 'To educate and inform. .', result: 'The Marketplace Gazette' },
+      { answer: 'To educate and inform.', result: 'The Marketplace Gazette' },
       { answer: 'To steward future generations and our earth.', result: 'Lorehollow' },
     ],
   },
@@ -181,7 +181,7 @@ const QUESTIONS = [
     question:
       'By using your magic, you could fool village merchants into thinking trash was money. Do you?',
     options: [
-      { answer: "Yes, and I'll spend as much as I can. .", result: 'Veilbreakers' },
+      { answer: "Yes, and I'll spend as much as I can.", result: 'Veilbreakers' },
       {
         answer: "Yes, but I'll only cheat the rich merchants or the ones that did me dirty.",
         result: 'The Family Nightingale',
@@ -205,7 +205,7 @@ const QUESTIONS = [
       'You have two job offers. One pays more, but the other is secure and steady. Which do you choose?',
     options: [
       {
-        answer: 'Definitely the lucrative job; steady work sounds like drudgery. .',
+        answer: 'Definitely the lucrative job; steady work sounds like drudgery.',
         result: 'Veilbreakers',
       },
       {
@@ -223,7 +223,7 @@ const QUESTIONS = [
       { answer: 'I’m my own boss. I’m not going to work for anyone else.', result: 'Markie' },
       {
         answer:
-          'How steady is steady? I’d do my research on both jobs and weigh the pros and cons on a written list. .',
+          'How steady is steady? I’d do my research on both jobs and weigh the pros and cons on a written list.',
         result: 'The Marketplace Gazette',
       },
     ],
@@ -401,13 +401,18 @@ export default function FactionQuizPage() {
               {resultPage.description}
             </p>
 
-            <button
-              type="button"
-              onClick={restartQuiz}
-              className="mt-10 rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
-            >
-              Take the quiz again
-            </button>
+            <div className="mt-10 flex flex-wrap justify-center gap-4 flex items-center">
+              <Link href="/tickets" className="faction-quiz-link text-base font-semibold ">
+                <span>Tickets</span>
+              </Link>
+              <button
+                type="button"
+                onClick={restartQuiz}
+                className="rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
+              >
+                Take the quiz again
+              </button>
+            </div>
           </section>
         ) : (
           <>
@@ -423,18 +428,23 @@ export default function FactionQuizPage() {
 
             <form className="mt-16 space-y-10" onSubmit={handleSubmit}>
               {QUESTIONS.map((item) => (
-                <fieldset
+                <div
                   key={item.question}
+                  role="radiogroup"
+                  aria-labelledby={`question-${item.number}`}
                   className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-(--color-vellum) p-5"
                 >
-                  <legend className="px-1 text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+                  <h2
+                    id={`question-${item.number}`}
+                    className="text-lg font-semibold text-zinc-900 dark:text-zinc-50"
+                  >
                     {item.number}. {item.question}
-                  </legend>
+                  </h2>
                   <div className="mt-3 space-y-2">
                     {item.options.map((option) => (
                       <label
                         key={option.answer}
-                        className="flex items-center gap-3 text-zinc-700 dark:text-zinc-300"
+                        className="flex cursor-pointer items-center gap-3 rounded-md border border-zinc-200 p-3 text-zinc-700 transition-colors hover:border-(--color-lantern) hover:bg-(--color-parchment) focus-within:border-(--color-lantern) focus-within:ring-2 focus-within:ring-(--color-lantern)/30 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-800"
                       >
                         <input
                           type="radio"
@@ -447,13 +457,13 @@ export default function FactionQuizPage() {
                               [item.number]: option.result,
                             }))
                           }
-                          className="h-4 w-4"
+                          className="h-4 w-4 accent-(--color-alchemy)"
                         />
                         {option.answer}
                       </label>
                     ))}
                   </div>
-                </fieldset>
+                </div>
               ))}
 
               <button
