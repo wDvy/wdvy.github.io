@@ -99,8 +99,14 @@ function FactionQuizResult() {
           <p className="mx-auto mt-10 max-w-2xl text-left text-lg leading-8 text-zinc-700 dark:text-zinc-300">
             {result.description}
           </p>
-          <section className="mx-auto mt-10 max-w-xl border-y border-zinc-200 py-6 dark:border-zinc-800" aria-labelledby="share-result-heading">
-            <h2 id="share-result-heading" className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
+          <section
+            className="mx-auto mt-10 max-w-xl border-y border-zinc-200 py-6 dark:border-zinc-800"
+            aria-labelledby="share-result-heading"
+          >
+            <h2
+              id="share-result-heading"
+              className="text-xl font-semibold text-zinc-900 dark:text-zinc-50"
+            >
               Share your result
             </h2>
             <div className="mt-4 flex flex-wrap justify-center gap-3">
@@ -112,16 +118,43 @@ function FactionQuizResult() {
                 <FaShare aria-hidden="true" />
                 Share
               </button>
-              <a href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook" title="Share on Facebook" className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 text-lg text-zinc-700 transition-colors hover:border-(--color-alchemy) hover:text-(--color-alchemy) dark:border-zinc-700 dark:text-zinc-300">
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Facebook"
+                title="Share on Facebook"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 text-lg text-zinc-700 transition-colors hover:border-(--color-alchemy) hover:text-(--color-alchemy) dark:border-zinc-700 dark:text-zinc-300"
+              >
                 <FaFacebookF aria-hidden="true" />
               </a>
-              <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="Share on X" title="Share on X" className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 text-lg text-zinc-700 transition-colors hover:border-(--color-alchemy) hover:text-(--color-alchemy) dark:border-zinc-700 dark:text-zinc-300">
+              <a
+                href={xUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on X"
+                title="Share on X"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 text-lg text-zinc-700 transition-colors hover:border-(--color-alchemy) hover:text-(--color-alchemy) dark:border-zinc-700 dark:text-zinc-300"
+              >
                 <FaXTwitter aria-hidden="true" />
               </a>
-              <a href={redditUrl} target="_blank" rel="noopener noreferrer" aria-label="Share on Reddit" title="Share on Reddit" className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 text-lg text-zinc-700 transition-colors hover:border-(--color-alchemy) hover:text-(--color-alchemy) dark:border-zinc-700 dark:text-zinc-300">
+              <a
+                href={redditUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share on Reddit"
+                title="Share on Reddit"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 text-lg text-zinc-700 transition-colors hover:border-(--color-alchemy) hover:text-(--color-alchemy) dark:border-zinc-700 dark:text-zinc-300"
+              >
                 <FaRedditAlien aria-hidden="true" />
               </a>
-              <button type="button" onClick={copyShareLink} aria-label="Copy result link" title="Copy result link" className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 text-lg text-zinc-700 transition-colors hover:border-(--color-alchemy) hover:text-(--color-alchemy) dark:border-zinc-700 dark:text-zinc-300">
+              <button
+                type="button"
+                onClick={copyShareLink}
+                aria-label="Copy result link"
+                title="Copy result link"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-zinc-300 text-lg text-zinc-700 transition-colors hover:border-(--color-alchemy) hover:text-(--color-alchemy) dark:border-zinc-700 dark:text-zinc-300"
+              >
                 <FaLink aria-hidden="true" />
               </button>
             </div>
