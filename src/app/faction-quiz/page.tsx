@@ -278,64 +278,64 @@ export default function FactionQuizPage() {
 
       <main className="max-w-3xl mx-auto px-6 py-24">
         <>
-            <div className="text-center">
-              <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50">
-                Conflicting forces clash at Magical Midwinter - where do your loyalties lie?
-              </h1>
-              <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-                Learn more about the stories, characters, and mysteries colliding at the marketplace
-                and discover where you fit in! Who are your people? Take this quiz to find out!
-              </p>
-            </div>
+          <div className="text-center">
+            <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50">
+              Conflicting forces clash at Magical Midwinter - where do your loyalties lie?
+            </h1>
+            <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+              Learn more about the stories, characters, and mysteries colliding at the marketplace
+              and discover where you fit in! Who are your people? Take this quiz to find out!
+            </p>
+          </div>
 
-            <form className="mt-16 space-y-10" onSubmit={handleSubmit}>
-              {QUESTIONS.map((item) => (
-                <div
-                  key={item.question}
-                  role="radiogroup"
-                  aria-labelledby={`question-${item.number}`}
-                  className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-(--color-vellum) p-5"
-                >
-                  <h2
-                    id={`question-${item.number}`}
-                    className="text-lg font-semibold text-zinc-900 dark:text-zinc-50"
-                  >
-                    {item.number}. {item.question}
-                  </h2>
-                  <div className="mt-3 space-y-2">
-                    {item.options.map((option) => (
-                      <label
-                        key={option.answer}
-                        className="flex cursor-pointer items-center gap-3 rounded-md border border-zinc-200 p-3 text-zinc-700 transition-colors hover:border-(--color-lantern) hover:bg-(--color-parchment) focus-within:border-(--color-lantern) focus-within:ring-2 focus-within:ring-(--color-lantern)/30 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-800"
-                      >
-                        <input
-                          type="radio"
-                          name={`question-${item.number}`}
-                          value={option.result}
-                          checked={answers[item.number] === option.result}
-                          onChange={() =>
-                            setAnswers((currentAnswers) => ({
-                              ...currentAnswers,
-                              [item.number]: option.result,
-                            }))
-                          }
-                          className="h-4 w-4 accent-(--color-alchemy)"
-                        />
-                        {option.answer}
-                      </label>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-              <button
-                type="submit"
-                disabled={!allQuestionsAnswered}
-                className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
+          <form className="mt-16 space-y-10" onSubmit={handleSubmit}>
+            {QUESTIONS.map((item) => (
+              <div
+                key={item.question}
+                role="radiogroup"
+                aria-labelledby={`question-${item.number}`}
+                className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-(--color-vellum) p-5"
               >
-                Submit
-              </button>
-            </form>
+                <h2
+                  id={`question-${item.number}`}
+                  className="text-lg font-semibold text-zinc-900 dark:text-zinc-50"
+                >
+                  {item.number}. {item.question}
+                </h2>
+                <div className="mt-3 space-y-2">
+                  {item.options.map((option) => (
+                    <label
+                      key={option.answer}
+                      className="flex cursor-pointer items-center gap-3 rounded-md border border-zinc-200 p-3 text-zinc-700 transition-colors hover:border-(--color-lantern) hover:bg-(--color-parchment) focus-within:border-(--color-lantern) focus-within:ring-2 focus-within:ring-(--color-lantern)/30 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                    >
+                      <input
+                        type="radio"
+                        name={`question-${item.number}`}
+                        value={option.result}
+                        checked={answers[item.number] === option.result}
+                        onChange={() =>
+                          setAnswers((currentAnswers) => ({
+                            ...currentAnswers,
+                            [item.number]: option.result,
+                          }))
+                        }
+                        className="h-4 w-4 accent-(--color-alchemy)"
+                      />
+                      {option.answer}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            <button
+              type="submit"
+              disabled={!allQuestionsAnswered}
+              className="w-full rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
+            >
+              Submit
+            </button>
+          </form>
         </>
       </main>
     </div>
