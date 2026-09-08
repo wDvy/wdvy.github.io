@@ -10,6 +10,7 @@ import {
   dioriteTexture,
   swirlingTexture,
   weaveTexture,
+  gazettePicture,
 } from '../../images';
 
 const TIEBREAKER_QUESTION_NUMBERS = [12, 13];
@@ -257,7 +258,7 @@ const QUESTIONS = [
   {
     number: 12,
     question:
-      '(Extra) You have two job offers. One pays more, but the other is secure and steady. Which do you choose?',
+      '(Extra Tiebreaker Question!): You have two job offers. One pays more, but the other is secure and steady. Which do you choose?',
     options: [
       {
         answer: 'Definitely the lucrative job; steady work sounds like drudgery.',
@@ -286,7 +287,7 @@ const QUESTIONS = [
   {
     number: 13,
     question:
-      '(Extra) If you accepted a job or contract, would you try to finish the task even if it got much more dangerous?',
+      '(Extra Tiebreaker Question!): If you accepted a job or contract, would you try to finish the task even if it got much more dangerous?',
     options: [
       { answer: 'Yes, my word is my bond.', result: "Hecate's Torch" },
       {
@@ -334,6 +335,10 @@ export default function FactionQuizPage() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<'forward' | 'back'>('forward');
+  const [stage, setStage] = useState<'quiz' | 'email'>('quiz');
+  const [email, setEmail] = useState('');
+  const [consentChecked, setConsentChecked] = useState(false);
+  const [emailStatus, setEmailStatus] = useState<'idle' | 'submitting' | 'error'>('idle');
   const router = useRouter();
 
   // Tiebreaker questions only appear if the main questions (and prior tiebreakers) end in a tie.
@@ -395,7 +400,21 @@ export default function FactionQuizPage() {
 
   function handleSubmit() {
     if (allQuestionsAnswered) {
+      setStage('email');
+    }
+  }
+
+  async function handleEmailSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!consentChecked) return;
+
+    setEmailStatus('submitting');
+    try {
+      // TODO: wire this up to a real email service (Mailchimp/ConvertKit/Formspree, etc.)
+      await new Promise((resolve) => setTimeout(resolve, 300));
       router.push(`/faction-quiz/results?faction=${encodeURIComponent(getResults())}`);
+    } catch {
+      setEmailStatus('error');
     }
   }
 
@@ -417,90 +436,168 @@ export default function FactionQuizPage() {
         <div className="mt-12">
           <div className="mb-2 flex items-center justify-between text-sm font-medium text-zinc-600 dark:text-zinc-400">
             <span>
-              Question {currentIndex + 1} of {visibleQuestions.length}
+              {stage === 'email'
+                ? 'Almost there!'
+                : `Question ${currentIndex + 1} of ${visibleQuestions.length}`}
             </span>
-            <span>{Math.round(((currentIndex + 1) / visibleQuestions.length) * 100)}%</span>
+            <span>
+              {stage === 'email'
+                ? '100%'
+                : `${Math.round(((currentIndex + 1) / visibleQuestions.length) * 100)}%`}
+            </span>
           </div>
           <div className="h-2 w-full overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
             <div
               className="h-full rounded-full bg-(--color-alchemy) transition-all duration-300"
-              style={{ width: `${((currentIndex + 1) / visibleQuestions.length) * 100}%` }}
+              style={{
+                width:
+                  stage === 'email'
+                    ? '100%'
+                    : `${((currentIndex + 1) / visibleQuestions.length) * 100}%`,
+              }}
             />
           </div>
         </div>
 
-        <div
-          key={currentQuestion.number}
-          role="radiogroup"
-          aria-labelledby={`question-${currentQuestion.number}`}
-          className={`mt-8 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-(--color-vellum) p-5 ${
-            direction === 'forward' ? 'animate-quiz-in-forward' : 'animate-quiz-in-back'
-          }`}
-        >
-          <h2
-            id={`question-${currentQuestion.number}`}
-            className="text-lg font-semibold text-zinc-900 dark:text-zinc-50"
-          >
-            {currentQuestion.number}. {currentQuestion.question}
-          </h2>
-          <div className="mt-3 space-y-2">
-            {currentQuestion.options.map((option) => (
-              <label
-                key={option.answer}
-                className="flex cursor-pointer items-center gap-3 rounded-md border border-zinc-200 p-3 text-zinc-700 transition-colors hover:border-(--color-lantern) hover:bg-(--color-parchment) focus-within:border-(--color-lantern) focus-within:ring-2 focus-within:ring-(--color-lantern)/30 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-800"
-              >
-                <input
-                  type="radio"
-                  name={`question-${currentQuestion.number}`}
-                  value={option.result}
-                  checked={currentAnswer === option.result}
-                  onChange={() => selectAnswer(option.result)}
-                  className="h-4 w-4 accent-(--color-alchemy)"
-                />
-                {'image' in option && option.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element -- placeholder texture asset, not yet optimized
-                  <img
-                    src={option.image}
-                    alt={option.answer}
-                    className="h-16 w-16 shrink-0 rounded-md object-cover"
-                  />
-                ) : null}
-                {option.answer}
+        {stage === 'email' ? (
+          <div className="mt-8 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-(--color-vellum) p-5 animate-quiz-in-forward">
+            <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+              Enter your email to reveal your results
+            </h2>
+            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+              We&apos;ll use this to send you festival announcements and lore drops. You can
+              unsubscribe anytime.
+            </p>
+
+            <form onSubmit={handleEmailSubmit} className="mt-4 flex flex-col gap-3">
+              <label htmlFor="quiz-email" className="sr-only">
+                Email address
               </label>
-            ))}
+              <input
+                id="quiz-email"
+                type="email"
+                required
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="you@example.com"
+                className="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-(--color-parchment) px-4 py-2.5 text-zinc-900 dark:text-zinc-50 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100"
+              />
+
+              <label className="flex cursor-pointer items-start gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+                <input
+                  type="checkbox"
+                  required
+                  checked={consentChecked}
+                  onChange={(event) => setConsentChecked(event.target.checked)}
+                  className="mt-0.5 h-4 w-4 accent-(--color-alchemy)"
+                />
+                I consent to receive emails from Magical Midwinter and agree to the{' '}
+                <a href="/policies" className="underline hover:text-(--color-lantern)">
+                  privacy policy
+                </a>
+                .
+              </label>
+
+              {emailStatus === 'error' ? (
+                <p className="text-sm text-red-600 dark:text-red-400">
+                  Something went wrong. Please try again.
+                </p>
+              ) : null}
+
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <button
+                  type="button"
+                  onClick={() => setStage('quiz')}
+                  className="rounded-lg border border-zinc-300 px-4 py-2.5 font-semibold text-zinc-700 transition-opacity hover:opacity-90 dark:border-zinc-700 dark:text-zinc-300"
+                >
+                  Back
+                </button>
+                <button
+                  type="submit"
+                  disabled={!consentChecked || emailStatus === 'submitting'}
+                  className="flex-1 rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
+                >
+                  {emailStatus === 'submitting' ? 'Revealing…' : 'Reveal My Results'}
+                </button>
+              </div>
+            </form>
           </div>
-        </div>
-
-        <div className="mt-8 flex items-center justify-between gap-4">
-          <button
-            type="button"
-            onClick={goToPrevious}
-            disabled={currentIndex === 0}
-            className="rounded-lg border border-zinc-300 px-4 py-2.5 font-semibold text-zinc-700 transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 dark:border-zinc-700 dark:text-zinc-300"
-          >
-            Back
-          </button>
-
-          {isLastQuestion ? (
-            <button
-              type="button"
-              onClick={handleSubmit}
-              disabled={!allQuestionsAnswered}
-              className="flex-1 rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
+        ) : (
+          <>
+            <div
+              key={currentQuestion.number}
+              role="radiogroup"
+              aria-labelledby={`question-${currentQuestion.number}`}
+              className={`mt-8 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-(--color-vellum) p-5 ${
+                direction === 'forward' ? 'animate-quiz-in-forward' : 'animate-quiz-in-back'
+              }`}
             >
-              See Results
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={goToNext}
-              disabled={!currentAnswer}
-              className="flex-1 rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
-            >
-              Next
-            </button>
-          )}
-        </div>
+              <h2
+                id={`question-${currentQuestion.number}`}
+                className="text-lg font-semibold text-zinc-900 dark:text-zinc-50"
+              >
+                {currentQuestion.number}. {currentQuestion.question}
+              </h2>
+              <div className="mt-3 space-y-2">
+                {currentQuestion.options.map((option) => (
+                  <label
+                    key={option.answer}
+                    className="flex cursor-pointer items-center gap-3 rounded-md border border-zinc-200 p-3 text-zinc-700 transition-colors hover:border-(--color-lantern) hover:bg-(--color-parchment) focus-within:border-(--color-lantern) focus-within:ring-2 focus-within:ring-(--color-lantern)/30 dark:border-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                  >
+                    <input
+                      type="radio"
+                      name={`question-${currentQuestion.number}`}
+                      value={option.result}
+                      checked={currentAnswer === option.result}
+                      onChange={() => selectAnswer(option.result)}
+                      className="h-4 w-4 accent-(--color-alchemy)"
+                    />
+                    {'image' in option && option.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element -- placeholder texture asset, not yet optimized
+                      <img
+                        src={option.image}
+                        alt={option.answer}
+                        className="h-16 w-16 shrink-0 rounded-md object-cover"
+                      />
+                    ) : null}
+                    {option.answer}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 flex items-center justify-between gap-4">
+              <button
+                type="button"
+                onClick={goToPrevious}
+                disabled={currentIndex === 0}
+                className="rounded-lg border border-zinc-300 px-4 py-2.5 font-semibold text-zinc-700 transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 dark:border-zinc-700 dark:text-zinc-300"
+              >
+                Back
+              </button>
+
+              {isLastQuestion ? (
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={!allQuestionsAnswered}
+                  className="flex-1 rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
+                >
+                  See Results
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={goToNext}
+                  disabled={!currentAnswer}
+                  className="flex-1 rounded-lg bg-zinc-900 px-4 py-2.5 font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:border dark:border-zinc-900 dark:bg-(--color-surface) dark:text-zinc-900"
+                >
+                  Next
+                </button>
+              )}
+            </div>
+          </>
+        )}
       </main>
     </div>
   );

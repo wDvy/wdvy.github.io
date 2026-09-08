@@ -5,6 +5,7 @@ import {
   Vesper,
   VictorCreo,
   magicDude,
+  gazettePicture,
 } from '../../images';
 
 export const FACTION_RESULTS = {
@@ -30,7 +31,7 @@ export const FACTION_RESULTS = {
       'The good, the bad, the ugly, all deserve to be printed, no matter the consequence',
       'Eagle-eyed, wary, truthful',
     ],
-    image: GazetteOverlay,
+    image: gazettePicture,
     imageAlt: 'The Marketplace Gazette',
     description:
       'The Marketplace Gazette, founded by Evelyn Stokes, editor-in-chief, with the mandate to investigate the various mysteries of the Marketplace, is the only traveling magical printing house of its kind. Led by their fearless leader, Evelyn, reporters of the Gazette hunt down new leads by interviewing Markies and guests alike. This year, they’re focusing on uncovering the reason behind the string of unexplained disappearances at the marketplace which has gone unexamined since they began… The members of the Marketplace Gazette seek truth above all… and will stop at nothing to get it.',

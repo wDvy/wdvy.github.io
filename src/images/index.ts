@@ -80,6 +80,7 @@ export const EmberwyldCrestTransparent = withBasePath(
 export const GazetteOverlay = withBasePath('/assets/Images/gazette/MarketGazette-template.png');
 
 //Faction Quiz
+export const gazettePicture = withBasePath('/assets/Images/gazette/gazettePicture.webp');
 
 //Textures
 export const arrowTexture = withBasePath('/assets/Images/faction-quiz/arrows.png');
