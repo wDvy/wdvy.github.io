@@ -244,3 +244,40 @@ h3 {
     animation: none;
   }
 }
+
+@keyframes quiz-in-forward {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes quiz-in-back {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-quiz-in-forward {
+  animation: quiz-in-forward 0.25s ease-out;
+}
+
+.animate-quiz-in-back {
+  animation: quiz-in-back 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-quiz-in-forward,
+  .animate-quiz-in-back {
+    animation: none;
+  }
+}

@@ -78,3 +78,13 @@ export const EmberwyldCrestTransparent = withBasePath(
 
 //Gazette
 export const GazetteOverlay = withBasePath('/assets/Images/gazette/MarketGazette-template.png');
+
+//Faction Quiz
+
+//Textures
+export const arrowTexture = withBasePath('/assets/Images/faction-quiz/arrows.png');
+export const cellTexture = withBasePath('/assets/Images/faction-quiz/cells.png');
+export const crossTexture = withBasePath('/assets/Images/faction-quiz/cross.png');
+export const dioriteTexture = withBasePath('/assets/Images/faction-quiz/diorite.png');
+export const swirlingTexture = withBasePath('/assets/Images/faction-quiz/swirling_white.png');
+export const weaveTexture = withBasePath('/assets/Images/faction-quiz/weave.png');
