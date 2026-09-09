@@ -384,11 +384,13 @@ export default function FactionQuizPage() {
   function goToNext() {
     setDirection('forward');
     setCurrentIndex((index) => Math.min(index + 1, visibleQuestions.length - 1));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function goToPrevious() {
     setDirection('back');
     setCurrentIndex((index) => Math.max(index - 1, 0));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function selectAnswer(result: string) {
@@ -401,6 +403,7 @@ export default function FactionQuizPage() {
   function handleSubmit() {
     if (allQuestionsAnswered) {
       setStage('email');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }
 
@@ -412,6 +415,7 @@ export default function FactionQuizPage() {
     try {
       // TODO: wire this up to a real email service (Mailchimp/ConvertKit/Formspree, etc.)
       await new Promise((resolve) => setTimeout(resolve, 300));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       router.push(`/faction-quiz/results?faction=${encodeURIComponent(getResults())}`);
     } catch {
       setEmailStatus('error');
