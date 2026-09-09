@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Navbar from '../../components/Navbar';
 import {
@@ -340,6 +340,16 @@ export default function FactionQuizPage() {
   const [consentChecked, setConsentChecked] = useState(false);
   const [emailStatus, setEmailStatus] = useState<'idle' | 'submitting' | 'error'>('idle');
   const router = useRouter();
+  const questionCardRef = useRef<HTMLDivElement>(null);
+
+  function scrollToQuestionCard() {
+    const card = questionCardRef.current;
+    if (!card) return;
+
+    const scrollOffset = 96; // clears the sticky navbar
+    const top = card.getBoundingClientRect().top + window.scrollY - scrollOffset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
 
   // Tiebreaker questions only appear if the main questions (and prior tiebreakers) end in a tie.
   const visibleQuestions = useMemo(() => {
@@ -384,13 +394,13 @@ export default function FactionQuizPage() {
   function goToNext() {
     setDirection('forward');
     setCurrentIndex((index) => Math.min(index + 1, visibleQuestions.length - 1));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToQuestionCard();
   }
 
   function goToPrevious() {
     setDirection('back');
     setCurrentIndex((index) => Math.max(index - 1, 0));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToQuestionCard();
   }
 
   function selectAnswer(result: string) {
@@ -403,7 +413,7 @@ export default function FactionQuizPage() {
   function handleSubmit() {
     if (allQuestionsAnswered) {
       setStage('email');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToQuestionCard();
     }
   }
 
@@ -415,7 +425,7 @@ export default function FactionQuizPage() {
     try {
       // TODO: wire this up to a real email service (Mailchimp/ConvertKit/Formspree, etc.)
       await new Promise((resolve) => setTimeout(resolve, 300));
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToQuestionCard();
       router.push(`/faction-quiz/results?faction=${encodeURIComponent(getResults())}`);
     } catch {
       setEmailStatus('error');
@@ -464,7 +474,10 @@ export default function FactionQuizPage() {
         </div>
 
         {stage === 'email' ? (
-          <div className="mt-8 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-(--color-vellum) p-5 animate-quiz-in-forward">
+          <div
+            ref={questionCardRef}
+            className="mt-8 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-(--color-vellum) p-5 animate-quiz-in-forward"
+          >
             <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
               Enter your email to reveal your results
             </h2>
@@ -529,6 +542,7 @@ export default function FactionQuizPage() {
         ) : (
           <>
             <div
+              ref={questionCardRef}
               key={currentQuestion.number}
               role="radiogroup"
               aria-labelledby={`question-${currentQuestion.number}`}
