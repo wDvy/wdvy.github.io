@@ -424,7 +424,7 @@ export default function FactionQuizPage() {
 
     setEmailStatus('submitting');
     try {
-      await submitNewsletterEmail(email);
+      await submitNewsletterEmail(email, getResults());
       scrollToQuestionCard();
       router.push(`/faction-quiz/results?faction=${encodeURIComponent(getResults())}`);
     } catch {
