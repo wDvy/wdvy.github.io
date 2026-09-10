@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import Script from 'next/script';
 import { Suspense, useState } from 'react';
 import { FaFacebookF, FaLink, FaRedditAlien, FaShare, FaXTwitter } from 'react-icons/fa6';
 import Navbar from '../../../components/Navbar';
@@ -11,6 +12,17 @@ import { getFactionResult } from '../factionResults';
 export default function FactionQuizResultsPage() {
   return (
     <Suspense fallback={null}>
+      <Script id="faction-quiz-conversion" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('event', 'conversion', {
+              'send_to': 'AW-18422615639/xobYCLnPvPMcENecy9BE',
+              'value': 1.0,
+              'currency': 'USD'
+          });
+        `}
+      </Script>
       <FactionQuizResult />
     </Suspense>
   );
