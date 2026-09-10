@@ -138,5 +138,20 @@ export default function EventbriteCheckoutEmbed({
     };
   }, [brandColor, containerId, eventId, iframeContainerHeight, onOrderComplete]);
 
-  return <div id={containerId} className={className} />;
+  return (
+    <div className={className}>
+      <div id={containerId} />
+      <p className="mt-4 text-center text-sm text-zinc-600 dark:text-zinc-400">
+        Checkout not loading?{' '}
+        <a
+          href="https://www.eventbrite.com/e/magical-midwinter-an-interactive-experience-tickets-1990290234669"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold underline hover:opacity-80"
+        >
+          Visit our Eventbrite to buy tickets
+        </a>
+      </p>
+    </div>
+  );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, type FormEvent } from 'react';
+import { submitNewsletterEmail } from '../lib/newsletter';
 
 const STORAGE_KEY = 'mm-newsletter-dismissed-at';
 const SHOW_AFTER_MS = 5000;
@@ -34,8 +35,7 @@ export default function NewsletterPopup() {
     event.preventDefault();
     setStatus('submitting');
     try {
-      // TODO: wire this up to a real email service (Mailchimp/ConvertKit/Formspree, etc.)
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await submitNewsletterEmail(email);
       setStatus('success');
       window.localStorage.setItem(STORAGE_KEY, String(Date.now()));
     } catch {

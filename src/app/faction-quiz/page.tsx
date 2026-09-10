@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Navbar from '../../components/Navbar';
+import { submitNewsletterEmail } from '../../lib/newsletter';
 import {
   arrowTexture,
   cellTexture,
@@ -423,8 +424,7 @@ export default function FactionQuizPage() {
 
     setEmailStatus('submitting');
     try {
-      // TODO: wire this up to a real email service (Mailchimp/ConvertKit/Formspree, etc.)
-      await new Promise((resolve) => setTimeout(resolve, 300));
+      await submitNewsletterEmail(email);
       scrollToQuestionCard();
       router.push(`/faction-quiz/results?faction=${encodeURIComponent(getResults())}`);
     } catch {
