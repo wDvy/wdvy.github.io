@@ -500,19 +500,21 @@ export default function FactionQuizPage() {
                 className="w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-(--color-parchment) px-4 py-2.5 text-zinc-900 dark:text-zinc-50 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100"
               />
 
-              <label className="flex cursor-pointer items-start gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+              <label className="flex cursor-pointer items-start gap-3 text-sm leading-snug text-zinc-700 dark:text-zinc-300">
                 <input
                   type="checkbox"
                   required
                   checked={consentChecked}
                   onChange={(event) => setConsentChecked(event.target.checked)}
-                  className="mt-0.5 h-4 w-4 accent-(--color-alchemy)"
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-(--color-alchemy)"
                 />
-                I consent to receive emails from Magical Midwinter and agree to the{' '}
-                <a href="/policies" className="underline hover:text-(--color-lantern)">
-                  privacy policy
-                </a>
-                .
+                <span>
+                  I consent to receive emails from Magical Midwinter and agree to the{' '}
+                  <a href="/policies" className="underline hover:text-(--color-lantern)">
+                    privacy policy
+                  </a>
+                  .
+                </span>
               </label>
 
               {emailStatus === 'error' ? (
