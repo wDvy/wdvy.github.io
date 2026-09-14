@@ -14,49 +14,11 @@ import {
   gazettePicture,
 } from '../../images';
 
-const TIEBREAKER_QUESTION_NUMBERS = [12, 13];
+const TIEBREAKER_QUESTION_NUMBERS = [11, 12];
 
 const QUESTIONS = [
   {
     number: 1,
-    question: 'Respected elders are expressing disapproval of something you did. Do you:',
-    options: [
-      {
-        answer:
-          "Reflect on the criticism and change your ways if you find it necessary; ignore it if you don't!",
-        result: 'markie',
-      },
-      { answer: 'Seek to explain your reasons to them', result: 'Lorehollow' },
-      {
-        answer:
-          'Ignore them and convince everyone around you that the ones criticizing you are ignorant',
-        result: 'The Family Nightingale',
-      },
-      { answer: 'Silence them - at any cost', result: 'Veilbreakers' },
-      {
-        answer: 'Objectively analyze the situation before making any decisions',
-        result: 'The Marketplace Gazette',
-      },
-      { answer: 'Apologize and mend the relationship', result: "Hecate's Torch" },
-    ],
-  },
-  {
-    number: 2,
-    question: 'Do you respect your leaders?',
-    options: [
-      { answer: 'Their words guide my actions.', result: 'Lorehollow' },
-      { answer: "They're role models for me.", result: "Hecate's Torch" },
-      { answer: "They're often out of touch with my life.", result: 'The Family Nightingale' },
-      { answer: "They're out of touch with reality.", result: 'Veilbreakers' },
-      { answer: 'Depends on the leader…', result: 'markie' },
-      {
-        answer: 'Leaders should not be trusted solely because of their power. Question Everything!',
-        result: 'The Marketplace Gazette',
-      },
-    ],
-  },
-  {
-    number: 3,
     question: 'What location most calls to you?',
     options: [
       {
@@ -81,15 +43,17 @@ const QUESTIONS = [
     ],
   },
   {
-    number: 4,
-    question: 'A powerful but corrupt mage offers you power if you betray a friend. Do you:',
+    number: 2,
+    question:
+      "You've been offered a precious magical item in return for betraying a friend. What do you do?",
     options: [
       {
-        answer: 'Condemn your friend and take the opportunity to better yourself',
+        answer:
+          "If your friend is gullible enough to be duped by you, it's their fault and your gain",
         result: 'Veilbreakers',
       },
       {
-        answer: "Agree, but drop hints to your friend that something's up",
+        answer: "Agree, but drop hints to your friend that something's up...",
         result: 'The Family Nightingale',
       },
       { answer: 'Refuse the offer and refuse to betray your friend', result: 'Lorehollow' },
@@ -101,30 +65,16 @@ const QUESTIONS = [
         answer: 'Alert your friend and the authorities that someone is up to no good',
         result: "Hecate's Torch",
       },
-      { answer: 'Agree, but betray the mage instead', result: 'markie' },
-    ],
-  },
-  {
-    number: 5,
-    question: 'Do you become close to friends, or hold most people at a safe distance?',
-    options: [
       {
-        answer: 'I have an abundance of close friends, family, and acquaintances.',
+        answer:
+          'Band together with your friend to steal the item from the person who offered this shady deal',
         result: 'markie',
       },
-      { answer: 'I have some close friends.', result: "Hecate's Torch" },
-      { answer: 'I have my family.', result: 'The Family Nightingale' },
-      { answer: 'I try to keep people at a distance.', result: 'Veilbreakers' },
-      { answer: 'I have a community of mentors, friends, and family.', result: 'Lorehollow' },
-      {
-        answer: 'I take a while to trust people, but when I do, I am loyal and expect the same.',
-        result: 'The Marketplace Gazette',
-      },
     ],
   },
   {
-    number: 6,
-    question: 'Do you donate time and resources to improve the local community?',
+    number: 3,
+    question: 'Do you care about your community outside of your immediate family?',
     options: [
       { answer: 'Yes, the needs of the community are my top priority.', result: "Hecate's Torch" },
       { answer: 'Yes, I donate as much as I can once my own needs are met.', result: 'Lorehollow' },
@@ -133,25 +83,29 @@ const QUESTIONS = [
         result: 'The Family Nightingale',
       },
       {
-        answer: 'No, my local community would be a waste of time and money.',
+        answer: 'No, supporting my local community would be a waste of time and money.',
         result: 'Veilbreakers',
       },
       {
         answer: 'Time is money and I help my community by sharing my knowledge and wisdom.',
         result: 'The Marketplace Gazette',
       },
-      { answer: 'Community is everything. We all pitch in to keep it running.', result: 'markie' },
+      {
+        answer: 'Community is everything. We all must pitch in to keep it running.',
+        result: 'markie',
+      },
     ],
   },
   {
-    number: 7,
-    question: 'Your community is threatened with invasion. Do you:',
+    number: 4,
+    question: 'Your hometown is threatened with invasion by dark magic. Do you:',
     options: [
       { answer: 'Help defend it to your last breath', result: "Hecate's Torch" },
-      { answer: 'Defend the area with the rest of your community', result: 'markie' },
-      { answer: 'Flee as soon as things look grim', result: 'Veilbreakers' },
+      { answer: 'Step up to defend the area with the rest of your community', result: 'markie' },
+      { answer: 'Save yourself and run as soon as the tides turn', result: 'Veilbreakers' },
       {
-        answer: 'Cut a deal with the enemy to act as a spy and report back to your community',
+        answer:
+          'Cut a deal with the enemy to act as a spy and report secrets back to your community',
         result: 'The Marketplace Gazette',
       },
       {
@@ -165,26 +119,48 @@ const QUESTIONS = [
     ],
   },
   {
-    number: 8,
-    question: 'A plague is sweeping across your country. Would you:',
+    number: 5,
+    question: 'Someone has called you out. Do you:',
     options: [
-      { answer: 'Undertake a dangerous mission to find the cure', result: "Hecate's Torch" },
       {
         answer:
-          'Heal the sick as best you can with wisdom from books, the elders, and professionals',
+          "Reflect on the criticism and change your ways if necessary; ignore it if you don't!",
+        result: 'markie',
+      },
+      {
+        answer: "Seek to explain your reasons to them; it's probably a misunderstanding.",
         result: 'Lorehollow',
       },
-      { answer: 'Avoid contact with the sick', result: 'The Family Nightingale' },
-      { answer: 'Flee the country', result: 'Veilbreakers' },
-      { answer: 'Set up makeshift hospitals and help nurse your community', result: 'markie' },
       {
-        answer: 'Spread awareness about the plague, how it can be prevented and treated',
+        answer:
+          'Ignore them and convince everyone around you that the ones criticizing you are ignorant.',
+        result: 'The Family Nightingale',
+      },
+      { answer: 'Silence them - at any cost.', result: 'Veilbreakers' },
+      {
+        answer: 'Objectively analyze the situation before making any decisions.',
+        result: 'The Marketplace Gazette',
+      },
+      { answer: 'Apologize and mend the relationship.', result: "Hecate's Torch" },
+    ],
+  },
+  {
+    number: 6,
+    question: 'Do you become close to many individuals, or hold most people at a safe distance?',
+    options: [
+      { answer: 'I have many close friends, family, and acquaintances.', result: 'markie' },
+      { answer: 'I have a few trusted, close friends.', result: "Hecate's Torch" },
+      { answer: 'I have my family.', result: 'The Family Nightingale' },
+      { answer: 'I try to keep people at a distance.', result: 'Veilbreakers' },
+      { answer: 'I have a community of mentors, friends, and family.', result: 'Lorehollow' },
+      {
+        answer: 'I take a while to trust people, but when I do, I am loyal and expect the same.',
         result: 'The Marketplace Gazette',
       },
     ],
   },
   {
-    number: 9,
+    number: 7,
     question: 'Which of the following textures most resonates with you?',
     options: [
       {
@@ -220,28 +196,58 @@ const QUESTIONS = [
     ],
   },
   {
-    number: 10,
+    number: 8,
     question: 'What is the best use of magic?',
     options: [
-      { answer: 'To help the destitute and less fortunate.', result: "Hecate's Torch" },
-      { answer: 'To provide for the needs of friends and family.', result: 'markie' },
-      { answer: 'To stay on top of the heap yourself.', result: 'Veilbreakers' },
       {
-        answer: 'To not only stay on top, but keep others from climbing to your level.',
+        answer: 'To help the destitute and less fortunate and to serve the common good.',
+        result: "Hecate's Torch",
+      },
+      {
+        answer: 'To provide for the needs of friends and family; to make life better.',
+        result: 'markie',
+      },
+      { answer: 'To make your life great with the most power.', result: 'Veilbreakers' },
+      {
+        answer: 'To gather the most power and keep others from taking it.',
         result: 'The Family Nightingale',
       },
-      { answer: 'To educate and inform.', result: 'The Marketplace Gazette' },
-      { answer: 'To steward future generations and our earth.', result: 'Lorehollow' },
+      {
+        answer: 'To educate and inform, to lift up with truth.',
+        result: 'The Marketplace Gazette',
+      },
+      { answer: 'To steward future generations and our Earth.', result: 'Lorehollow' },
     ],
   },
   {
-    number: 11,
+    number: 9,
+    question: 'Do you respect your leaders?',
+    options: [
+      { answer: 'Their words can often guide my actions.', result: 'Lorehollow' },
+      { answer: "They're role models for me.", result: "Hecate's Torch" },
+      {
+        answer: "They're often out of touch with my life and don't understand my issues.",
+        result: 'The Family Nightingale',
+      },
+      {
+        answer: "They're out of touch with reality and serve little purpose.",
+        result: 'Veilbreakers',
+      },
+      { answer: 'Depends on the leader…', result: 'markie' },
+      {
+        answer: 'Leaders should not be trusted solely because of their power. Question Everything!',
+        result: 'The Marketplace Gazette',
+      },
+    ],
+  },
+  {
+    number: 10,
     question:
-      'By using your magic, you could fool village merchants into thinking trash was money. Do you?',
+      'By using your magic, you could fool vendors at the marketplace into thinking trash was money. Do you?',
     options: [
       { answer: "Yes, and I'll spend as much as I can.", result: 'Veilbreakers' },
       {
-        answer: "Yes, but I'll only cheat the rich merchants or the ones that did me dirty.",
+        answer: "Yes, but I'll only cheat the rich vendors or the ones that did me dirty.",
         result: 'The Family Nightingale',
       },
       { answer: "No, it's against ethical magical use.", result: "Hecate's Torch" },
@@ -251,7 +257,36 @@ const QUESTIONS = [
         result: 'Lorehollow',
       },
       {
-        answer: 'Research if the trash will stay permanently as money...',
+        answer: "Maybe. I'll research if the trash will stay permanently as money...",
+        result: 'The Marketplace Gazette',
+      },
+    ],
+  },
+  {
+    number: 11,
+    question:
+      '(Extra) You have two paths. One will make you wealthy quickly but may not last, the other offers steady security. Which path do you take?',
+    options: [
+      {
+        answer: 'Definitely the quick wealth; steady work sounds like drudgery.',
+        result: 'Veilbreakers',
+      },
+      {
+        answer: "Probably the wealth, although I'd look into the secure path.",
+        result: 'The Family Nightingale',
+      },
+      {
+        answer: 'Security. Unless I judged the quick wealth enough to last for a long time.',
+        result: 'Lorehollow',
+      },
+      {
+        answer:
+          'Definitely security, because I plan for the long term and to support those around me.',
+        result: "Hecate's Torch",
+      },
+      { answer: "I'm my own boss. I'm not going to work for anyone else.", result: 'markie' },
+      {
+        answer: "How steady is steady? I'd research both paths and weigh pros and cons on a list.",
         result: 'The Marketplace Gazette',
       },
     ],
@@ -259,53 +294,28 @@ const QUESTIONS = [
   {
     number: 12,
     question:
-      '(Extra Tiebreaker Question!): You have two job offers. One pays more, but the other is secure and steady. Which do you choose?',
-    options: [
-      {
-        answer: 'Definitely the lucrative job; steady work sounds like drudgery.',
-        result: 'Veilbreakers',
-      },
-      {
-        answer: "Probably the lucrative job, although I'd look into the secure job.",
-        result: 'The Family Nightingale',
-      },
-      {
-        answer: 'The secure job, unless the other job was outrageously lucrative.',
-        result: 'Lorehollow',
-      },
-      {
-        answer: 'Definitely the secure job, because I plan for the long term.',
-        result: "Hecate's Torch",
-      },
-      { answer: "I'm my own boss. I'm not going to work for anyone else.", result: 'markie' },
-      {
-        answer:
-          "How steady is steady? I'd research both and weigh pros and cons on a written list.",
-        result: 'The Marketplace Gazette',
-      },
-    ],
-  },
-  {
-    number: 13,
-    question:
-      '(Extra Tiebreaker Question!): If you accepted a job or contract, would you try to finish the task even if it got much more dangerous?',
+      '(Extra) If you made a promise to someone, would you try to finish the task even if it suddenly became dangerous?',
     options: [
       { answer: 'Yes, my word is my bond.', result: "Hecate's Torch" },
       {
         answer: "Yes, because it's good to have a reputation for dependability.",
         result: 'Lorehollow',
       },
-      { answer: "You can bet I'd be renegotiating.", result: 'markie' },
       {
-        answer: "If it's no longer a good deal, then the deal is off.",
+        answer: "You can bet I'd be renegotiating - I should get something out of this.",
+        result: 'markie',
+      },
+      {
+        answer:
+          "If it's no longer a good deal for me, then the deal is off, no matter what I promised.",
         result: 'The Marketplace Gazette',
       },
       {
-        answer: "If the job came from someone who mattered, yes. If not, I wouldn't risk it.",
+        answer: "If I made the promise to someone who mattered, yes. If not, I wouldn't risk it.",
         result: 'The Family Nightingale',
       },
       {
-        answer: "Of course - and then I'd extort more money out of them when I succeeded.",
+        answer: "Of course - and then I'd extort money out of them when I succeeded.",
         result: 'Veilbreakers',
       },
     ],

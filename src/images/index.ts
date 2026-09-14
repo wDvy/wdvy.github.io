@@ -12,7 +12,7 @@ export function withBasePath(path: string) {
 export const Logo = withBasePath('/assets/Images/NewLogoPurple+Shadow1.png');
 export const Banner = withBasePath('/assets/Images/Eventbrite Banner.webp');
 export const SantaMagic = withBasePath('/assets/Images/santa&magic.jpg');
-export const Lorehollow2025 = withBasePath('/assets/Images/2025Lorehollow.jpg');
+export const Lorehollow2025 = withBasePath('/assets/Images/midwinter2025.jpg');
 export const Puzzle2025 = withBasePath('/assets/Images/2025puzzle.jpg');
 export const Wlky = withBasePath('/assets/Images/wlky.jpg');
 export const divider = withBasePath(
