@@ -81,6 +81,17 @@ export const GazetteOverlay = withBasePath('/assets/Images/gazette/MarketGazette
 
 //Faction Quiz
 export const gazettePicture = withBasePath('/assets/Images/gazette/gazettePicture.webp');
+export const GazetteFaction = withBasePath('/assets/Images/faction-quiz/GazetteFaction.jpg');
+export const LorehollowFaction = withBasePath('/assets/Images/faction-quiz/LorehollowFaction.jpg');
+
+export const HecatesTorchFaction = withBasePath(
+  '/assets/Images/faction-quiz/HecatesTorchFaction.jpg'
+);
+export const MarkieFaction = withBasePath('/assets/Images/faction-quiz/MarkiesFaction.jpg');
+export const NightengaleFaction = withBasePath(
+  '/assets/Images/faction-quiz/NightengaleFaction.jpg'
+);
+export const VeilbreakersFaction = withBasePath('/assets/Images/faction-quiz/VBfaction.jpg');
 
 //Textures
 export const arrowTexture = withBasePath('/assets/Images/faction-quiz/arrows.png');
