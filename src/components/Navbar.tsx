@@ -146,6 +146,12 @@ export default function Navbar() {
                 Lorehollow
               </Link>
               <Link
+                href="/contact"
+                className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
+              >
+                Contact
+              </Link>
+              <Link
                 href="/gazette"
                 className="text-sm sm:text-base text-[var(--color-comfort)] hover:text-[var(--color-alchemy)] dark:text-[var(--color-comfort)] dark:hover:text-[var(--color-bloom)]"
               >
@@ -269,6 +275,12 @@ export default function Navbar() {
             className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
           >
             Lorehollow
+          </Link>
+          <Link
+            href="/contact"
+            className="block px-2 py-2 rounded text-[var(--color-comfort)] hover:bg-[var(--color-parchment)] dark:hover:bg-[var(--color-zinc-800)]"
+          >
+            Contact
           </Link>
           <Link
             href="/gazette"
