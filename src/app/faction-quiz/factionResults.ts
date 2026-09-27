@@ -54,7 +54,7 @@ export const FACTION_RESULTS = {
     image: HecatesTorchFaction,
     imageAlt: "Hecate's Torch",
     description:
-      'An international coalition of talented magic users dedicated to upholding magical law. Hecate’s Hand is the ultimate expression of justice - judge, jury and executioner. Lorehollow is one of the recruiting houses that sends prospective members for this elite society’s training. Commonly referred to as “The Torch.” Members of Hecate’s Torch will stop at nothing to uncover the Veilbreaker’s insidious plot to steal and misuse the magic of the dead. They are also highly suspicious of the tactics and power hoarded by the Family Nightingale.',
+      'An international coalition of talented magic users dedicated to upholding magical law. Hecate’s Torch is the ultimate expression of justice - judge, jury and executioner. Lorehollow is one of the recruiting houses that sends prospective members for this elite society’s training. Commonly referred to as “The Torch.” Members of Hecate’s Torch will stop at nothing to uncover the Veilbreaker’s insidious plot to steal and misuse the magic of the dead. They are also highly suspicious of the tactics and power hoarded by the Family Nightingale.',
   },
   Lorehollow: {
     title: 'Lorehollow',
