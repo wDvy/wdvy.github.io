@@ -1,0 +1,224 @@
+.section {
+  padding: 2rem 1.5rem;
+}
+
+.calendar {
+  display: grid;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0.55rem;
+  gap: 0.55rem;
+  border-radius: 0.4rem;
+  background: linear-gradient(115deg, #ff8f38, #ed318b);
+}
+
+.week {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.78fr) minmax(11rem, 1.15fr) minmax(0, 1fr)
+    minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.55rem;
+}
+
+.weekIntro,
+.days {
+  display: contents;
+}
+
+.month,
+.weekend,
+.day {
+  position: relative;
+  min-width: 0;
+  background: #fff;
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(145deg, #ff943b, #ff7952);
+  color: #8c16ae;
+  font-family: var(--font-game-reality), Georgia, serif;
+  text-align: center;
+}
+
+.monthName {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+.dateRange {
+  margin-top: 0.45rem;
+  font-size: clamp(1.15rem, 1.8vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.weekend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: #312638;
+  text-align: center;
+}
+
+.weekend h2 {
+  margin: 0;
+  font-family: var(--font-game-reality), Georgia, serif;
+  font-size: clamp(1.55rem, 2.8vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.day {
+  min-height: 12rem;
+  padding: 0.85rem;
+  color: #252525;
+}
+
+.dayHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 0.45rem;
+  padding: 0 0 0.4rem;
+  border-bottom: 0.22rem solid #2e402d;
+  color: #e88f40;
+  font-family: var(--font-game-reality), Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.events {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.events a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.04em;
+  text-underline-offset: 0.12em;
+}
+
+.events a:hover {
+  color: #8c16ae;
+}
+
+.events a:focus-visible {
+  border-radius: 0.1rem;
+  outline: 2px solid #8c16ae;
+  outline-offset: 2px;
+}
+
+.ribbon {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.25rem;
+  z-index: 1;
+  padding: 0.35rem 0.75rem;
+  transform: rotate(-7deg);
+  background: #ffbd19;
+  color: #26352a;
+  font-family: var(--font-game-reality), Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .week {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .weekIntro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    min-height: 9rem;
+    gap: 0.55rem;
+  }
+
+  .days {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .day {
+    min-height: 0;
+    padding: 0.75rem;
+  }
+
+  .dayHeading {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+
+  .events {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .calendar {
+    padding: 0.35rem;
+    gap: 0.35rem;
+  }
+
+  .week {
+    gap: 0.35rem;
+  }
+
+  .weekIntro {
+    min-height: 7rem;
+    gap: 0.35rem;
+  }
+
+  .month,
+  .weekend {
+    padding: 0.65rem 0.4rem;
+  }
+
+  .monthName {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .dateRange {
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+  }
+
+  .weekend h2 {
+    font-size: clamp(1.2rem, 6vw, 1.75rem);
+  }
+
+  .days {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+  }
+
+  .day {
+    padding: 0.7rem 0.8rem;
+  }
+
+  .dayHeading {
+    font-size: 1rem;
+  }
+
+  .events {
+    gap: 0.3rem;
+    font-size: 0.88rem;
+  }
+}

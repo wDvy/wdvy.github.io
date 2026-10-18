@@ -7,6 +7,7 @@ import IntroOverlay from '../components/IntroOverlay';
 import { FaInstagram, FaTiktok, FaArrowRight } from 'react-icons/fa';
 import Link from 'next/link';
 import EventbriteCheckoutEmbed from '../components/EventbriteCheckoutEmbed';
+import Calendar from '../components/Calendar';
 
 const INTRO_STORAGE_KEY = 'intro-seen';
 
@@ -208,6 +209,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Calendar />
 
       {/* social media section */}
       <section className="py-20">

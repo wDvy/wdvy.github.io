@@ -25,4 +25,10 @@ if ($LASTEXITCODE -ne 0) {
   throw "SCP upload failed."
 }
 
+$permissionsCommand = "set -e; cd '$RemotePath'; find . -type d -exec chmod 755 {} +; find . -type f -exec chmod 644 {} +"
+& ssh $RemoteUserHost $permissionsCommand
+if ($LASTEXITCODE -ne 0) {
+  throw "Remote permission update failed."
+}
+
 Write-Host "Deploy complete." -ForegroundColor Green

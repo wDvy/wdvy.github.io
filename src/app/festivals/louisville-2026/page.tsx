@@ -9,6 +9,7 @@ import {
   LexiQuill,
   Lorehollow2025,
 } from '../../../images';
+import Calendar from '../../../components/Calendar';
 
 export default function Home() {
   const faqItems = [
@@ -195,6 +196,8 @@ export default function Home() {
         ]}
         reverse
       />
+
+      <Calendar />
 
       <FAQDropdown title="Louisville 2026 FAQ" items={faqItems} />
     </div>
