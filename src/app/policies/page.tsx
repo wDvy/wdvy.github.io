@@ -12,6 +12,44 @@ export default function PoliciesPage() {
 
       <main className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50">
+          Principles and policies
+        </h1>
+        <hr className="my-8 border-zinc-300 dark:border-zinc-700"></hr>
+
+        <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+          No AI Use Statement
+        </h2>
+        <p className="text-zinc-700 dark:text-zinc-300">
+          Immersio and Magical Midwinter, LLC. is committed to centering human expression and
+          artistry. AI has no place in our work. We vow all of our creative content is
+          human-created. In that vein, all of our content is copyrighted Magical Midwinter, LLC and
+          none can be uploaded in full or partial to any AI model.
+        </p>
+        <hr className="my-8 border-zinc-300 dark:border-zinc-700"></hr>
+
+        <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+          Inclusive and Welcoming Atmosphere
+        </h2>
+        <p className="text-zinc-700 dark:text-zinc-300">
+          Immersio and Magical Midwinter, LLC. is committed to creating inclusive and welcoming
+          spaces. Hate speech, violence, or human rights violations are not permitted in any of our
+          spaces or on any of our platforms. We are committed to giving lovers of fantasy and
+          magical schools a place to gather without fear of bigotry.
+        </p>
+        <hr className="my-8 border-zinc-300 dark:border-zinc-700"></hr>
+        <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+          Prioritizing the Safety of our Performers
+        </h2>
+        <p className="text-zinc-700 dark:text-zinc-300">
+          Immersio and Magical Midwinter, LLC. is committed to protecting the mental and physical
+          well-being of our performers and artists. Guests are not permitted to touch any performers
+          without explicit verbal consent. Threatening, offensive, or otherwise inappropriate
+          language used with or in proximity to our performers or staff will result in immediate
+          removal from our event and a subsequent ban from attending future events.
+        </p>
+        <hr className="my-8 border-zinc-300 dark:border-zinc-700"></hr>
+
+        <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50">
           Magical Midwinter Market Privacy Policy
         </h1>
         <p className="mt-4 text-zinc-700 dark:text-zinc-300">Effective Date: 10/26/2025</p>
@@ -488,10 +526,10 @@ export default function PoliciesPage() {
             <p>
               Email:{' '}
               <a
-                href="mailto:info@magicalmidwinter.com"
+                href="mailto:admin@magicalmidwinter.com"
                 className="text-emerald-600 hover:underline"
               >
-                info@magicalmidwinter.com
+                admin@magicalmidwinter.com
               </a>
             </p>
             <p>
