@@ -76,6 +76,20 @@ export const EmberwyldCrestTransparent = withBasePath(
   '/assets/Images/Lorehollow/LorehollowCrests-Emberwyld.png'
 );
 
+//Gallery
+export const GalleryAmaryllis = withBasePath('/assets/Images/gallery/amaryllis-compressed.webp');
+export const GalleryAmaryllis2 = withBasePath('/assets/Images/gallery/amaryllis2-compressed.webp');
+export const GalleryHopGossip = withBasePath('/assets/Images/gallery/hopgossip-compressed.webp');
+export const GalleryLorehollow = withBasePath('/assets/Images/gallery/lorehollow1-compressed.webp');
+export const GalleryMarkies = withBasePath('/assets/Images/gallery/markies-compressed.webp');
+export const GalleryPointyHat = withBasePath('/assets/Images/gallery/pointyhat-compressed.webp');
+export const GalleryPuzzle = withBasePath('/assets/Images/gallery/puzzle-compressed.webp');
+export const GalleryPuzzle2 = withBasePath('/assets/Images/gallery/puzzle2-compressed.webp');
+export const GalleryPuzzle3 = withBasePath('/assets/Images/gallery/puzzle3-compressed.webp');
+export const GalleryPuzzle4 = withBasePath('/assets/Images/gallery/puzzle4-compressed.webp');
+export const GalleryQuest = withBasePath('/assets/Images/gallery/quest1-compressed.webp');
+export const GalleryYuh = withBasePath('/assets/Images/gallery/yuh-compressed.webp');
+
 //Gazette
 export const GazetteOverlay = withBasePath('/assets/Images/gazette/MarketGazette-template.png');
 
