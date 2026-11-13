@@ -185,7 +185,7 @@ const calendar: CalendarWeek[] = [
     ],
   },
   {
-    month: 'NOV',
+    month: 'DEC',
     dateRange: '18-20, 2026',
     title: 'VEILBREAKERS WEEKEND',
     days: [
